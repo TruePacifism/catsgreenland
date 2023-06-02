@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.7acaea2f.css",
-    "main.js": "/react-homework-template/static/js/main.07d3183d.js",
-    "index.html": "/react-homework-template/index.html",
-    "main.7acaea2f.css.map": "/react-homework-template/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/react-homework-template/static/js/main.07d3183d.js.map"
+    "main.css": "/catsgreenland/static/css/main.2738416c.css",
+    "main.js": "/catsgreenland/static/js/main.17f8c820.js",
+    "static/media/1614251810_44-p-kartinki-cherno-zelenii-fon-50.jpg": "/catsgreenland/static/media/1614251810_44-p-kartinki-cherno-zelenii-fon-50.dc62879ff73878e53312.jpg",
+    "static/media/cat-logo.svg": "/catsgreenland/static/media/cat-logo.31b5b43db3d72039baa4ffe65d721574.svg",
+    "index.html": "/catsgreenland/index.html",
+    "main.2738416c.css.map": "/catsgreenland/static/css/main.2738416c.css.map",
+    "main.17f8c820.js.map": "/catsgreenland/static/js/main.17f8c820.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.2738416c.css",
+    "static/js/main.17f8c820.js"
   ]
 }

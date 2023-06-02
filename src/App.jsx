@@ -9,7 +9,7 @@ import store from 'redux/store';
 export const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter basename="/cats-greenland">
+      <BrowserRouter basename="/catsgreenland">
         <Header />
         <Routes>
           <Route exact path="/" Component={MainPage} />

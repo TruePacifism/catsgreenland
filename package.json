@@ -2,7 +2,7 @@
   "name": "react-homework-templatee",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://truepacifism.github.io/cats-greenland/",
+  "homepage": "https://truepacifism.github.io/catsgreenland/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",

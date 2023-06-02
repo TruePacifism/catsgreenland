@@ -1,7 +1,5 @@
-import Container from 'components/Container/Container';
-import Section from 'components/Section/Section';
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import Icon from '../../svgIcons/cat-logo.svg';
 import vars from '../../utils/vars';

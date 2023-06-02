@@ -8,7 +8,7 @@ export default function BiograhpyListItem({ bio }) {
     <li key={vkId} className={styles.bioItem}>
       <h3 className={styles.heading}>
         <span className={styles.number}>{number}. </span>
-        <a href="" className={styles.name}>
+        <a href={`vk.com/id${vkId}`} className={styles.name}>
           {name}
         </a>
       </h3>

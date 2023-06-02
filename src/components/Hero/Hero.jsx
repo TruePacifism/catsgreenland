@@ -1,5 +1,3 @@
-import Container from 'components/Container/Container';
-import Section from 'components/Section/Section';
 import React from 'react';
 import styles from './Hero.module.css';
 

@@ -1,0 +1,37 @@
+.heading {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 30px;
+}
+.button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}
+.section {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(../../images/1614251810_44-p-kartinki-cherno-zelenii-fon-50.jpg);
+}
+.container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+}

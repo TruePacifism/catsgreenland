@@ -16,6 +16,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-material-music-player": "^1.1.9",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.15",

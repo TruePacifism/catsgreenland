@@ -1,0 +1,42 @@
+.title {
+  font-weight: 500;
+  display: inline;
+  color: var(--accent-color);
+}
+.heading {
+  color: var(--accent-color);
+}
+.notApprovedHeading {
+  color: var(--accent-color);
+}
+.special {
+  font-style: italic;
+}
+.rulesList {
+  box-sizing: border-box; /* учитывать границы и отступы элемента */
+  padding-left: 1em;
+}
+.rulesListItem {
+  list-style-type: decimal;
+}
+.rulesListItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+.rulesListItem > .rulesList {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.disclaimerBlock {
+  position: relative;
+}
+.disclaimerBlock::before {
+  display: inline-block;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: var(--accent-color);
+  content: '';
+}
+.disclaimer {
+  margin-left: 10px;
+}

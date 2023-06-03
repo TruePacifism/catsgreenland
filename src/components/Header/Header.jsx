@@ -4,20 +4,13 @@ import styles from './Header.module.css';
 // import Icon from '../../svgIcons/cat-logo.svg';
 // import vars from '../../utils/vars';
 import { ReactSVG } from 'react-svg';
+import { ReactComponent as Icon } from '../../cat-logo.svg';
 
 export default function Header() {
   return (
     <div>
       <div className={styles.container}>
-        <span>
-          <ReactSVG
-            src="./cat-logo.svg"
-            className={styles.icon}
-            fallback={() => <span>Error!</span>}
-            loading={() => <span>Loading</span>}
-          />
-          {/* <Icon width={50} height={50} fill={vars.accentColor} /> */}
-        </span>
+        <Icon className={styles.icon} />
         <ul className={styles.navList}>
           <li className={styles.navListItem}>
             <NavLink

@@ -54,5 +54,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "svg-inline-loader": "^0.8.2"
   }
 }

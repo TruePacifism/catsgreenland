@@ -380,9 +380,17 @@ My name is, chka-chka, эээ... Nyase.
       imagesUrl: [],
     },
   ],
+  currentUser: {},
 };
+const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {
-  builder.addCase(createAction('TEST'), console.log);
+  builder.addCase(authAction, (state, action) => {
+    localStorage.setItem('loggedUser', JSON.stringify(action.payload));
+    return {
+      ...state,
+      currentUser: action.payload,
+    };
+  });
 });
 
 const store = configureStore({
@@ -390,3 +398,5 @@ const store = configureStore({
 });
 
 export default store;
+
+export const auth = authAction;

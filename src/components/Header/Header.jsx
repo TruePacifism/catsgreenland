@@ -4,10 +4,6 @@ import styles from './Header.module.css';
 import { ReactComponent as Icon } from '../../cat-logo.svg';
 import VK, { Auth } from 'react-vk';
 
-const responseVk = response => {
-  console.log(response);
-};
-
 export default function Header() {
   return (
     <div>

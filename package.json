@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.15",
     "react-svg-loader": "^3.0.3",
+    "react-vk": "^5.0.2",
     "redux": "^4.2.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",

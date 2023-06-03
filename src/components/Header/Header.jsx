@@ -2,6 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import { ReactComponent as Icon } from '../../cat-logo.svg';
+import VK, { Auth } from 'react-vk';
+
+const responseVk = response => {
+  console.log(response);
+};
 
 export default function Header() {
   return (
@@ -46,6 +51,15 @@ export default function Header() {
             </NavLink>
           </li>
         </ul>
+        <VK apiId={51666098}>
+          <Auth
+            options={{
+              onAuth: user => {
+                console.log(user);
+              },
+            }}
+          />
+        </VK>
         <button className={styles.placeholder}>Тут что-то будет</button>
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function VkAuth() {
   const loggedUser = useSelector(store => store.currentUser);
   useEffect(() => {
     dispatch(auth(JSON.parse(localStorage.getItem('loggedUser'))));
-  }, [dispatch]);
+  });
   console.log(loggedUser);
 
   const [isModalOpen, setIsModalOpen] = useState(false);

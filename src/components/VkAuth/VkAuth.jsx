@@ -19,7 +19,9 @@ export default function VkAuth() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pfp, setPfp] = useState(placeholder);
   useEffect(() => {
-    getPfp(loggedUser.uid, setPfp);
+    setTimeout(() => {
+      getPfp(loggedUser.uid, setPfp);
+    }, 100);
   }, [loggedUser]);
   const onEscEvent = useCallback(
     e => {

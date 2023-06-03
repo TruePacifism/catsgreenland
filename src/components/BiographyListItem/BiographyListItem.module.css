@@ -1,23 +1,43 @@
-.bioItem {
-  padding: 15px;
-  border: 3px solid var(--accent-color);
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--accent-color);
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.1);
+  transition: box-shadow 250ms ease-in-out;
 }
-.bioItem:not(:last-child) {
-  margin-bottom: 20px;
+.item:hover,
+.item.selected {
+  box-shadow: 0 10px 10px -15px #007f00, 0 -5px 10px -15px #007f00,
+    10px 0 10px -15px #007f00, -10px 0 10px -15px #007f00,
+    10px 10px 10px -15px #007f00, -10px 10px 10px -15px #007f00,
+    10px -10px 10px -15px #007f00, -10px -10px 10px -15px #007f00;
 }
-.number {
-  font-weight: 500;
+
+.item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
+  color: #333;
 }
-.name {
+
+.item img {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.item span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: auto;
   color: var(--accent-color);
-  composes: link from '../../index.css';
-}
-.text {
-  color: var(--accent-color);
-  font-size: 20px;
-}
-.image {
-  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

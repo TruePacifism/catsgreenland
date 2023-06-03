@@ -13,7 +13,7 @@ export const App = () => {
         <Header />
         <Routes>
           <Route exact path="/" Component={MainPage} />
-          <Route path="/biographys" Component={Biographys} />
+          <Route path="/biographys/*" Component={Biographys} />
         </Routes>
         <Footer />
       </BrowserRouter>

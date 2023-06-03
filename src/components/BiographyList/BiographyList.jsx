@@ -1,13 +1,15 @@
 import BiograhpyListItem from 'components/BiographyListItem/BiographyListItem';
+import styles from './BiographyList.module.css';
 import { useSelector } from 'react-redux';
+
 export default function BiograhpyList() {
   const bios = useSelector(store => store.bios);
-  console.log(bios);
+
   return (
-    <ul>
+    <div className={styles.container}>
       {bios.map(bio => (
         <BiograhpyListItem key={bio.vkId} bio={bio} />
       ))}
-    </ul>
+    </div>
   );
 }

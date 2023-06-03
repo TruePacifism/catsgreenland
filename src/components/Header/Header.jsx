@@ -1,9 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
-// import Icon from '../../svgIcons/cat-logo.svg';
-// import vars from '../../utils/vars';
-import { ReactSVG } from 'react-svg';
 import { ReactComponent as Icon } from '../../cat-logo.svg';
 
 export default function Header() {

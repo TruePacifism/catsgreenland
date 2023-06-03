@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/catsgreenland/static/css/main.645fd9c7.css",
-    "main.js": "/catsgreenland/static/js/main.d8177567.js",
+    "main.js": "/catsgreenland/static/js/main.fc41b206.js",
     "static/media/1614251810_44-p-kartinki-cherno-zelenii-fon-50.jpg": "/catsgreenland/static/media/1614251810_44-p-kartinki-cherno-zelenii-fon-50.dc62879ff73878e53312.jpg",
     "static/media/cat-logo.svg": "/catsgreenland/static/media/cat-logo.07518a3988df19f668dc52861239c848.svg",
     "index.html": "/catsgreenland/index.html",
     "static/media/close-md-svgrepo-com.svg": "/catsgreenland/static/media/close-md-svgrepo-com.02fd53fcb59c8b132fb76e701e22fe8f.svg",
     "main.645fd9c7.css.map": "/catsgreenland/static/css/main.645fd9c7.css.map",
-    "main.d8177567.js.map": "/catsgreenland/static/js/main.d8177567.js.map"
+    "main.fc41b206.js.map": "/catsgreenland/static/js/main.fc41b206.js.map"
   },
   "entrypoints": [
     "static/css/main.645fd9c7.css",
-    "static/js/main.d8177567.js"
+    "static/js/main.fc41b206.js"
   ]
 }

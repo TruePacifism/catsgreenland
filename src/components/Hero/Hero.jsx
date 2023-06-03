@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './Hero.module.css';
 import ReactModal from 'react-modal';
 import Rules from 'components/Rules/Rules';
@@ -6,11 +6,14 @@ import { ReactComponent as CloseIcon } from '../../images/close-md-svgrepo-com.s
 
 export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
-  const onEscEvent = e => {
-    if (e.code === 'Escape' && isOpen) {
-      closeModal();
-    }
-  };
+  const onEscEvent = useCallback(
+    e => {
+      if (e.code === 'Escape' && isOpen) {
+        closeModal();
+      }
+    },
+    [isOpen]
+  );
   const openModal = () => {
     setIsOpen(true);
   };

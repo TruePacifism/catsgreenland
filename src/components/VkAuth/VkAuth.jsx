@@ -13,11 +13,14 @@ export default function VkAuth() {
   const loggedUser = useSelector(store => store.currentUser);
   useEffect(() => {
     dispatch(auth(JSON.parse(localStorage.getItem('loggedUser'))));
-  });
+  }, [dispatch]);
   console.log(loggedUser);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pfp, setPfp] = useState(placeholder);
+  useEffect(() => {
+    getPfp(loggedUser.uid, setPfp);
+  }, [loggedUser]);
   const onEscEvent = useCallback(
     e => {
       if (e.code === 'Escape' && isModalOpen) {
@@ -66,7 +69,6 @@ export default function VkAuth() {
             options={{
               onAuth: user => {
                 dispatch(auth(user));
-                getPfp(loggedUser.uid, setPfp);
               },
             }}
           />

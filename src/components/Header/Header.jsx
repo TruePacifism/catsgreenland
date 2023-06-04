@@ -35,12 +35,10 @@ export default function Header() {
   const openBurger = () => {
     setIsBurgerOpen(true);
     disableScroll();
-    console.log(isBurgerOpen);
   };
   const closeBurger = () => {
     setIsBurgerOpen(false);
     enableScroll();
-    console.log(isBurgerOpen);
   };
   return (
     <div className={styles.section}>

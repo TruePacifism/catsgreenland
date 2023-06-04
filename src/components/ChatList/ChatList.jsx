@@ -10,8 +10,8 @@ export default function ChatList() {
     <Section>
       <Container>
         <ul className={styles.list}>
-          {chats.map(chat => (
-            <ChatListItem chat={chat} />
+          {chats.map((chat, idx) => (
+            <ChatListItem key={idx} chat={chat} />
           ))}
         </ul>
       </Container>

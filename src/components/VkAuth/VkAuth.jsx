@@ -14,7 +14,6 @@ export default function VkAuth({ onModalOpen }) {
   useEffect(() => {
     dispatch(auth(JSON.parse(localStorage.getItem('loggedUser'))));
   }, [dispatch]);
-  console.log(loggedUser);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pfp, setPfp] = useState(placeholder);

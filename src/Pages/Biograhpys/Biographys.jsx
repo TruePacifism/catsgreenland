@@ -11,11 +11,22 @@ export default function Biographys() {
   useEffect(() => {
     setTimeout(() => {
       if (bioRef.current) {
-        bioRef.current.scrollIntoView({
+        const headerOffset = 80;
+        const elementPosition = bioRef.current.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
           behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
         });
+
+        // bioRef.current.scrollIntoView({
+        //   behavior: 'smooth',
+        //   block: 'start',
+        //   inline: 'nearest',
+        //   offset: { top: '-80px' },
+        // });
       }
     }, 100);
   }, [searchParams]);

@@ -8,7 +8,7 @@ import { auth } from 'redux/store';
 import placeholder from '../../images/bio-grid-placeholder.png';
 import getPfp from 'utils/getPfp';
 
-export default function VkAuth() {
+export default function VkAuth({ onModalOpen }) {
   const dispatch = useDispatch();
   const loggedUser = useSelector(store => store.currentUser);
   useEffect(() => {
@@ -33,6 +33,7 @@ export default function VkAuth() {
   );
   const openModal = () => {
     setIsModalOpen(true);
+    onModalOpen();
   };
   const closeModal = () => {
     setIsModalOpen(false);

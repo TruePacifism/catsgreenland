@@ -1,53 +1,91 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
 import styles from './Header.module.css';
 import { ReactComponent as Icon } from '../../cat-logo.svg';
 import VkAuth from 'components/VkAuth/VkAuth';
+import { ReactComponent as BurgerIcon } from '../../images/burger-menu-svgrepo-com.svg';
+import NavMenu from 'components/NavMenu/NavMenu';
+import { useMediaQuery } from 'react-responsive';
+import { CSSTransition } from 'react-transition-group';
+import { Link } from 'react-router-dom';
+
+let scrollPosition = 0;
+
+const disableScroll = () => {
+  // Сохраняем текущую позицию прокрутки
+  scrollPosition = window.pageYOffset;
+
+  // Добавляем стили для блокировки прокрутки
+  document.body.style.overflow = 'hidden';
+  // document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+};
+
+const enableScroll = () => {
+  // Удаляем стили для блокировки прокрутки
+  document.body.style.overflow = '';
+  // document.body.style.position = '';
+  document.body.style.top = '';
+  // Возвращаем страницу на сохраненную позицию прокрутки
+  window.scrollTo(0, scrollPosition);
+};
 
 export default function Header() {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const openBurger = () => {
+    setIsBurgerOpen(true);
+    disableScroll();
+    console.log(isBurgerOpen);
+  };
+  const closeBurger = () => {
+    setIsBurgerOpen(false);
+    enableScroll();
+    console.log(isBurgerOpen);
+  };
   return (
-    <div>
+    <div className={styles.section}>
       <div className={styles.container}>
-        <Icon className={styles.icon} />
-        <ul className={styles.navList}>
-          <li className={styles.navListItem}>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? [styles.navLink, styles.navLinkActive].join(' ')
-                  : styles.navLink
-              }
-            >
-              На главную
-            </NavLink>
-          </li>
-          <li className={styles.navListItem}>
-            <NavLink
-              to="/biographys"
-              className={({ isActive }) =>
-                isActive
-                  ? [styles.navLink, styles.navLinkActive].join(' ')
-                  : styles.navLink
-              }
-            >
-              Рассказы
-            </NavLink>
-          </li>
-          <li className={styles.navListItem}>
-            <NavLink
-              to="/newspaper"
-              className={({ isActive }) =>
-                isActive
-                  ? [styles.navLink, styles.navLinkActive].join(' ')
-                  : styles.navLink
-              }
-            >
-              Газета
-            </NavLink>
-          </li>
-        </ul>
-        <VkAuth />
+        <Link to={'/'}>
+          <Icon className={styles.icon} />
+        </Link>
+        {!isMobile && (
+          <>
+            <NavMenu closeMenu={closeBurger} />
+            <VkAuth onModalOpen={closeBurger} />
+          </>
+        )}
+        {isMobile && (
+          <BurgerIcon onClick={openBurger} className={styles.burgerIcon} />
+        )}
+        <CSSTransition
+          in={isBurgerOpen}
+          classNames={{
+            enter: styles['slide-enter'],
+            enterActive: styles['slide-enter-active'],
+            enterDone: styles['slide-enter-done'],
+            exitDone: styles['slide-exit-done'],
+            exitActive: styles['slide-exit-active'],
+          }}
+          timeout={300}
+        >
+          <div className={styles.burgerMenu}>
+            <VkAuth onModalOpen={closeBurger} />
+            <NavMenu closeMenu={closeBurger} />
+          </div>
+        </CSSTransition>
+        <CSSTransition
+          in={isBurgerOpen}
+          classNames={{
+            enter: styles['opacity-enter'],
+            enterActive: styles['opacity-enter-active'],
+            enterDone: styles['opacity-enter-done'],
+            exitDone: styles['opacity-exit-done'],
+            exitActive: styles['opacity-exit-active'],
+          }}
+          timeout={300}
+        >
+          <div className={styles.burgerOverlay} onClick={closeBurger}></div>
+        </CSSTransition>
       </div>
     </div>
   );

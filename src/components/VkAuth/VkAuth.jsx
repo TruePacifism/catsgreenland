@@ -1,11 +1,11 @@
 import VK, { Auth } from 'react-vk';
 import ReactModal from 'react-modal';
-import { ReactComponent as CloseIcon } from '../../images/close-md-svgrepo-com.svg';
+import { ReactComponent as CloseIcon } from '../../images/close-icon.svg';
 import styles from './VkAuth.module.css';
 import React, { useState, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from 'redux/store';
-import placeholder from '../../images/bio-grid-placeholder.png';
+import placeholder from '../../images/image-placeholder.png';
 import getPfp from 'utils/getPfp';
 
 export default function VkAuth({ onModalOpen }) {

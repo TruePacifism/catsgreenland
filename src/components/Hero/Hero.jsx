@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styles from './Hero.module.css';
 import ReactModal from 'react-modal';
 import Rules from 'components/Rules/Rules';
-import { ReactComponent as CloseIcon } from '../../images/close-md-svgrepo-com.svg';
+import { ReactComponent as CloseIcon } from '../../images/close-icon.svg';
 
 export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);

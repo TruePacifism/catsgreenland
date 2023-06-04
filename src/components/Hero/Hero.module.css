@@ -19,7 +19,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url(../../images/1614251810_44-p-kartinki-cherno-zelenii-fon-50.jpg);
+    url(../../images/hero-background.jpg);
   width: 100%;
 }
 .container {
@@ -27,7 +27,7 @@
   padding-bottom: 60px;
   padding-left: 15px;
   padding-right: 15px;
-  min-height: 500px;
+  min-height: 700px;
 
   display: flex;
   justify-content: center;

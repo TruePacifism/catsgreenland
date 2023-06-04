@@ -1,5 +1,5 @@
 import styles from './BiographyListItem.module.css';
-import placeholder from '../../images/bio-grid-placeholder.png';
+import placeholder from '../../images/image-placeholder.png';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import getPfp from 'utils/getPfp';

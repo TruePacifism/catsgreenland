@@ -381,6 +381,29 @@ My name is, chka-chka, эээ... Nyase.
     },
   ],
   currentUser: {},
+  chats: [
+    {
+      name: 'Беседа ботов',
+      link: 'https://vk.me/join/Ok_fO1yDQe9HhtMcKuSd7CQgxgIJ2DBpjqE=',
+      image: '',
+      serviceName: 'ВК',
+      text: 'Беседа ботов для игр и их дрюка без спама в основной беседе',
+    },
+    {
+      name: 'Дискорд сервер',
+      link: '',
+      image: '',
+      serviceName: 'Discord',
+      text: 'Сервер для посиделок в войсе и совместных игр',
+    },
+    {
+      name: 'Телеграм чат',
+      link: 'https://t.me/+PCMV87p-lbJhYzgy',
+      image: '',
+      serviceName: 'Телеграм',
+      text: 'Чат для времен, когда вк нестабилен и вот-вот развалится на части',
+    },
+  ],
 };
 const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Header.module.css';
 import { ReactComponent as Icon } from '../../cat-logo.svg';
 import VkAuth from 'components/VkAuth/VkAuth';
-import { ReactComponent as BurgerIcon } from '../../images/burger-menu-svgrepo-com.svg';
+import { ReactComponent as BurgerIcon } from '../../images/burger-menu.svg';
 import NavMenu from 'components/NavMenu/NavMenu';
 import { useMediaQuery } from 'react-responsive';
 import { CSSTransition } from 'react-transition-group';

@@ -11,6 +11,11 @@ function importMusic() {
     const fileName = pathParts[pathParts.length - 1];
     const musicFile = context(filePath);
     const fileObject = { name: fileName, path: filePath, music: musicFile };
+    console.log('pathParts', pathParts);
+    console.log('vkId', vkId);
+    console.log('fileName', fileName);
+    console.log('musicFile', musicFile);
+    console.log('fileObject', fileObject);
     if (!files[vkId]) {
       files[vkId] = [fileObject];
     } else {
@@ -25,6 +30,7 @@ function importMusic() {
 }
 
 const musicFiles = importMusic();
+console.log(musicFiles);
 // const musicFiles = importAll(require.context('../music', false, /\.mp3$/));
 
 const initialState = {

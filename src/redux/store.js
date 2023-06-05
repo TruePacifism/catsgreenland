@@ -11,11 +11,6 @@ function importMusic() {
     const fileName = pathParts[pathParts.length - 1];
     const musicFile = context(filePath);
     const fileObject = { name: fileName, path: filePath, music: musicFile };
-    console.log('pathParts', pathParts);
-    console.log('vkId', vkId);
-    console.log('fileName', fileName);
-    console.log('musicFile', musicFile);
-    console.log('fileObject', fileObject);
     if (!files[vkId]) {
       files[vkId] = [fileObject];
     } else {
@@ -44,6 +39,7 @@ const initialState = {
       imagesUrl: [
         'https://sun9-58.userapi.com/impg/eQcfZZ8MBTkWOM9lGO7cksHyXjA7rha5w1HXYQ/0P2nrr5RHh4.jpg?size=807x670&quality=96&sign=1162419f8fab822909487158102bbaf4&type=album',
       ],
+      alert: 'new',
       // title: 'TheFatRat - Mayday',
       // src: musicFiles[0].default,
     },

@@ -7,3 +7,11 @@
   margin-right: auto;
   margin-left: auto;
 }
+.heading {
+  font-size: 24px;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 45px;
+  text-align: center;
+  text-transform: uppercase;
+}

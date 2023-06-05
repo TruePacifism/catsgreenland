@@ -1,15 +1,15 @@
 .item {
-  margin: 15px;
+  margin: 10px;
   /* background-color: gray; */
   padding: 15px;
   border: 3px solid var(--accent-color);
   border-radius: 10px;
-  width: calc((100% - 15px * 6) / 3);
+  width: calc((100% - 10px * 6) / 3);
   position: relative;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .item {
-    width: calc((100% - 15px * 4) / 2);
+    width: calc((100% - 10px * 4) / 2);
   }
 }
 @media screen and (max-width: 480px) {
@@ -17,27 +17,54 @@
     width: 100%;
   }
 }
+@media screen and (min-width: 768px) {
+  .linkContainer {
+    height: 66px;
+  }
+}
 .image {
   margin-bottom: 15px;
   width: 100%;
+  border-radius: 10px;
 }
 .name {
   text-transform: uppercase;
   text-align: center;
   font-weight: 500;
-}
-.text {
   margin-bottom: 15px;
 }
-.link {
+.text {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  min-height: 75px;
+}
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+}
+.link,
+.noLink {
   padding: 10px;
   background-color: var(--accent-color);
   color: white;
   border-radius: 5px;
   display: block;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-right: auto;
   margin-left: auto;
   width: fit-content;
+  text-align: center;
+  word-wrap: break-word;
   composes: link from '../../index.css';
 }
 .container {
@@ -48,6 +75,5 @@
   margin-top: auto;
 }
 .noLink {
-  text-align: center;
-  word-wrap: break-word;
+  background-color: red;
 }

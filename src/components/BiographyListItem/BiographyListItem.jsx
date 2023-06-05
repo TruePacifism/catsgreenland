@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './BiographyListItem.module.css';
 import placeholder from '../../images/image-placeholder.png';
 import { useSearchParams } from 'react-router-dom';
+import { ReactComponent as AlertIcon } from '../../images/cat-alert.svg';
 
 export default function BiograhpyListItem({ bio }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,13 +23,17 @@ export default function BiograhpyListItem({ bio }) {
       }}
     >
       <span className={styles.name}>{bio.name ? bio.name : 'Загрузка...'}</span>
-      <div className={styles.image}>
-        {bio.pfp ? (
-          <img src={bio.pfp} alt={bio.name} />
-        ) : (
-          <img src={placeholder} alt="Загрузка..." />
-        )}
-      </div>
+      {bio.pfp ? (
+        <img src={bio.pfp} alt={bio.name} className={styles.image} />
+      ) : (
+        <img src={placeholder} alt="Загрузка..." className={styles.image} />
+      )}
+      {bio.alert && (
+        <div className={styles.alert}>
+          <span className={styles.alertText}>{bio.alert}</span>
+          <AlertIcon className={styles.alertIcon}>,dfsdfsd</AlertIcon>
+        </div>
+      )}
     </div>
   );
 }

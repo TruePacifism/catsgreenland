@@ -5,6 +5,7 @@
   border: 2px solid var(--accent-color);
   border-radius: 5px;
   transition: box-shadow 250ms ease-in-out;
+  position: relative;
 }
 .item:hover,
 .item.selected {
@@ -24,14 +25,14 @@
   color: #333;
 }
 
-.item img {
+.image {
   position: relative;
   max-width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.item span {
+.name {
   font-size: 16px;
   font-weight: bold;
   margin-top: auto;
@@ -40,4 +41,26 @@
   color: var(--accent-color);
   padding-bottom: 10px;
   padding-top: 10px;
+}
+.alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-75%);
+}
+.alertIcon {
+  width: 80px;
+  fill: var(--accent-color);
+  z-index: -1;
+}
+.alertText {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 10005;
+  font-family: 'Slackside One', cursive;
+  font-size: 24px;
 }

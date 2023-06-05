@@ -8,7 +8,7 @@ export default function ChatList() {
   const chats = useSelector(store => store.chats);
   return (
     <Section>
-      <Container>
+      <Container heading={'Наши специальные чаты'}>
         <ul className={styles.list}>
           {chats.map((chat, idx) => (
             <ChatListItem key={idx} chat={chat} />

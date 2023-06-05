@@ -3,6 +3,30 @@ import discordPfp from '../images/discord-pfp.jpg';
 import botPfp from '../images/bot-pfp.jpg';
 import actions from './user-actions';
 
+function importMusic() {
+  const context = require.context('../music/', true, /\.mp3$/);
+  const musicFiles = context.keys().reduce((files, filePath) => {
+    const pathParts = filePath.split('/');
+    const vkId = pathParts[1];
+    const fileName = pathParts[pathParts.length - 1];
+    const musicFile = context(filePath);
+    const fileObject = { name: fileName, path: filePath, music: musicFile };
+    if (!files[vkId]) {
+      files[vkId] = [fileObject];
+    } else {
+      if (!filePath.startsWith('music')) {
+        files[vkId].push(fileObject);
+      }
+    }
+    return files;
+  }, {});
+
+  return musicFiles;
+}
+
+const musicFiles = importMusic();
+// const musicFiles = importAll(require.context('../music', false, /\.mp3$/));
+
 const initialState = {
   bios: [
     {
@@ -14,6 +38,8 @@ const initialState = {
       imagesUrl: [
         'https://sun9-58.userapi.com/impg/eQcfZZ8MBTkWOM9lGO7cksHyXjA7rha5w1HXYQ/0P2nrr5RHh4.jpg?size=807x670&quality=96&sign=1162419f8fab822909487158102bbaf4&type=album',
       ],
+      // title: 'TheFatRat - Mayday',
+      // src: musicFiles[0].default,
     },
     {
       vkId: 601128888,
@@ -383,6 +409,7 @@ My name is, chka-chka, эээ... Nyase.
       text: 'Чат для времен, когда вк нестабилен и вот-вот развалится на части',
     },
   ],
+  bioMusic: musicFiles,
 };
 const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {

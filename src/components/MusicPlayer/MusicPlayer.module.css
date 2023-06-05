@@ -1,0 +1,53 @@
+.container:not(:last-child) {
+  margin-bottom: 10px;
+}
+.controlsContainer,
+.progressBarContainer {
+  display: flex;
+  align-items: center;
+}
+.title {
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.button {
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  margin-right: 15px;
+}
+.stop {
+  display: none;
+}
+.play {
+  fill: white;
+  color: white;
+  stroke: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pause {
+  fill: white;
+  color: white;
+  stroke: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.progressBar {
+  margin-right: 15px;
+}
+.time {
+  color: var(--accent-color);
+}
+.progressInfo {
+  background-color: var(--accent-color);
+  color: white;
+}

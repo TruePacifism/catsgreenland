@@ -26,6 +26,18 @@
 body {
   padding-top: 80px;
 }
+::-webkit-progress-value,
+::-moz-progress-bar {
+  background-color: var(--accent-color); /* цвет заполненной части */
+}
+/* Цвет незаполненной части */
+progress {
+  background-color: #d1d5db;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden; /* скрывает части содержимого, которые выходят за границы элемента */
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

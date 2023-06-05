@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Header.module.css';
-import { ReactComponent as Icon } from '../../cat-logo.svg';
+import { ReactComponent as Icon } from '../../images/cat-logo.svg';
 import VkAuth from 'components/VkAuth/VkAuth';
 import { ReactComponent as BurgerIcon } from '../../images/burger-menu.svg';
 import NavMenu from 'components/NavMenu/NavMenu';

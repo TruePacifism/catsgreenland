@@ -27,6 +27,7 @@ export default function BiograhpyList() {
       updateUsers();
     }
   }, [bios, dispatch]);
+
   return (
     <div className={styles.container}>
       {bios.map(bio => (

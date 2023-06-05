@@ -17,11 +17,7 @@ export default function Biograhpy({ bioRef, vkId }) {
       ))}
       {music &&
         music.map((musicItem, idx) => (
-          <MusicPlayer
-            key={idx}
-            src={musicItem.music.default}
-            title={musicItem.name}
-          />
+          <MusicPlayer key={idx} src={musicItem.music} title={musicItem.name} />
         ))}
     </div>
   );

@@ -26,6 +26,10 @@
 }
 
 .modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,6 +42,7 @@
   background-color: white;
   scrollbar-color: var(--accent-color);
   scrollbar-base-color: var(--accent-color);
+  text-align: center;
 }
 .closeButton {
   position: absolute;
@@ -67,4 +72,27 @@
   .authButton {
     margin-bottom: 50px;
   }
+}
+.widgetContainer {
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+  border: 3px solid var(--accent-color);
+}
+.loggedPfp {
+  width: 200px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 2px solid var(--accent-color);
+  margin-right: auto;
+  margin-left: auto;
+}
+.name {
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.authMessage {
+  margin-top: 0;
+  margin-bottom: 20px;
 }

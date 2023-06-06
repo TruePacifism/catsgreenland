@@ -66,15 +66,38 @@ export default function VkAuth({ onModalOpen }) {
           </div>
         )}
       >
-        <VK apiId={51666098}>
-          <Auth
-            options={{
-              onAuth: user => {
-                dispatch(auth(user));
-              },
-            }}
+        <div className={styles.userInfo}>
+          <img
+            src={loggedUser ? pfp : placeholder}
+            alt=""
+            className={styles.loggedPfp}
           />
-        </VK>
+          <h3 className={styles.name}>
+            {loggedUser
+              ? loggedUser.first_name + ' ' + loggedUser.last_name
+              : 'НН какой-то'}
+          </h3>
+        </div>
+        {loggedUser ? (
+          <p className={styles.authMessage}>
+            Вы можете сменить аккаунт ВК с помощью виджета ниже
+          </p>
+        ) : (
+          <p className={styles.authMessage}>
+            Вы можете войти через ВК с помощью виджета ниже
+          </p>
+        )}
+        <div className={styles.widgetContainer}>
+          <VK apiId={51666098}>
+            <Auth
+              options={{
+                onAuth: user => {
+                  dispatch(auth(user));
+                },
+              }}
+            />
+          </VK>
+        </div>
       </ReactModal>
 
       <button className={styles.authButton} onClick={openModal}>

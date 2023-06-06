@@ -1,0 +1,38 @@
+.chart {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.colorInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.colorName {
+  text-align: center;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.colorUsersList {
+}
+.colorUsersItem {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.userPfp {
+  width: 50px;
+  margin-right: 20px;
+}
+.userName {
+  font-weight: 500;
+}

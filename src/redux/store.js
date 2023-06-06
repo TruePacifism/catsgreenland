@@ -2,6 +2,7 @@ import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 import discordPfp from '../images/discord-pfp.jpg';
 import botPfp from '../images/bot-pfp.jpg';
 import actions from './user-actions';
+import colors from './colors-enum';
 
 function importMusic() {
   const context = require.context('../music/', true, /\.mp3$/);
@@ -40,8 +41,7 @@ const initialState = {
         'https://sun9-58.userapi.com/impg/eQcfZZ8MBTkWOM9lGO7cksHyXjA7rha5w1HXYQ/0P2nrr5RHh4.jpg?size=807x670&quality=96&sign=1162419f8fab822909487158102bbaf4&type=album',
       ],
       alert: 'new',
-      // title: 'TheFatRat - Mayday',
-      // src: musicFiles[0].default,
+      colors: [colors.BLACK, colors.WHITE, colors.GREEN],
     },
     {
       vkId: 601128888,
@@ -49,6 +49,7 @@ const initialState = {
 
 
 `,
+      colors: [colors.BLUE],
       imagesUrl: [],
     },
     {
@@ -67,6 +68,7 @@ const initialState = {
 
 
 `,
+      colors: [colors.PINK, colors.PURPLE],
       imagesUrl: [],
     },
     {
@@ -84,6 +86,7 @@ const initialState = {
 
 
 `,
+      colors: [colors.GREEN],
       imagesUrl: [],
     },
     {
@@ -104,6 +107,7 @@ OST с Drakengard 3, просто потому что потому.
 
 
 `,
+      colors: [colors.RED, colors.CYAN],
       imagesUrl: [
         'https://sun9-44.userapi.com/impg/LLO5PyP1vXmUI5o5XHRZ7QVoRTUetf7OZcxRUw/cn7W8VZ5x8Q.jpg?size=1280x1024&quality=96&sign=ac1c63ca324e27bb1111f7bb3f569a6c&type=album',
       ],
@@ -146,6 +150,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.RED, colors.BLACK],
       imagesUrl: [
         'https://sun9-75.userapi.com/impg/HaVKHCHjy4SiCnLO16KcRltkb9ISKdZXrhvTjA/_8stnXrG-Ek.jpg?size=1280x720&quality=96&sign=b68d9a621242e9b1569e88144c3fe156&type=album',
       ],
@@ -180,6 +185,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.RED],
       imagesUrl: [],
     },
     {
@@ -197,6 +203,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.RED, colors.BLACK],
       imagesUrl: [
         'https://sun9-37.userapi.com/impg/Ieb0cpghpTDltC7JYDZM6UaIMDc7DV0RjJiIEA/HwYF6CeA5Ds.jpg?size=373x210&quality=96&sign=47a2df211adcda7192bc75f979844b0c&type=album',
       ],
@@ -211,6 +218,7 @@ My name is, chka-chka, эээ... Nyase.
 Любимых исполнителей писать не желаю, так как время идет и они могут меняться.
 Любимые цвета - белый, бежевый, персидский синий (6600FF), пастельно-розовый (FFD1DC).
 `,
+      colors: [colors.WHITE, colors.BLUE, colors.PINK],
       imagesUrl: [
         'https://sun9-9.userapi.com/impg/Qu7KR6Jl_Zikpf9h2G1PNtgTZxxfBg2EowgrvA/v07USPk7kps.jpg?size=1428x2048&quality=96&sign=e9369e68ab46012c0033f8dc27cb81c8&type=album',
       ],
@@ -222,6 +230,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.LIGHT_BLUE, colors.PURPLE],
       imagesUrl: [],
     },
     {
@@ -244,6 +253,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.GREEN],
       imagesUrl: [
         'https://sun9-25.userapi.com/impg/kjJlfJ42YpusldV_CyznxDezoyYNp8LvIRNUgA/Z9SE6YcN1U8.jpg?size=1200x750&quality=96&sign=d8ceb0d8ce123bb84a2c8b60c8b5478a&type=album',
       ],
@@ -294,6 +304,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.WHITE, colors.BLACK, colors.PURPLE, colors.GREEN],
       imagesUrl: [
         'https://sun9-77.userapi.com/impg/-2Jzk7HxCHcDt0EKtcUzTNwvVmBn7mLJjfXVWQ/VoenTMtYPNg.jpg?size=1280x1280&quality=96&sign=9da3ec436a4d7ebd2e420c45463f947f&type=album',
       ],
@@ -325,6 +336,7 @@ My name is, chka-chka, эээ... Nyase.
 Из музыки, у меня нет таких отдельных поджанров, которые бы выделялись на фоне других.
 
 `,
+      colors: [colors.PURPLE],
       imagesUrl: [],
     },
     {
@@ -368,6 +380,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      colors: [colors.LIGHT_BLUE, colors.CYAN, colors.PURPLE, colors.GREEN],
       imagesUrl: [
         'https://sun9-55.userapi.com/impg/zx4Caz4sYFtcomHlUQm7IWBCtVSUmTFf9Y8GPA/euyc6FX9rhc.jpg?size=736x962&quality=96&sign=dc7713cd7695022b3e699b0553f77b91&type=album',
       ],

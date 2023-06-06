@@ -7,19 +7,28 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import actions from 'redux/user-actions';
 import placeholder from './images/image-placeholder.png';
+import Hobbies from 'Pages/Hobbies/Hobbies';
+import getUsers from 'utils/getUser';
 
 export const App = () => {
   const bios = useSelector(store => store.bios);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (!bios[0].pfp) {
-      dispatch(
-        actions.updateUsers(
-          bios.map(bio => {
-            return { ...bio, pfp: placeholder };
-          })
-        )
-      );
+    if (!bios[0].pfp || !bios[0].pfp.startsWith('http')) {
+      const updateUsers = async () => {
+        const users = await getUsers(bios.map(bios => bios.vkId));
+        dispatch(
+          actions.updateUsers(
+            users.map(user => {
+              return {
+                name: user.first_name + ' ' + user.last_name,
+                pfp: user.photo_max,
+              };
+            })
+          )
+        );
+      };
+      updateUsers();
     }
   }, [bios, dispatch]);
   return (
@@ -28,6 +37,7 @@ export const App = () => {
       <Routes>
         <Route exact path="/" Component={MainPage} />
         <Route path="/biographys/*" Component={Biographys} />
+        <Route path="/hobbies" Component={Hobbies} />
       </Routes>
       <Footer />
     </>

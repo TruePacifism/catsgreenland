@@ -32,7 +32,7 @@ export default function NavMenu({ closeMenu }) {
       </li>
       <li className={styles.navListItem}>
         <NavLink
-          to="/newspaper"
+          to="/hobbies"
           className={({ isActive }) =>
             isActive
               ? [styles.navLink, styles.navLinkActive].join(' ')
@@ -40,7 +40,7 @@ export default function NavMenu({ closeMenu }) {
           }
           onClick={closeMenu}
         >
-          Газета
+          Уголок интересов
         </NavLink>
       </li>
     </ul>

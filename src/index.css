@@ -37,11 +37,17 @@ progress {
   border-radius: 5px;
   overflow: hidden; /* скрывает части содержимого, которые выходят за границы элемента */
 }
-#page_wrap * {
-  display: none;
+#vk_auth * {
+  display: none !important;
 }
 .flat_button.wauth_auth._wauth_auth {
-  display: inline-block;
+  display: inline-block !important;
+}
+#vk_auth * iframe {
+  display: none !important;
+}
+iframe .flat_button.wauth_auth._wauth_auth {
+  display: inline-block !important;
 }
 ::-webkit-scrollbar {
   width: 12px;

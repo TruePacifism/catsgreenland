@@ -37,7 +37,12 @@ progress {
   border-radius: 5px;
   overflow: hidden; /* скрывает части содержимого, которые выходят за границы элемента */
 }
-
+#page_wrap * {
+  display: none;
+}
+.flat_button.wauth_auth._wauth_auth {
+  display: inline-block;
+}
 ::-webkit-scrollbar {
   width: 12px;
 }

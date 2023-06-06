@@ -5,6 +5,8 @@
   "homepage": "https://truepacifism.github.io/catsgreenland/",
   "proxy": "https://awww.api.com",
   "dependencies": {
+    "@coreui/coreui": "^4.2.6",
+    "@coreui/react": "^4.8.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

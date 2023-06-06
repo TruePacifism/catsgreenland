@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import actions from 'redux/user-actions';
-import placeholder from './images/image-placeholder.png';
 import Hobbies from 'Pages/Hobbies/Hobbies';
 import getUsers from 'utils/getUser';
 

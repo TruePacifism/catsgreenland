@@ -3,6 +3,7 @@ import discordPfp from '../images/discord-pfp.jpg';
 import botPfp from '../images/bot-pfp.jpg';
 import actions from './user-actions';
 import colors from './colors-enum';
+import games from './games-enum';
 
 function importMusic() {
   const context = require.context('../music/', true, /\.mp3$/);
@@ -26,7 +27,6 @@ function importMusic() {
 }
 
 const musicFiles = importMusic();
-console.log(musicFiles);
 // const musicFiles = importAll(require.context('../music', false, /\.mp3$/));
 
 const initialState = {
@@ -41,6 +41,16 @@ const initialState = {
         'https://sun9-58.userapi.com/impg/eQcfZZ8MBTkWOM9lGO7cksHyXjA7rha5w1HXYQ/0P2nrr5RHh4.jpg?size=807x670&quality=96&sign=1162419f8fab822909487158102bbaf4&type=album',
       ],
       alert: 'new',
+      games: [
+        {
+          ...games.GENSHIN,
+          rating: '??',
+        },
+        {
+          ...games.HONKAI,
+          rating: '??',
+        },
+      ],
       colors: [colors.BLACK, colors.WHITE, colors.GREEN],
     },
     {
@@ -50,6 +60,12 @@ const initialState = {
 
 `,
       colors: [colors.BLUE],
+      games: [
+        {
+          ...games.FOOL_ONLINE,
+          rating: '-',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -69,6 +85,24 @@ const initialState = {
 
 `,
       colors: [colors.PINK, colors.PURPLE],
+      games: [
+        {
+          ...games.OSU,
+          rating: '2100 pp',
+        },
+        {
+          ...games.ISAAC,
+          rating: 'Dead God',
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '-',
+        },
+        {
+          ...games.HOLLOW_KNIGHT,
+          rating: '112%',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -87,6 +121,24 @@ const initialState = {
 
 `,
       colors: [colors.GREEN],
+      games: [
+        {
+          ...games.DOTA,
+          rating: 'Кастомки',
+        },
+        {
+          ...games.CYBERPUNK,
+          rating: '???',
+        },
+        {
+          ...games.GENSHIN,
+          rating: '???',
+        },
+        {
+          ...games.FORTNITE,
+          rating: '???',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -108,6 +160,20 @@ OST с Drakengard 3, просто потому что потому.
 
 `,
       colors: [colors.RED, colors.CYAN],
+      games: [
+        {
+          ...games.SEKAI,
+          rating: '???',
+        },
+        {
+          ...games.DIVA,
+          rating: '???',
+        },
+        {
+          ...games.MUSEDASH,
+          rating: '???',
+        },
+      ],
       imagesUrl: [
         'https://sun9-44.userapi.com/impg/LLO5PyP1vXmUI5o5XHRZ7QVoRTUetf7OZcxRUw/cn7W8VZ5x8Q.jpg?size=1280x1024&quality=96&sign=ac1c63ca324e27bb1111f7bb3f569a6c&type=album',
       ],
@@ -151,6 +217,56 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.RED, colors.BLACK],
+      games: [
+        {
+          ...games.GOD_OF_WAR,
+          rating: '???',
+        },
+        {
+          ...games.PHANTASY_STAR,
+          rating: '???',
+        },
+        {
+          ...games.FINAL_FANTASY,
+          rating: '???',
+        },
+        {
+          ...games.WILD_ARMS,
+          rating: '???',
+        },
+        {
+          ...games.SHINING_FORCE,
+          rating: '???',
+        },
+        {
+          ...games.GUILTY_GEAR,
+          rating: '???',
+        },
+        {
+          ...games.MORTAL_KOMBAT,
+          rating: '???',
+        },
+        {
+          ...games.DANGANRONPA,
+          rating: '???',
+        },
+        {
+          ...games.ACE_ATTORNEY,
+          rating: '???',
+        },
+        {
+          ...games.DIVA,
+          rating: '???',
+        },
+        {
+          ...games.SEKAI,
+          rating: '???',
+        },
+        {
+          ...games.GUITAR_HERO,
+          rating: '???',
+        },
+      ],
       imagesUrl: [
         'https://sun9-75.userapi.com/impg/HaVKHCHjy4SiCnLO16KcRltkb9ISKdZXrhvTjA/_8stnXrG-Ek.jpg?size=1280x720&quality=96&sign=b68d9a621242e9b1569e88144c3fe156&type=album',
       ],
@@ -174,6 +290,16 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      games: [
+        {
+          ...games.GENSHIN,
+          rating: '???',
+        },
+        {
+          ...games.SKULL_GIRLS,
+          rating: '???',
+        },
+      ],
       imagesUrl: [
         'https://sun9-80.userapi.com/impg/aN_G7BOi7wxvlPOoUQYfSjkvF3JLOS5rB1aHMQ/V-YAT0bET0A.jpg?size=1080x619&quality=96&sign=92ed391223ce149654661e7c00313061&type=album',
       ],
@@ -185,6 +311,16 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      games: [
+        {
+          ...games.OSU,
+          rating: '???',
+        },
+        {
+          ...games.STARCRAFT,
+          rating: '???',
+        },
+      ],
       colors: [colors.RED],
       imagesUrl: [],
     },
@@ -204,6 +340,12 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.RED, colors.BLACK],
+      games: [
+        {
+          ...games.DND,
+          rating: '???',
+        },
+      ],
       imagesUrl: [
         'https://sun9-37.userapi.com/impg/Ieb0cpghpTDltC7JYDZM6UaIMDc7DV0RjJiIEA/HwYF6CeA5Ds.jpg?size=373x210&quality=96&sign=47a2df211adcda7192bc75f979844b0c&type=album',
       ],
@@ -231,6 +373,12 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.LIGHT_BLUE, colors.PURPLE],
+      games: [
+        {
+          ...games.GENSHIN,
+          rating: '???',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -284,6 +432,12 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      games: [
+        {
+          ...games.WORLD_OF_TANKS,
+          rating: '???',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -305,6 +459,48 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.WHITE, colors.BLACK, colors.PURPLE, colors.GREEN],
+      games: [
+        {
+          ...games.TERRARIA,
+          rating: '???',
+        },
+        {
+          ...games.BULLETS_PER_MINUTE,
+          rating: '???',
+        },
+        {
+          ...games.ISAAC,
+          rating: '???',
+        },
+        {
+          ...games.SEVEN_DAYS_TO_DIE,
+          rating: '???',
+        },
+        {
+          ...games.DEEP_ROCK_GALACTIC,
+          rating: '???',
+        },
+        {
+          ...games.STARDEW_VALLEY,
+          rating: '???',
+        },
+        {
+          ...games.DEEP_ROCK_GALACTIC,
+          rating: '???',
+        },
+        {
+          ...games.IT_TAKES_TWO,
+          rating: '???',
+        },
+        {
+          ...games.BORDERLANDS,
+          rating: '???',
+        },
+        {
+          ...games.FOREST,
+          rating: '???',
+        },
+      ],
       imagesUrl: [
         'https://sun9-77.userapi.com/impg/-2Jzk7HxCHcDt0EKtcUzTNwvVmBn7mLJjfXVWQ/VoenTMtYPNg.jpg?size=1280x1280&quality=96&sign=9da3ec436a4d7ebd2e420c45463f947f&type=album',
       ],
@@ -337,6 +533,40 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.PURPLE],
+      games: [
+        {
+          ...games.OBLIVION,
+          rating: '???',
+        },
+        {
+          ...games.RETURN_TO_CASTLE_WOLFENSTEIN,
+          rating: '???',
+        },
+        {
+          ...games.EVERLASTING_SUMMER,
+          rating: '???',
+        },
+        {
+          ...games.KATAWA_SHOUJO,
+          rating: '???',
+        },
+        {
+          ...games.DANGANRONPA,
+          rating: '???',
+        },
+        {
+          ...games.ACE_ATTORNEY,
+          rating: '???',
+        },
+        {
+          ...games.MILK_INSIDE_A_BAG,
+          rating: '???',
+        },
+        {
+          ...games.STEINS_GATE,
+          rating: '???',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -364,6 +594,18 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      games: [
+        {
+          title: 'Dota 2',
+          isMultiplayer: true,
+          rating: '2000 MMR',
+        },
+        {
+          title: 'osu!',
+          isMultiplayer: true,
+          rating: '2.4k pp',
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -381,6 +623,12 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.LIGHT_BLUE, colors.CYAN, colors.PURPLE, colors.GREEN],
+      games: [
+        {
+          ...games.GENSHIN,
+          rating: '40 уровень',
+        },
+      ],
       imagesUrl: [
         'https://sun9-55.userapi.com/impg/zx4Caz4sYFtcomHlUQm7IWBCtVSUmTFf9Y8GPA/euyc6FX9rhc.jpg?size=736x962&quality=96&sign=dc7713cd7695022b3e699b0553f77b91&type=album',
       ],
@@ -397,6 +645,20 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      games: [
+        {
+          ...games.PHASMOPHOBIA,
+          rating: '???',
+        },
+        {
+          ...games.RUST,
+          rating: '???',
+        },
+        {
+          ...games.CS_GO,
+          rating: '???',
+        },
+      ],
       imagesUrl: [],
     },
   ],

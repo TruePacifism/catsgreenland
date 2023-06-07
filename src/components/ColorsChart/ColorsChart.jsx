@@ -51,7 +51,6 @@ export default function ColorsChart() {
   const [chartData, setChartData] = useState(initChartData);
   useEffect(() => {
     if (chartData === initChartData) {
-      console.log(bios);
       setTimeout(() => {
         const colorsWithUsers = getUsersByColor(bios.filter(bio => bio.colors));
         setColors(colorsWithUsers);
@@ -110,8 +109,8 @@ export default function ColorsChart() {
               <span className={styles.percentage}>45%</span>
             </div>
             <ul className={styles.colorUsersList}>
-              {showingColor.users.map(user => (
-                <li className={styles.colorUsersItem}>
+              {showingColor.users.map((user, idx) => (
+                <li key={idx} className={styles.colorUsersItem}>
                   <img className={styles.userPfp} src={user.pfp} alt="" />
                   <span className={styles.userName}>{user.name}</span>
                 </li>

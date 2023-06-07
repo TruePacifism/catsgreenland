@@ -7,6 +7,21 @@ import { ReactComponent as SortedUpIcon } from '../../images/sort-arrow-up.svg';
 import { ReactComponent as SortedDownIcon } from '../../images/sort-arrow-down.svg';
 import { ReactComponent as SearchIcon } from '../../images/search-icon.svg';
 
+function getStatusClass(status) {
+  switch (status) {
+    case 'Активно играется':
+      return styles.onGoing;
+    case 'Пройдено':
+      return styles.completed;
+    case 'Иногда играется':
+      return styles.rarely;
+    case 'Заброшено':
+      return styles.forbidden;
+    default:
+      return '';
+  }
+}
+
 function getUsersByGame(users) {
   const games = [];
 
@@ -17,81 +32,75 @@ function getUsersByGame(users) {
       if (gameIndex === -1) {
         games.push({
           title: userGame.title,
-          isMultiplayer: userGame.isMultiplayer,
-          users: [user],
-          rating: userGame.rating,
+          types: userGame.types,
+          users: [
+            {
+              ...user,
+              rating: user.games.find(game => game.title === userGame.title)
+                .rating,
+              status: user.games.find(game => game.title === userGame.title)
+                .status,
+            },
+          ],
         });
       } else {
-        games[gameIndex].users.push(user);
+        games[gameIndex].users.push({
+          ...user,
+          rating: user.games.find(game => game.title === userGame.title).rating,
+          status: user.games.find(game => game.title === userGame.title).status,
+        });
       }
     });
   });
+  console.log(games);
 
   return games;
 }
 
 function GamesTable() {
-  // State для хранения данных таблицы и параметров фильтрации, сортировки и поиска
   const [data, setData] = useState([]);
+  const [filter, setFilter] = useState('');
+  const [sortField, setSortField] = useState('userscount');
+  const [sortOrder, setSortOrder] = useState('desc');
+  const [checkedFilterCheckboxes, setCheckedFilterCheckboxes] = useState({
+    синглплеер: true,
+    мультиплеер: true,
+    кооператив: true,
+  });
+  const typeFilter = Object.entries(checkedFilterCheckboxes)
+    .filter(type => type[1])
+    .map(type => type[0]);
+  const [showingGame, setShowingGame] = useState(null);
   const bios = useSelector(store => store.bios);
+
   useEffect(() => {
-    console.log(data);
-    console.log(data.length === 0);
     if (data.length === 0) {
-      console.log(bios);
       setTimeout(() => {
         const gamesWithUsers = getUsersByGame(bios.filter(bio => bio.games));
         setData(
           gamesWithUsers.map(game => ({
-            Название: game.title,
-            'Кол-во игроков': game.users.length,
-            Мультиплеер: game.isMultiplayer ? 'Мультиплеер' : 'Одиночная',
+            title: game.title,
+            users: game.users,
+            types: game.types.join(', '),
+            userscount: game.users.length,
           }))
         );
-        console.log(gamesWithUsers);
       }, 500);
-      // if (data) {
-      //   setChartData({
-      //     labels: colors.map(color => color.name),
-      //     datasets: [
-      //       {
-      //         label: '# of Votes',
-      //         data: colors.map(color => color.users.length),
-      //         backgroundColor: colors.map(
-      //           color =>
-      //             `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 0.5)`
-      //         ),
-      //         borderColor: colors.map(color =>
-      //           color.name === 'Белый'
-      //             ? `rgba(128, 128, 128, 1)`
-      //             : `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 1)`
-      //         ),
-      //         borderWidth: 1,
-      //       },
-      //     ],
-      //   });
-      // }
     }
   }, [bios, data]);
 
-  // useEffect(() => {
-  //   setData([
-  //     { id: 1, name: 'John', age: 25, gender: 'Male' },
-  //     { id: 2, name: 'Mary', age: 30, gender: 'Female' },
-  //     { id: 3, name: 'Bob', age: 40, gender: 'Male' },
-  //     { id: 4, name: 'Alice', age: 20, gender: 'Female' },
-  //   ]);
-  // }, []);
-  const [filter, setFilter] = useState('');
-  const [sortField, setSortField] = useState('Кол-во игроков');
-  const [sortOrder, setSortOrder] = useState('desc');
+  function handleFilterCheckboxChange(handledType) {
+    const updatedCheckboxes = {
+      ...checkedFilterCheckboxes,
+      [handledType]: !checkedFilterCheckboxes[handledType],
+    };
+    setCheckedFilterCheckboxes(updatedCheckboxes);
+  }
 
-  // Функция для обработки изменения значения фильтра
   function handleFilterChange(event) {
     setFilter(event.target.value);
   }
 
-  // Функция для обработки нажатия на заголовок столбца для сортировки
   function handleSort(field) {
     if (field === sortField) {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
@@ -101,14 +110,12 @@ function GamesTable() {
     }
   }
 
-  // Функция для фильтрации данных таблицы по заданному фильтру
   const filteredData = data.filter(
     item =>
-      item['Название'].toLowerCase().includes(filter.toLowerCase()) ||
-      item['Мультиплеер'].toLowerCase().includes(filter.toLowerCase())
+      item.title.toLowerCase().includes(filter.toLowerCase()) &&
+      typeFilter.some(type => item.types.toLowerCase().includes(type))
   );
 
-  // Функция для сортировки данных таблицы по заданному полю и порядку сортировки
   const sortedData = filteredData.sort((a, b) => {
     if (sortField) {
       const aValue = a[sortField];
@@ -123,30 +130,66 @@ function GamesTable() {
     }
   });
 
-  // JSX разметка таблицы
   return (
     <Section>
       <Container heading={'Игры'}>
-        <div className={styles.tableContainer}>
-          <div className={styles.searchContainer}>
-            <SearchIcon className={styles.searchIcon} />
+        <div className={styles.searchContainer}>
+          <b className={styles.totalCounter}>Всего игр: {sortedData.length}</b>
+          <SearchIcon className={styles.searchIcon} />
+          <input
+            className={styles.search}
+            type="text"
+            placeholder="Название игры"
+            value={filter}
+            onChange={handleFilterChange}
+          />
+          <label className={styles.checkboxLabel}>
             <input
-              className={styles.filter}
-              type="text"
-              placeholder="Filter"
-              value={filter}
-              onChange={handleFilterChange}
+              className={styles.checkbox}
+              type="checkbox"
+              name="singleplayer"
+              id="singleplayer"
+              checked={checkedFilterCheckboxes.синглплеер}
+              onChange={() => {
+                handleFilterCheckboxChange('синглплеер');
+              }}
             />
-          </div>
+            Синглплеер
+          </label>
+          <label className={styles.checkboxLabel}>
+            <input
+              className={styles.checkbox}
+              type="checkbox"
+              name="multiplayer"
+              id="multiplayer"
+              checked={checkedFilterCheckboxes.мультиплеер}
+              onChange={() => {
+                handleFilterCheckboxChange('мультиплеер');
+              }}
+            />
+            Мультиплеер
+          </label>
+          <label className={styles.checkboxLabel}>
+            <input
+              className={styles.checkbox}
+              type="checkbox"
+              name="cooperative"
+              id="cooperative"
+              checked={checkedFilterCheckboxes.кооператив}
+              onChange={() => {
+                handleFilterCheckboxChange('кооператив');
+              }}
+            />
+            Кооператив
+          </label>
+        </div>
+        <div className={styles.tableContainer}>
           <table className={styles.table}>
             <thead className={styles.thead}>
               <tr className={styles.tr}>
-                <th
-                  className={styles.th}
-                  onClick={() => handleSort('Название')}
-                >
+                <th className={styles.th} onClick={() => handleSort('title')}>
                   Название
-                  {sortField === 'Название' ? (
+                  {sortField === 'title' ? (
                     sortOrder === 'asc' ? (
                       <SortedUpIcon className={styles.sortedUp} />
                     ) : (
@@ -158,10 +201,10 @@ function GamesTable() {
                 </th>
                 <th
                   className={styles.th}
-                  onClick={() => handleSort('Кол-во игроков')}
+                  onClick={() => handleSort('userscount')}
                 >
                   Кол-во игроков
-                  {sortField === 'Кол-во игроков' ? (
+                  {sortField === 'userscount' ? (
                     sortOrder === 'asc' ? (
                       <SortedUpIcon className={styles.sortedUp} />
                     ) : (
@@ -171,12 +214,9 @@ function GamesTable() {
                     <></>
                   )}
                 </th>
-                <th
-                  className={styles.th}
-                  onClick={() => handleSort('Мультиплеер')}
-                >
-                  Мультиплеер
-                  {sortField === 'Мультиплеер' ? (
+                <th className={styles.th} onClick={() => handleSort('types')}>
+                  Тип
+                  {sortField === 'types' ? (
                     sortOrder === 'asc' ? (
                       <SortedUpIcon className={styles.sortedUp} />
                     ) : (
@@ -190,15 +230,52 @@ function GamesTable() {
             </thead>
             <tbody className={styles.tbody}>
               {sortedData.map(item => (
-                <tr className={styles.tr} key={item['Название']}>
-                  <td className={styles.td}>{item['Название']}</td>
-                  <td className={styles.td}>{item['Кол-во игроков']}</td>
-                  <td className={styles.td}>{item['Мультиплеер']}</td>
+                <tr
+                  className={styles.tr}
+                  onClick={() => {
+                    setShowingGame(item);
+                  }}
+                  key={item.title}
+                >
+                  <td className={styles.td}>{item.title}</td>
+                  <td className={styles.td}>{item.userscount}</td>
+                  <td className={styles.td}>{item.types}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        {showingGame && (
+          <div className={styles.showingGameContainer}>
+            <h3 className={styles.showingGameTitle}>
+              Игроки в{' '}
+              <span className={styles.showingGameName}>
+                {showingGame.title}
+              </span>
+              :
+            </h3>
+            <ul className={styles.playersList}>
+              {showingGame.users.map((user, idx) => (
+                <li className={styles.playersItem} key={idx}>
+                  <img className={styles.playerPfp} src={user.pfp} alt="" />
+                  <span className={styles.playerName}>{user.name} </span>
+                  {user.rating &&
+                    user.rating !== '' &&
+                    !user.rating.includes('?') && (
+                      <span className={styles.playerRating}>
+                        Рейтинг: {user.rating}
+                      </span>
+                    )}
+                  {user.status && (
+                    <span className={getStatusClass(user.status)}>
+                      Статус: {user.status}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </Container>
     </Section>
   );

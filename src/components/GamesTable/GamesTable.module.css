@@ -4,7 +4,12 @@
   --table-row-primary: #dcedc8;
   --table-row-secondary: #c5e1a5;
 }
-.filter {
+.search {
+  border: 2px solid var(--table-border);
+  margin-right: 10px;
+}
+.search::placeholder {
+  color: var(--table-border);
 }
 .searchContainer {
   margin-left: auto;
@@ -13,6 +18,11 @@
   justify-content: right;
   margin-bottom: 10px;
 }
+.totalCounter {
+  font-weight: 500;
+  color: var(--table-border);
+  margin-right: auto;
+}
 .searchIcon {
   margin-right: 15px;
   fill: var(--accent-color);
@@ -20,19 +30,45 @@
   height: 20px;
   display: inline-block;
 }
+.checkboxLabel {
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+.checkbox {
+  margin-right: 5px;
+}
+/* .checkbox {
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  overflow: visible;
+}
+.checkbox::after {
+  margin-right: 5px;
+  content: '';
+  display: block;
+  width: 13px;
+  height: 13px;
+  background-color: tomato;
+  background-image: url(../../images/checkbox-off.svg);
+  fill: green;
+}
+.checkbox:checked::after {
+  background-color: green;
+} */
 .thead {
   position: sticky;
-  top: 0;
+  top: -1px;
 }
 .tableContainer {
   max-height: 200px;
   overflow: scroll;
   width: 100%;
+  margin-bottom: 20px;
 }
 .table {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 20px;
   border: 1px solid var(--table-border);
   position: relative;
 }
@@ -63,4 +99,64 @@
 }
 .tr:nth-child(2n) {
   background-color: var(--table-row-primary);
+}
+.showingGameContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+.showingGameName {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.showingGameTitle {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.playersList {
+}
+.playersItem {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+.playersItem::before {
+  content: '';
+  background-color: var(--accent-color);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.playerPfp {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+.playerName {
+  margin-right: 0.5em;
+}
+.playerRating {
+  font-weight: 500;
+}
+.onGoing,
+.completed,
+.rarely,
+.forbidden {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* изменяем толщину на 2 пикселя */
+}
+.onGoing {
+  text-decoration-color: green; /* изменяем цвет на синий */
+}
+.completed {
+  text-decoration-color: green; /* изменяем цвет на синий */
+}
+.rarely {
+  text-decoration-color: yellow; /* изменяем цвет на синий */
+}
+.forbidden {
+  text-decoration-color: red; /* изменяем цвет на синий */
 }

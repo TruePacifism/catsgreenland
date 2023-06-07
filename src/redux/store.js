@@ -26,6 +26,13 @@ function importMusic() {
   return musicFiles;
 }
 
+const gameStatus = {
+  COMPLETED: 'Пройдено',
+  ON_GOING: 'Активно играется',
+  FORBIDDEN: 'Заброшено',
+  RARELY: 'Иногда играется',
+};
+
 const musicFiles = importMusic();
 // const musicFiles = importAll(require.context('../music', false, /\.mp3$/));
 
@@ -45,10 +52,17 @@ const initialState = {
         {
           ...games.GENSHIN,
           rating: '??',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.HONKAI,
           rating: '??',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.SEKAI,
+          rating: '??',
+          status: gameStatus.ON_GOING,
         },
       ],
       colors: [colors.BLACK, colors.WHITE, colors.GREEN],
@@ -64,6 +78,7 @@ const initialState = {
         {
           ...games.FOOL_ONLINE,
           rating: '-',
+          status: gameStatus.RARELY,
         },
       ],
       imagesUrl: [],
@@ -89,18 +104,128 @@ const initialState = {
         {
           ...games.OSU,
           rating: '2100 pp',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.ISAAC,
           rating: 'Dead God',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.MINECRAFT,
           rating: '-',
+          status: gameStatus.RARELY,
         },
         {
           ...games.HOLLOW_KNIGHT,
           rating: '112%',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DETROIT,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RHYTHM_DOCTOR,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.UNDERTALE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TO_THE_MOON,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ATOMIC_HEART,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BIOSHOCK,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DELTARUNE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ADOFAI,
+          rating: '',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.TINY_BUNNY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FAR_CRY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PORTAL,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GEOMETRY_DASH,
+          rating: 'Хардест Future Funk',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.WARCRAFT,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DDLC,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.MUSEDASH,
+          rating: '150+ уровень',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.CELESTE,
+          rating:
+            'Все стороны А,Б,В (кроме 8В), все красные клубники, лунная клубника',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ASSASSINS_CREED,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEPONIA,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.JUST_SHAPES_AND_BEATS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GTA,
+          rating: '',
+          status: gameStatus.COMPLETED,
         },
       ],
       imagesUrl: [],
@@ -125,18 +250,22 @@ const initialState = {
         {
           ...games.DOTA,
           rating: 'Кастомки',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.CYBERPUNK,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.GENSHIN,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.FORTNITE,
           rating: '???',
+          status: gameStatus.RARELY,
         },
       ],
       imagesUrl: [],
@@ -164,14 +293,17 @@ OST с Drakengard 3, просто потому что потому.
         {
           ...games.SEKAI,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.DIVA,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.MUSEDASH,
           rating: '???',
+          status: gameStatus.RARELY,
         },
       ],
       imagesUrl: [
@@ -221,50 +353,62 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.GOD_OF_WAR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PHANTASY_STAR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.FINAL_FANTASY,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.WILD_ARMS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SHINING_FORCE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.GUILTY_GEAR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MORTAL_KOMBAT,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DANGANRONPA,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ACE_ATTORNEY,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DIVA,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.SEKAI,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.GUITAR_HERO,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
       ],
       imagesUrl: [
@@ -294,10 +438,12 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.GENSHIN,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
         {
           ...games.SKULL_GIRLS,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
       ],
       imagesUrl: [
@@ -313,12 +459,134 @@ My name is, chka-chka, эээ... Nyase.
 `,
       games: [
         {
-          ...games.OSU,
+          ...games.GUILTY_GEAR_STRIVE,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
         {
-          ...games.STARCRAFT,
+          ...games.COD_WARZONE_II,
           rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.RAINBOW_SIX,
+          rating: '???',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.RESIDENT_EVIL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SILENT_HILL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SIGNALIS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.AMNESIA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OUTLAST,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PARASITE_EVE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DINO_CRISIS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BEYOND_TWO_SOULS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HEAVY_RAIN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SIFU,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.REMEMBER_ME,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OBSCURE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BIOSHOCK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PORTAL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ATOMIC_HEART,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.REPUBLIQUE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WITCHER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HITMAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DISHONORED,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.METAL_GEAR_SOLID,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SEKIRO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.METAL_GEAR_RISING,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DOTA,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
       ],
       colors: [colors.RED],
@@ -377,6 +645,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.GENSHIN,
           rating: '???',
+          status: gameStatus.RARELY,
         },
       ],
       imagesUrl: [],
@@ -436,6 +705,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.WORLD_OF_TANKS,
           rating: '???',
+          status: gameStatus.ON_GOING,
         },
       ],
       imagesUrl: [],
@@ -474,10 +744,6 @@ My name is, chka-chka, эээ... Nyase.
         },
         {
           ...games.SEVEN_DAYS_TO_DIE,
-          rating: '???',
-        },
-        {
-          ...games.DEEP_ROCK_GALACTIC,
           rating: '???',
         },
         {
@@ -537,34 +803,42 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.OBLIVION,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.RETURN_TO_CASTLE_WOLFENSTEIN,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.EVERLASTING_SUMMER,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.KATAWA_SHOUJO,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DANGANRONPA,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ACE_ATTORNEY,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MILK_INSIDE_A_BAG,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.STEINS_GATE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
       ],
       imagesUrl: [],
@@ -594,18 +868,6 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
-      games: [
-        {
-          title: 'Dota 2',
-          isMultiplayer: true,
-          rating: '2000 MMR',
-        },
-        {
-          title: 'osu!',
-          isMultiplayer: true,
-          rating: '2.4k pp',
-        },
-      ],
       imagesUrl: [],
     },
     {
@@ -649,14 +911,17 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.PHASMOPHOBIA,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.RUST,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.CS_GO,
           rating: '???',
+          status: gameStatus.RARELY,
         },
       ],
       imagesUrl: [],

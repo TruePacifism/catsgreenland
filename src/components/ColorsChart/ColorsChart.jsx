@@ -87,7 +87,7 @@ export default function ColorsChart() {
     },
     responsive: true,
     maintainAspectRatio: false,
-    onHover: throttle((event, chartElement) => {
+    onClick: throttle((event, chartElement) => {
       if (chartElement && chartElement[0]) {
         // здесь вы можете вызвать функцию, которая будет рендерить объекты
         if (showingColor !== colors[chartElement[0].index]) {

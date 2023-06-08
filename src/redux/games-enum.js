@@ -45,7 +45,7 @@ const games = {
   },
   SEKAI: {
     title: 'Project SEKAI: Colorful Stage',
-    types: [SINGLEPLAYER],
+    types: [SINGLEPLAYER, MULTIPLAYER],
   },
   DIVA: {
     title: 'Project DIVA',

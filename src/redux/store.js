@@ -47,7 +47,6 @@ const initialState = {
       imagesUrl: [
         'https://sun9-58.userapi.com/impg/eQcfZZ8MBTkWOM9lGO7cksHyXjA7rha5w1HXYQ/0P2nrr5RHh4.jpg?size=807x670&quality=96&sign=1162419f8fab822909487158102bbaf4&type=album',
       ],
-      alert: 'new',
       games: [
         {
           ...games.GENSHIN,
@@ -192,11 +191,6 @@ const initialState = {
           status: gameStatus.COMPLETED,
         },
         {
-          ...games.MINECRAFT,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
           ...games.MUSEDASH,
           rating: '150+ уровень',
           status: gameStatus.RARELY,
@@ -292,6 +286,16 @@ OST с Drakengard 3, просто потому что потому.
       games: [
         {
           ...games.SEKAI,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.GTA,
           rating: '???',
           status: gameStatus.ON_GOING,
         },
@@ -799,6 +803,7 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.PURPLE],
+      alert: 'new',
       games: [
         {
           ...games.OBLIVION,
@@ -855,6 +860,7 @@ My name is, chka-chka, эээ... Nyase.
 Шалом!
 
 `,
+      alert: 'new',
       imagesUrl: [],
     },
     {

@@ -4,6 +4,11 @@
   margin-right: auto;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 479px) {
+  .chart {
+    width: calc(100vw - 60px);
+  }
+}
 .infoContainer {
   display: flex;
   justify-content: center;

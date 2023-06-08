@@ -7,9 +7,22 @@
 .search {
   border: 2px solid var(--table-border);
   margin-right: 10px;
+  width: 100%;
 }
 .search::placeholder {
   color: var(--table-border);
+}
+.searchField {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.totalAndSearchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  margin-right: auto;
 }
 .searchContainer {
   margin-left: auto;
@@ -22,6 +35,7 @@
   font-weight: 500;
   color: var(--table-border);
   margin-right: auto;
+  margin-bottom: 10px;
 }
 .searchIcon {
   margin-right: 15px;
@@ -29,6 +43,11 @@
   width: 20px;
   height: 20px;
   display: inline-block;
+}
+.checkboxesList {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 .checkboxLabel {
   color: var(--accent-color);
@@ -61,7 +80,7 @@
   top: -1px;
 }
 .tableContainer {
-  max-height: 200px;
+  max-height: 300px;
   overflow: scroll;
   width: 100%;
   margin-bottom: 20px;
@@ -83,6 +102,7 @@
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 15px;
+  margin-top: 10px;
 }
 .th,
 .td {
@@ -114,20 +134,34 @@
   margin-left: 20px;
 }
 .playersList {
-}
-.playersItem {
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-bottom: 10px;
+  flex-direction: column;
 }
-.playersItem::before {
+.playersItem {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-right: auto;
+  margin-bottom: 20px;
+  flex-direction: column;
+  text-align: left;
+}
+.playerProfile::before {
   content: '';
+  display: block;
   background-color: var(--accent-color);
   width: 10px;
   height: 10px;
   border-radius: 50%;
   margin-right: 10px;
+}
+.playerProfile {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10px;
 }
 .playerPfp {
   height: 50px;
@@ -140,6 +174,7 @@
 }
 .playerRating {
   font-weight: 500;
+  margin-left: 15px;
 }
 .onGoing,
 .completed,
@@ -147,6 +182,8 @@
 .forbidden {
   text-decoration: underline;
   text-decoration-thickness: 2px; /* изменяем толщину на 2 пикселя */
+  margin-left: 15px;
+  font-weight: 500;
 }
 .onGoing {
   text-decoration-color: green; /* изменяем цвет на синий */
@@ -159,4 +196,16 @@
 }
 .forbidden {
   text-decoration-color: red; /* изменяем цвет на синий */
+}
+@media screen and (max-width: 767px) {
+  .checkboxesList {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 480px) {
+  .playersItem {
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+  }
 }

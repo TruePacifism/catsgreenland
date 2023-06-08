@@ -31,7 +31,7 @@
     margin-right: 50px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .navList {
     flex-direction: column;
     justify-content: right;

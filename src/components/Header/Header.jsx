@@ -30,7 +30,7 @@ const enableScroll = () => {
 };
 
 export default function Header() {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const openBurger = () => {
     setIsBurgerOpen(true);

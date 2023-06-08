@@ -60,7 +60,7 @@ export default function ColorsChart() {
           labels: colors.map(color => color.name),
           datasets: [
             {
-              label: '# of Votes',
+              label: 'Количество любителей',
               data: colors.map(color => color.users.length),
               backgroundColor: colors.map(
                 color =>
@@ -106,7 +106,17 @@ export default function ColorsChart() {
           <div className={styles.infoContainer}>
             <div className={styles.colorInfoContainer}>
               <h3 className={styles.colorName}>{showingColor.name}:</h3>
-              <span className={styles.percentage}>45%</span>
+              <span className={styles.percentage}>
+                {Math.floor(
+                  (showingColor.users.length /
+                    chartData.datasets[0].data.reduce(
+                      (sum, data) => sum + data,
+                      0
+                    )) *
+                    100
+                )}
+                %
+              </span>
             </div>
             <ul className={styles.colorUsersList}>
               {showingColor.users.map((user, idx) => (

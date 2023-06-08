@@ -6,6 +6,7 @@ import Container from 'components/Container/Container';
 import { ReactComponent as SortedUpIcon } from '../../images/sort-arrow-up.svg';
 import { ReactComponent as SortedDownIcon } from '../../images/sort-arrow-down.svg';
 import { ReactComponent as SearchIcon } from '../../images/search-icon.svg';
+import { useMediaQuery } from 'react-responsive';
 
 function getStatusClass(status) {
   switch (status) {
@@ -52,7 +53,6 @@ function getUsersByGame(users) {
       }
     });
   });
-  console.log(games);
 
   return games;
 }
@@ -62,6 +62,9 @@ function GamesTable() {
   const [filter, setFilter] = useState('');
   const [sortField, setSortField] = useState('userscount');
   const [sortOrder, setSortOrder] = useState('desc');
+  const isMobile = useMediaQuery({
+    maxWidth: 479,
+  });
   const [checkedFilterCheckboxes, setCheckedFilterCheckboxes] = useState({
     синглплеер: true,
     мультиплеер: true,
@@ -134,54 +137,62 @@ function GamesTable() {
     <Section>
       <Container heading={'Игры'}>
         <div className={styles.searchContainer}>
-          <b className={styles.totalCounter}>Всего игр: {sortedData.length}</b>
-          <SearchIcon className={styles.searchIcon} />
-          <input
-            className={styles.search}
-            type="text"
-            placeholder="Название игры"
-            value={filter}
-            onChange={handleFilterChange}
-          />
-          <label className={styles.checkboxLabel}>
-            <input
-              className={styles.checkbox}
-              type="checkbox"
-              name="singleplayer"
-              id="singleplayer"
-              checked={checkedFilterCheckboxes.синглплеер}
-              onChange={() => {
-                handleFilterCheckboxChange('синглплеер');
-              }}
-            />
-            Синглплеер
-          </label>
-          <label className={styles.checkboxLabel}>
-            <input
-              className={styles.checkbox}
-              type="checkbox"
-              name="multiplayer"
-              id="multiplayer"
-              checked={checkedFilterCheckboxes.мультиплеер}
-              onChange={() => {
-                handleFilterCheckboxChange('мультиплеер');
-              }}
-            />
-            Мультиплеер
-          </label>
-          <label className={styles.checkboxLabel}>
-            <input
-              className={styles.checkbox}
-              type="checkbox"
-              name="cooperative"
-              id="cooperative"
-              checked={checkedFilterCheckboxes.кооператив}
-              onChange={() => {
-                handleFilterCheckboxChange('кооператив');
-              }}
-            />
-            Кооператив
-          </label>
+          <div className={styles.totalAndSearchContainer}>
+            <b className={styles.totalCounter}>
+              Всего игр: {sortedData.length}
+            </b>
+            <div className={styles.searchField}>
+              <SearchIcon className={styles.searchIcon} />
+              <input
+                className={styles.search}
+                type="text"
+                placeholder="Название игры"
+                value={filter}
+                onChange={handleFilterChange}
+              />
+            </div>
+          </div>
+          <div className={styles.checkboxesList}>
+            <label className={styles.checkboxLabel}>
+              <input
+                className={styles.checkbox}
+                type="checkbox"
+                name="singleplayer"
+                id="singleplayer"
+                checked={checkedFilterCheckboxes.синглплеер}
+                onChange={() => {
+                  handleFilterCheckboxChange('синглплеер');
+                }}
+              />
+              Синглплеер
+            </label>
+            <label className={styles.checkboxLabel}>
+              <input
+                className={styles.checkbox}
+                type="checkbox"
+                name="multiplayer"
+                id="multiplayer"
+                checked={checkedFilterCheckboxes.мультиплеер}
+                onChange={() => {
+                  handleFilterCheckboxChange('мультиплеер');
+                }}
+              />
+              Мультиплеер
+            </label>
+            <label className={styles.checkboxLabel}>
+              <input
+                className={styles.checkbox}
+                type="checkbox"
+                name="cooperative"
+                id="cooperative"
+                checked={checkedFilterCheckboxes.кооператив}
+                onChange={() => {
+                  handleFilterCheckboxChange('кооператив');
+                }}
+              />
+              Кооператив
+            </label>
+          </div>
         </div>
         <div className={styles.tableContainer}>
           <table className={styles.table}>
@@ -214,18 +225,20 @@ function GamesTable() {
                     <></>
                   )}
                 </th>
-                <th className={styles.th} onClick={() => handleSort('types')}>
-                  Тип
-                  {sortField === 'types' ? (
-                    sortOrder === 'asc' ? (
-                      <SortedUpIcon className={styles.sortedUp} />
+                {!isMobile && (
+                  <th className={styles.th} onClick={() => handleSort('types')}>
+                    Тип
+                    {sortField === 'types' ? (
+                      sortOrder === 'asc' ? (
+                        <SortedUpIcon className={styles.sortedUp} />
+                      ) : (
+                        <SortedDownIcon className={styles.sortedDown} />
+                      )
                     ) : (
-                      <SortedDownIcon className={styles.sortedDown} />
-                    )
-                  ) : (
-                    <></>
-                  )}
-                </th>
+                      <></>
+                    )}
+                  </th>
+                )}
               </tr>
             </thead>
             <tbody className={styles.tbody}>
@@ -239,7 +252,7 @@ function GamesTable() {
                 >
                   <td className={styles.td}>{item.title}</td>
                   <td className={styles.td}>{item.userscount}</td>
-                  <td className={styles.td}>{item.types}</td>
+                  {!isMobile && <td className={styles.td}>{item.types}</td>}
                 </tr>
               ))}
             </tbody>
@@ -257,8 +270,10 @@ function GamesTable() {
             <ul className={styles.playersList}>
               {showingGame.users.map((user, idx) => (
                 <li className={styles.playersItem} key={idx}>
-                  <img className={styles.playerPfp} src={user.pfp} alt="" />
-                  <span className={styles.playerName}>{user.name} </span>
+                  <div className={styles.playerProfile}>
+                    <img className={styles.playerPfp} src={user.pfp} alt="" />
+                    <span className={styles.playerName}>{user.name} </span>
+                  </div>
                   {user.rating &&
                     user.rating !== '' &&
                     !user.rating.includes('?') && (

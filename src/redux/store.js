@@ -32,6 +32,10 @@ const gameStatus = {
   FORBIDDEN: 'Заброшено',
   RARELY: 'Иногда играется',
 };
+const gender = {
+  MALE: 'Мужской',
+  FEMALE: 'Женский',
+};
 
 const musicFiles = importMusic();
 // const musicFiles = importAll(require.context('../music', false, /\.mp3$/));
@@ -64,6 +68,8 @@ const initialState = {
           status: gameStatus.ON_GOING,
         },
       ],
+      age: 15,
+      gender: gender.MALE,
       colors: [colors.BLACK, colors.WHITE, colors.GREEN],
     },
     {
@@ -80,6 +86,8 @@ const initialState = {
           status: gameStatus.RARELY,
         },
       ],
+      age: 19,
+      gender: gender.FEMALE,
       imagesUrl: [],
     },
     {
@@ -222,6 +230,8 @@ const initialState = {
           status: gameStatus.COMPLETED,
         },
       ],
+      age: 20,
+      gender: gender.MALE,
       imagesUrl: [],
     },
     {
@@ -262,6 +272,7 @@ const initialState = {
           status: gameStatus.RARELY,
         },
       ],
+      gender: gender.MALE,
       imagesUrl: [],
     },
     {
@@ -310,6 +321,8 @@ OST с Drakengard 3, просто потому что потому.
           status: gameStatus.RARELY,
         },
       ],
+      age: 26,
+      gender: gender.FEMALE,
       imagesUrl: [
         'https://sun9-44.userapi.com/impg/LLO5PyP1vXmUI5o5XHRZ7QVoRTUetf7OZcxRUw/cn7W8VZ5x8Q.jpg?size=1280x1024&quality=96&sign=ac1c63ca324e27bb1111f7bb3f569a6c&type=album',
       ],
@@ -415,6 +428,7 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.ON_GOING,
         },
       ],
+      gender: gender.MALE,
       imagesUrl: [
         'https://sun9-75.userapi.com/impg/HaVKHCHjy4SiCnLO16KcRltkb9ISKdZXrhvTjA/_8stnXrG-Ek.jpg?size=1280x720&quality=96&sign=b68d9a621242e9b1569e88144c3fe156&type=album',
       ],
@@ -426,6 +440,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      gender: gender.MALE,
       imagesUrl: [
         'https://sun9-19.userapi.com/impg/NruYuCq9YbTrlXpFMJes2Wf5r4U5NpU1YrdPGw/FOOXsSW7FjM.jpg?size=665x581&quality=96&sign=bb4b323f65e245197c9c131ced5ebf50&type=album',
       ],
@@ -438,6 +453,7 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      gender: gender.MALE,
       games: [
         {
           ...games.GENSHIN,
@@ -461,6 +477,8 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      age: 29,
+      gender: gender.MALE,
       games: [
         {
           ...games.GUILTY_GEAR_STRIVE,
@@ -612,6 +630,8 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.RED, colors.BLACK],
+      age: 16,
+      gender: gender.MALE,
       games: [
         {
           ...games.DND,
@@ -633,6 +653,7 @@ My name is, chka-chka, эээ... Nyase.
 Любимые цвета - белый, бежевый, персидский синий (6600FF), пастельно-розовый (FFD1DC).
 `,
       colors: [colors.WHITE, colors.BLUE, colors.PINK],
+      gender: gender.FEMALE,
       imagesUrl: [
         'https://sun9-9.userapi.com/impg/Qu7KR6Jl_Zikpf9h2G1PNtgTZxxfBg2EowgrvA/v07USPk7kps.jpg?size=1428x2048&quality=96&sign=e9369e68ab46012c0033f8dc27cb81c8&type=album',
       ],
@@ -645,6 +666,8 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.LIGHT_BLUE, colors.PURPLE],
+      age: 21,
+      gender: gender.FEMALE,
       games: [
         {
           ...games.GENSHIN,
@@ -675,6 +698,7 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.GREEN],
+      gender: gender.FEMALE,
       imagesUrl: [
         'https://sun9-25.userapi.com/impg/kjJlfJ42YpusldV_CyznxDezoyYNp8LvIRNUgA/Z9SE6YcN1U8.jpg?size=1200x750&quality=96&sign=d8ceb0d8ce123bb84a2c8b60c8b5478a&type=album',
       ],
@@ -690,6 +714,8 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      age: 20,
+      gender: gender.MALE,
       imagesUrl: [],
     },
     {
@@ -705,6 +731,8 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      age: 20,
+      gender: gender.MALE,
       games: [
         {
           ...games.WORLD_OF_TANKS,
@@ -733,6 +761,7 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.WHITE, colors.BLACK, colors.PURPLE, colors.GREEN],
+      gender: gender.MALE,
       games: [
         {
           ...games.TERRARIA,
@@ -788,6 +817,8 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      age: 20,
+      gender: gender.MALE,
       imagesUrl: [],
     },
     {
@@ -804,6 +835,8 @@ My name is, chka-chka, эээ... Nyase.
 `,
       colors: [colors.PURPLE],
       alert: 'new',
+      age: 22,
+      gender: gender.MALE,
       games: [
         {
           ...games.OBLIVION,
@@ -861,6 +894,8 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       alert: 'new',
+      age: 21,
+      gender: gender.FEMALE,
       imagesUrl: [],
     },
     {
@@ -874,6 +909,8 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      age: 24,
+      gender: gender.MALE,
       imagesUrl: [],
     },
     {
@@ -891,6 +928,8 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.LIGHT_BLUE, colors.CYAN, colors.PURPLE, colors.GREEN],
+      age: 17,
+      gender: gender.FEMALE,
       games: [
         {
           ...games.GENSHIN,
@@ -930,7 +969,59 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.RARELY,
         },
       ],
+      age: 20,
+      gender: gender.MALE,
       imagesUrl: [],
+    },
+    {
+      name: 'Alex Egorov',
+      vkId: 403229636,
+      gender: gender.MALE,
+    },
+    {
+      name: 'Артём Марков',
+      vkId: 366226306,
+      gender: gender.MALE,
+    },
+    {
+      name: 'Ilya Wieliczko',
+      vkId: 712497882,
+      gender: gender.MALE,
+    },
+    {
+      name: 'Роман Волков',
+      vkId: 553623499,
+      gender: gender.MALE,
+    },
+    {
+      name: 'Мария Рудова',
+      vkId: 392596805,
+      gender: gender.FEMALE,
+    },
+    {
+      name: 'Мак Сим',
+      vkId: 684817694,
+      gender: gender.MALE,
+    },
+    {
+      name: 'Слава Теплых',
+      vkId: 293207518,
+      gender: gender.FEMALE,
+    },
+    {
+      name: 'Nonad Vafakka',
+      vkId: 540275321,
+      gender: gender.MALE,
+    },
+    {
+      name: 'Вероника Ясь',
+      vkId: 510479187,
+      gender: gender.FEMALE,
+    },
+    {
+      name: 'Данил Кучугуров',
+      vkId: 261882343,
+      gender: gender.MALE,
     },
   ],
   currentUser: {},

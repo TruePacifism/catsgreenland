@@ -3,7 +3,7 @@ import styles from './BiographyList.module.css';
 import { useSelector } from 'react-redux';
 
 export default function BiograhpyList() {
-  const bios = useSelector(store => store.bios);
+  const bios = useSelector(store => store.bios.filter(bio => bio.text));
 
   return (
     <div className={styles.container}>

@@ -30,7 +30,6 @@ export default function AdminList() {
   ]);
 
   useEffect(() => {
-    console.log('useEffected');
     if (!admins.some(admin => admin.name && admin.pfp)) {
       const setUsersInfo = async adminsIds => {
         const users = await getUsers(adminsIds);

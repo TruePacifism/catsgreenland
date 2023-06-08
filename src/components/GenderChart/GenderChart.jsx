@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import styles from './GenderChart.module.css';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
+import { Link } from 'react-router-dom';
 
 ChartJS.register(
   CategoryScale,
@@ -143,6 +144,17 @@ export function GenderChart() {
   return (
     <Section>
       <Container heading={'Пол и возраст'}>
+        <p className={styles.chartDescription}>
+          Просто немного статистики по местному контингенту{' '}
+        </p>
+        <p className={styles.disclaimer}>
+          Возраст взят <b>только</b> из{' '}
+          <Link to={'/biographys'} className={styles.bioSpan}>
+            рассказов
+          </Link>{' '}
+          участников. <br /> Пол взят со страницы вк
+        </p>
+
         {data && ranges && (
           <div className={styles.chart}>
             <Bar
@@ -166,14 +178,15 @@ export function GenderChart() {
             />
           </div>
         )}
-        <span>Соотношение М/Ж в %: </span>
+        <b>Соотношение М/Ж в %: </b>
         <span>
           {getGenderPercentage(bios, 'Мужской')}
           %/
           {getGenderPercentage(bios, 'Женский')}
           %,{' '}
         </span>
-        <span>Средний возраст: </span>
+        <br />
+        <b>Средний возраст: </b>
         <span>
           {getAverageAge(bios.filter(bio => bio.age).map(bio => bio.age))}
         </span>

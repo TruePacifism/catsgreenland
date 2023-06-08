@@ -25,6 +25,7 @@
 }
 body {
   padding-top: 80px;
+  font-family: 'Open Sans', sans-serif;
 }
 ::-webkit-progress-value,
 ::-moz-progress-bar {

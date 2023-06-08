@@ -4,6 +4,21 @@
   --table-row-primary: #dcedc8;
   --table-row-secondary: #c5e1a5;
 }
+.tableDescription {
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0;
+}
+.disclaimer {
+  color: black;
+  text-align: center;
+}
+.bioSpan {
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: underline;
+}
 .search {
   border: 2px solid var(--table-border);
   margin-right: 10px;
@@ -192,7 +207,7 @@
   text-decoration-color: green; /* изменяем цвет на синий */
 }
 .rarely {
-  text-decoration-color: yellow; /* изменяем цвет на синий */
+  text-decoration-color: orange; /* изменяем цвет на синий */
 }
 .forbidden {
   text-decoration-color: red; /* изменяем цвет на синий */

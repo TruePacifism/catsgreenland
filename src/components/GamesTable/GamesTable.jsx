@@ -7,6 +7,7 @@ import { ReactComponent as SortedUpIcon } from '../../images/sort-arrow-up.svg';
 import { ReactComponent as SortedDownIcon } from '../../images/sort-arrow-down.svg';
 import { ReactComponent as SearchIcon } from '../../images/search-icon.svg';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 
 function getStatusClass(status) {
   switch (status) {
@@ -136,6 +137,20 @@ function GamesTable() {
   return (
     <Section>
       <Container heading={'Игры'}>
+        <p className={styles.tableDescription}>
+          Хотите найти тиммейтов, обсудить игру или найти что-то новое для себя?
+          Смотрите и изучайте таблицу всех наших игр.
+        </p>
+        <p className={styles.disclaimer}>
+          Данные взяты из{' '}
+          <Link to={'/biographys'} className={styles.bioSpan}>
+            рассказов
+          </Link>{' '}
+          участников. <br /> В таблице есть фильтрация, поиск, а также при
+          нажатии она отобразит список всех игроков нужной вам игры. <br /> Если
+          у кого-то что-то не написано - значит этот кто-то ещё не дал нам эту
+          информацию.
+        </p>
         <div className={styles.searchContainer}>
           <div className={styles.totalAndSearchContainer}>
             <b className={styles.totalCounter}>

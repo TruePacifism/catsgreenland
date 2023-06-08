@@ -1,7 +1,8 @@
 .heading {
-  font-size: 30px;
+  font-size: 40px;
   color: white;
   margin-bottom: 30px;
+  font-family: 'Merriweather', serif;
 }
 .button {
   padding-top: 15px;

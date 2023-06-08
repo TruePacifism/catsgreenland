@@ -14,7 +14,7 @@ export default function NavMenu({ closeMenu }) {
           }
           onClick={closeMenu}
         >
-          На главную
+          Главная
         </NavLink>
       </li>
       <li className={styles.navListItem}>

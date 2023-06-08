@@ -6,6 +6,7 @@ import styles from './ColorsChart.module.css';
 import throttle from 'lodash.throttle';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
+import { Link } from 'react-router-dom';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -79,12 +80,6 @@ export default function ColorsChart() {
     }
   }, [bios, colors, chartData]);
   const options = {
-    plugins: {
-      title: {
-        display: true,
-        text: 'Название вашей диаграммы',
-      },
-    },
     responsive: true,
     maintainAspectRatio: false,
     onClick: throttle((event, chartElement) => {
@@ -99,6 +94,16 @@ export default function ColorsChart() {
   return (
     <Section>
       <Container heading={'Наши любимые цвета'}>
+        <p className={styles.chartDescription}>
+          Какой цвет у нас самый любимый? Здесь вы сможете это узнать
+        </p>
+        <p className={styles.disclaimer}>
+          Данные взяты из{' '}
+          <Link to={'/biographys'} className={styles.bioSpan}>
+            рассказов
+          </Link>{' '}
+          участников
+        </p>
         <div className={styles.chart}>
           <Pie data={chartData} options={options} height={400} width={400} />
         </div>

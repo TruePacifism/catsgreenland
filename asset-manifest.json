@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catsgreenland/static/css/main.3845e14d.css",
-    "main.js": "/catsgreenland/static/js/main.2c45b335.js",
+    "main.css": "/catsgreenland/static/css/main.f87ba47f.css",
+    "main.js": "/catsgreenland/static/js/main.05afc60b.js",
     "static/media/LEN - This Silence is Mine (RUS).mp3": "/catsgreenland/static/media/LEN - This Silence is Mine (RUS).2924bddd62e627513f9c.mp3",
     "static/media/Tuomas Holopainen - A Lifetime Of Adventure (Alternative Version).mp3": "/catsgreenland/static/media/Tuomas Holopainen - A Lifetime Of Adventure (Alternative Version).687740ee6041333c5a3d.mp3",
     "static/media/Ария - Отшельник.mp3": "/catsgreenland/static/media/Ария - Отшельник.3de9b85b927f665e92ea.mp3",
@@ -38,11 +38,11 @@
     "static/media/sort-arrow-down.svg": "/catsgreenland/static/media/sort-arrow-down.69f0c6ac352a8e2b302b146f0ff72ad5.svg",
     "static/media/sort-arrow-up.svg": "/catsgreenland/static/media/sort-arrow-up.3ceb61d5e15aa23fb2f9ca566199a764.svg",
     "static/media/close-icon.svg": "/catsgreenland/static/media/close-icon.02fd53fcb59c8b132fb76e701e22fe8f.svg",
-    "main.3845e14d.css.map": "/catsgreenland/static/css/main.3845e14d.css.map",
-    "main.2c45b335.js.map": "/catsgreenland/static/js/main.2c45b335.js.map"
+    "main.f87ba47f.css.map": "/catsgreenland/static/css/main.f87ba47f.css.map",
+    "main.05afc60b.js.map": "/catsgreenland/static/js/main.05afc60b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3845e14d.css",
-    "static/js/main.2c45b335.js"
+    "static/css/main.f87ba47f.css",
+    "static/js/main.05afc60b.js"
   ]
 }

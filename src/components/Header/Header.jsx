@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Header.module.css';
 import { ReactComponent as Icon } from '../../images/cat-logo.svg';
 import VkAuth from 'components/VkAuth/VkAuth';
@@ -7,6 +7,8 @@ import NavMenu from 'components/NavMenu/NavMenu';
 import { useMediaQuery } from 'react-responsive';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import actions from 'redux/user-actions';
 
 let scrollPosition = 0;
 
@@ -31,7 +33,12 @@ const enableScroll = () => {
 
 export default function Header() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const dispatch = useDispatch();
+  const setIsBurgerOpen = isOpen => {
+    dispatch(actions.setOpenBurger(isOpen));
+  };
+  const isBurgerOpen = useSelector(store => store.isBurgerOpen);
+
   const openBurger = () => {
     setIsBurgerOpen(true);
     disableScroll();

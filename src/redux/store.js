@@ -1049,6 +1049,7 @@ My name is, chka-chka, эээ... Nyase.
     },
   ],
   bioMusic: musicFiles,
+  isBurgerOpen: false,
 };
 const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {
@@ -1069,6 +1070,12 @@ const reducer = createReducer(initialState, builder => {
             ...action.payload[idx],
           };
         }),
+      };
+    })
+    .addCase(actions.setOpenBurger, (state, action) => {
+      return {
+        ...state,
+        isBurgerOpen: action.payload,
       };
     });
 });

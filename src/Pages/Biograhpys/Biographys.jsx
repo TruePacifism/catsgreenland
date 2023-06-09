@@ -3,21 +3,13 @@ import BiograhpyList from 'components/BiographyList/BiographyList';
 import Container from 'components/Container/Container';
 import Section from 'components/Section/Section';
 import { useEffect, useRef } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
 import styles from './Biographys.module.css';
-import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Biographys() {
   const [searchParams] = useSearchParams();
   const bioRef = useRef(null);
   const PSRef = useRef(null);
-  const currentUser = useSelector(store => store.currentUser);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (currentUser === null) {
-      navigate('/login');
-    }
-  }, [currentUser, navigate]);
   useEffect(() => {
     setTimeout(() => {
       if (bioRef.current) {

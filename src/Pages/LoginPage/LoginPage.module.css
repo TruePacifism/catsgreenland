@@ -1,0 +1,13 @@
+.widgetContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  border: 3px solid var(--accent-color);
+}
+.link,
+.link:visited {
+  color: var(--accent-color);
+}
+.notice {
+  text-align: center;
+}

@@ -2,7 +2,7 @@ import Biographys from 'Pages/Biograhpys/Biographys';
 import MainPage from 'Pages/MainPage/MainPage';
 import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import actions from 'redux/user-actions';
@@ -22,6 +22,13 @@ export const App = () => {
       dispatch(actions.setOpenBurger(false));
     },
   });
+  const currentUser = useSelector(store => store.currentUser);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (currentUser === null) {
+      navigate('/login');
+    }
+  }, [currentUser, navigate]);
 
   useEffect(() => {
     if (!bios[0].pfp || !bios[0].pfp.startsWith('http')) {

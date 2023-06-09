@@ -7,10 +7,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from 'redux/store';
 import placeholder from '../../images/image-placeholder.png';
 import getPfp from 'utils/getPfp';
+import checkOnGroupMember from 'utils/checkOnGroupMember';
+import { useNavigate } from 'react-router-dom';
 
 export default function VkAuth({ onModalOpen }) {
   const dispatch = useDispatch();
   const loggedUser = useSelector(store => store.currentUser);
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(auth(JSON.parse(localStorage.getItem('loggedUser'))));
   }, [dispatch]);
@@ -91,8 +94,15 @@ export default function VkAuth({ onModalOpen }) {
           <VK apiId={51666098}>
             <Auth
               options={{
-                onAuth: user => {
-                  dispatch(auth(user));
+                onAuth: async user => {
+                  console.log(user);
+                  const groupMembers = await checkOnGroupMember();
+                  console.log(groupMembers);
+                  if (groupMembers.items.includes(user.uid)) {
+                    console.log('проверка пройдена');
+                    dispatch(auth(user));
+                    navigate('/');
+                  }
                 },
               }}
             />

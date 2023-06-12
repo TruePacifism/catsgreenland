@@ -146,10 +146,29 @@ function GamesTable() {
           <Link to={'/biographys'} className={styles.bioSpan}>
             рассказов
           </Link>{' '}
-          участников. <br /> В таблице есть фильтрация, поиск, а также при
-          нажатии она отобразит список всех игроков нужной вам игры. <br /> Если
-          у кого-то что-то не написано - значит этот кто-то ещё не дал нам эту
-          информацию.
+          участников и из{' '}
+          <a
+            href="https://vk.com/topic-213685976_49163066"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.bioSpan}
+          >
+            обсуждения
+          </a>{' '}
+          в группе. <br /> В таблице есть фильтрация, поиск, а также при нажатии
+          она отобразит список всех игроков нужной вам игры. <br /> Если у
+          кого-то что-то не написано - значит этот кто-то ещё не дал нам эту
+          информацию. <br />
+          Если в таблице есть ошибки, просьба написать{' '}
+          <a
+            href="https://vk.com/truepacifism"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.bioSpan}
+          >
+            Жене
+          </a>{' '}
+          и он их исправит
         </p>
         <div className={styles.searchContainer}>
           <div className={styles.totalAndSearchContainer}>

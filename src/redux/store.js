@@ -229,6 +229,161 @@ const initialState = {
           rating: '',
           status: gameStatus.COMPLETED,
         },
+        {
+          ...games.INSCRYPTION,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.AMONG_US,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.SLAY_THE_SPIRE,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.SUPER_MARIO_BROS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SIMS,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.UNTITLED_GOOSE_GAME,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HALF_LIFE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PLANTS_VS_ZOMBIES,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NEED_FOR_SPEED,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PLAGUE_INC,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THERE_IS_NO_GAME,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SUPERLIMINAL,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ROCK_OF_AGES,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.YUPPIE_PSYCHO,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SPIDER_MAN_WEB_OF_SHADOWS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ROAD_96,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.YES_YOUR_GRACE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LOST_IN_PLAY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FIFA,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.I_RULE,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.THE_HENRY_STICKMIN,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TWELVE_MINUTES,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SPIDER_MAN_3,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CRYPT_OF_THE_NECRODANCER,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.PROTOTYPE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.I_HATE_THIS_GAME,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CS_1_6,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.MARVEL_ULTIMATE_ALLIANCE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.X_MEN_LEGENDS_2,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GETTING_OVER_IT,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.SPIDER_MAN_2000,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
       ],
       age: 20,
       gender: gender.MALE,
@@ -680,21 +835,15 @@ My name is, chka-chka, эээ... Nyase.
     {
       name: 'Камилла Гринландская',
       vkId: 373718115,
-      text: `Я принимаю любые сокращения и "клички" (но не коверканья) кроме Кама и Камила. Возраст раскрывать не буду, считаю это пустой цифрой, которая вам почти ничего не даст. Место жительства тоже ненужная ерунда, диалоги со мной не коснутся этой темы. Из чисел любимое 13, которое является для многих несчастливым, однако для меня наоборот. Также симпатизирует число 3. В целом не нравятся четные числа, нечетные привлекают. Читала, что эта особенность моего знака зодиака, но я в любом случае не верю в эту ерунду, однако как забавный факт или совпадение имеет место быть.
+      text: `Я принимаю любые сокращения и "клички" (но не коверканья) кроме Кама и Камила. Также попрошу не тегать меня без особо веских причин. Я всегда читаю абсолютно все сообщения в беседе и с легкостью увижу что-то важное в любом случае. А если нужно что-то срочное, то тег не поможет либо я итак буду онлайн и также все рассмотрю.
+Ну и постарайтесь не шутить несмешные шутки в мою сторону, а также в шутку гнать. Мне это не понравится.
 
-Сижу в беседах много, онлайн часто. Поэтому стараюсь по максимуму обращать внимание на всех своих участников.
-Раньше мы были частью сетки цветных бесед, где нужно было выбрать цвет. Я выбрала зелёный, потому что он мой любимый. Смайлик сердечко зеленого цвета тоже нравится. Токсичный, кислотный цвет — что может быть лучше?
+А вообще, я много общаюсь и часто онлайн, поэтому стараюсь по максимуму обращать внимание на всех своих участников.
+Раньше мы были частью сетки цветных бесед, где нужно было выбрать цвет. Я выбрала зелёный, потому что он мой любимый. Котиков мы полюбили всем чатом, поэтому название тоже содержит их.
 
-Имею пустую страницу, пушто мне так комфортнее. Аватарки меняла бы очень часто, поэтому пришла к выводу что лучше их вообще не ставить. Любые другие фото или картинки на странице не вижу смысла держать, только если это не рисунки Славы. Ничего на страницу не публикую - не вижу в этом нужды и желания. Статус тоже не имеет смысла существовать на моей странице. В друзьях оставляю тех, с кем поддерживаю общение, остальных могу спокойно убрать. Хотя, заимев эту беседу, оставляю еще ребяток оттуда до их исчезновения.
+Имею пустую страницу пушто мне так комфортно, но я не фейк. Аватарки меняла бы очень часто, поэтому пришла к выводу что лучше их вообще не ставить. Любые другие фото или картинки на странице не вижу смысла держать, только если это не рисунки Славы. Ничего на страницу не публикую - не вижу в этом нужды и желания. Статус тоже не имеет смысла существовать на моей странице. В «друзьях» оставляю тех, с кем поддерживаю общение, остальных могу спокойно убрать. Хотя, заимев эту беседу, оставляю еще ребяток оттуда до их исчезновения.
 
-Редко занимаюсь чем-то другим. Если и занимаюсь, это может быть просмотр чего-либо, вязание, учеба. Еще любила срисовывать, но в последнее время ленюсь ужасно, даже если хочу. Из музыки нравятся песни на грустный мотив, любимые исполнители - Пиро и ему подобные.
-
-Из любимого можно выделить котиков, люблю их как никого и ничто. В одежде предпочитаю любые цвета кроме темных — надоели, и кроме белого — пачкается быстро.
-К сладкому потеряла вкус, не очень люблю его.
-Я маленькая во всех возможных и пришедших тебе в голову смыслах. Фотками или голосовыми сообщениями делюсь лишь в очень крайних случаях. Сама никогда не отправляю.
-
-Люблю слушать голоса, люблю фоточки. Люблю самые разные украшения, чем больше, тем лучше. И без разницы, на мне они или на другом человеке, это прекрасно. А вот безделушки не люблю — хлам. Чего не скажешь о разных сувенирах — это я тоже очень люблю.
-
+Кратковременными занятиями помимо вечного общения могут послужить просмотр чего-либо, вязание, учеба, изучение информации. Еще любила срисовывать, но в последнее время ленюсь ужасно, даже если хочу. Из музыки нравятся песни на грустный мотив, любимые исполнители - Пиро и ему подобные.
 
 `,
       colors: [colors.GREEN],
@@ -826,31 +975,43 @@ My name is, chka-chka, эээ... Nyase.
       gender: gender.MALE,
       games: [
         {
-          ...games.TERRARIA,
-          rating: '???',
-        },
-        {
           ...games.BULLETS_PER_MINUTE,
           rating: '???',
         },
         {
-          ...games.ISAAC,
+          ...games.ALAWAR,
           rating: '???',
         },
         {
-          ...games.SEVEN_DAYS_TO_DIE,
+          ...games.G_FORCE,
           rating: '???',
         },
         {
-          ...games.STARDEW_VALLEY,
+          ...games.NEIGHBOUR_FROM_HELL,
           rating: '???',
         },
         {
-          ...games.DEEP_ROCK_GALACTIC,
+          ...games.SONIC,
           rating: '???',
         },
         {
-          ...games.IT_TAKES_TWO,
+          ...games.GHOSTBUSTERS,
+          rating: '???',
+        },
+        {
+          ...games.HARD_RESET,
+          rating: '???',
+        },
+        {
+          ...games.CRYSIS,
+          rating: '???',
+        },
+        {
+          ...games.DOOM,
+          rating: '???',
+        },
+        {
+          ...games.FREEDOOM,
           rating: '???',
         },
         {
@@ -858,7 +1019,487 @@ My name is, chka-chka, эээ... Nyase.
           rating: '???',
         },
         {
+          ...games.MINECRAFT_STORY_MODE,
+          rating: '???',
+        },
+        {
+          ...games.SAINTS_ROW,
+          rating: '???',
+        },
+        {
+          ...games.NOITA,
+          rating: '???',
+        },
+        {
+          ...games.CARMAGEDDON,
+          rating: '???',
+        },
+        {
+          ...games.SOUL_KNIGHT,
+          rating: '???',
+        },
+        {
+          ...games.FEAR,
+          rating: '???',
+        },
+        {
+          ...games.FAR_CRY,
+          rating: '???',
+        },
+        {
+          ...games.JUST_CAUSE,
+          rating: '???',
+        },
+        {
+          ...games.POKEMONS,
+          rating: '???',
+        },
+        {
+          ...games.SLIME_RANCHER,
+          rating: '???',
+        },
+        {
+          ...games.EARN_TO_DIE,
+          rating: '???',
+        },
+        {
+          ...games.TERRARIA,
+          rating: '???',
+        },
+        {
+          ...games.DANGANRONPA,
+          rating: '???',
+        },
+        {
+          ...games.ACE_ATTORNEY,
+          rating: '???',
+        },
+        {
+          ...games.CROSSOUT,
+          rating: '???',
+        },
+        {
+          ...games.WORLD_OF_TANKS,
+          rating: '???',
+        },
+        {
           ...games.FOREST,
+          rating: '???',
+        },
+        {
+          ...games.SONS_OF_THE_FOREST,
+          rating: '???',
+        },
+        {
+          ...games.JUST_SHAPES_AND_BEATS,
+          rating: '???',
+        },
+        {
+          ...games.TRICKY_TOWERS,
+          rating: '???',
+        },
+        {
+          ...games.CASTLE_CRASHERS,
+          rating: '???',
+        },
+        {
+          ...games.LOBOTOMY_CORPORATION,
+          rating: '???',
+        },
+        {
+          ...games.DATA_WING,
+          rating: '???',
+        },
+        {
+          ...games.SEVEN_DAYS_TO_DIE,
+          rating: '???',
+        },
+        {
+          ...games.ISAAC,
+          rating: '???',
+        },
+        {
+          ...games.DEEP_ROCK_GALACTIC,
+          rating: '???',
+        },
+        {
+          ...games.PORTAL,
+          rating: '???',
+        },
+        {
+          ...games.SCRAP_MECHANIC,
+          rating: '???',
+        },
+        {
+          ...games.LEGO,
+          rating: '???',
+        },
+        {
+          ...games.BEAMNG_DRIVE,
+          rating: '???',
+        },
+        {
+          ...games.AS_DUSK_FALLS,
+          rating: '???',
+        },
+        {
+          ...games.INSCRYPTION,
+          rating: '???',
+        },
+        {
+          ...games.TEARDOWN,
+          rating: '???',
+        },
+        {
+          ...games.VISCERA_CLEANUP,
+          rating: '???',
+        },
+        {
+          ...games.VRCHAT,
+          rating: '???',
+        },
+        {
+          ...games.RAYMAN,
+          rating: '???',
+        },
+        {
+          ...games.GENSHIN,
+          rating: '???',
+        },
+        {
+          ...games.AMONG_US,
+          rating: '???',
+        },
+        {
+          ...games.DIG_OR_DIE,
+          rating: '???',
+        },
+        {
+          ...games.BIOSHOCK,
+          rating: '???',
+        },
+        {
+          ...games.PILLARS_OF_ETERNITY,
+          rating: '???',
+        },
+        {
+          ...games.DISHONORED,
+          rating: '???',
+        },
+        {
+          ...games.NEXOMON,
+          rating: '???',
+        },
+        {
+          ...games.ENTER_THE_GUNGEON,
+          rating: '???',
+        },
+        {
+          ...games.MONSTER_TRAIN,
+          rating: '???',
+        },
+        {
+          ...games.SLAY_THE_SPIRE,
+          rating: '???',
+        },
+        {
+          ...games.FALL_GUYS,
+          rating: '???',
+        },
+        {
+          ...games.DETROIT,
+          rating: '???',
+        },
+        {
+          ...games.FALLOUT,
+          rating: '???',
+        },
+        {
+          ...games.JUST_DANCE,
+          rating: '???',
+        },
+        {
+          ...games.KERBAL_SPACE_PROGRAM,
+          rating: '???',
+        },
+        {
+          ...games.METRO,
+          rating: '???',
+        },
+        {
+          ...games.OVERCOOKED,
+          rating: '???',
+        },
+        {
+          ...games.MUDRUNNER,
+          rating: '???',
+        },
+        {
+          ...games.DESPOTISM_3K,
+          rating: '???',
+        },
+        {
+          ...games.RAGE,
+          rating: '???',
+        },
+        {
+          ...games.STRANDED_DEEP,
+          rating: '???',
+        },
+        {
+          ...games.STICK_FIGHT,
+          rating: '???',
+        },
+        {
+          ...games.SUPRALAND,
+          rating: '???',
+        },
+        {
+          ...games.THE_ESCAPISTS,
+          rating: '???',
+        },
+        {
+          ...games.THE_LONG_DARK,
+          rating: '???',
+        },
+        {
+          ...games.PAPERS_PLEASE,
+          rating: '???',
+        },
+        {
+          ...games.HAT_IN_TIME,
+          rating: '???',
+        },
+        {
+          ...games.MARIO_3D,
+          rating: '???',
+        },
+        {
+          ...games.MARIO_CART,
+          rating: '???',
+        },
+        {
+          ...games.WOOLLY_YOSHIS_WORLD,
+          rating: '???',
+        },
+        {
+          ...games.SUPER_MARIO_BROS,
+          rating: '???',
+        },
+        {
+          ...games.IT_TAKES_TWO,
+          rating: '???',
+        },
+        {
+          ...games.WOBBLE_DOGS,
+          rating: '???',
+        },
+        {
+          ...games.ASTRONEER,
+          rating: '???',
+        },
+        {
+          ...games.SIMS,
+          rating: '???',
+        },
+        {
+          ...games.GTA,
+          rating: '???',
+        },
+        {
+          ...games.GOAT_SIMULATOR,
+          rating: '???',
+        },
+        {
+          ...games.STICK_FIGHT,
+          rating: '???',
+        },
+        {
+          ...games.I_AM_BREAD,
+          rating: '???',
+        },
+        {
+          ...games.VAMPIRE_SURVIVORS,
+          rating: '???',
+        },
+        {
+          ...games.UNDERTALE,
+          rating: '???',
+        },
+        {
+          ...games.DELTARUNE,
+          rating: '???',
+        },
+        {
+          ...games.UNTITLED_GOOSE_GAME,
+          rating: '???',
+        },
+        {
+          ...games.STARDEW_VALLEY,
+          rating: '???',
+        },
+        {
+          ...games.OCTODAD_DADLIEST_CATCH,
+          rating: '???',
+        },
+        {
+          ...games.ROBLOX,
+          rating: '???',
+        },
+        {
+          ...games.SACKBOY_A_BIG_ADVENTURE,
+          rating: '???',
+        },
+        {
+          ...games.SPORE,
+          rating: '???',
+        },
+        {
+          ...games.SKYRIM,
+          rating: '???',
+        },
+        {
+          ...games.HALF_LIFE,
+          rating: '???',
+        },
+        {
+          ...games.HOUSE_FLIPPER,
+          rating: '???',
+        },
+        {
+          ...games.CRAFT_THE_WORLD,
+          rating: '???',
+        },
+        {
+          ...games.THEY_ARE_BILLIONS,
+          rating: '???',
+        },
+        {
+          ...games.DICEY_DUNGEON,
+          rating: '???',
+        },
+        {
+          ...games.TABS,
+          rating: '???',
+        },
+        {
+          ...games.HOTLINE_MIAMI,
+          rating: '???',
+        },
+        {
+          ...games.DESTROY_ALL_HUMANS,
+          rating: '???',
+        },
+        {
+          ...games.DUCKTALES,
+          rating: '???',
+        },
+        {
+          ...games.TONY_HAWK_PRO_SKATER,
+          rating: '???',
+        },
+        {
+          ...games.CONTRA,
+          rating: '???',
+        },
+        {
+          ...games.SUBNAUTICA,
+          rating: '???',
+        },
+        {
+          ...games.BROFORCE,
+          rating: '???',
+        },
+        {
+          ...games.SPIDERMAN_SHATTERED_DIMENSIONS,
+          rating: '???',
+        },
+        {
+          ...games.PLANTS_VS_ZOMBIES,
+          rating: '???',
+        },
+        {
+          ...games.DONT_STARVE,
+          rating: '???',
+        },
+        {
+          ...games.RAFT,
+          rating: '???',
+        },
+        {
+          ...games.STARBOUND,
+          rating: '???',
+        },
+        {
+          ...games.TAZ_WANTED,
+          rating: '???',
+        },
+        {
+          ...games.NEED_FOR_SPEED,
+          rating: '???',
+        },
+        {
+          ...games.MAD_MAX,
+          rating: '???',
+        },
+        {
+          ...games.THE_OUTER_WORLDS,
+          rating: '???',
+        },
+        {
+          ...games.PLAGUE_INC,
+          rating: '???',
+        },
+        {
+          ...games.SNIPER_ELITE,
+          rating: '???',
+        },
+        {
+          ...games.HEAVENLY_BODIES,
+          rating: '???',
+        },
+        {
+          ...games.PEACE_DEATH,
+          rating: '???',
+        },
+        {
+          ...games.PONY_ISLAND,
+          rating: '???',
+        },
+        {
+          ...games.EDNA_AND_HARVEY,
+          rating: '???',
+        },
+        {
+          ...games.MAFIA,
+          rating: '???',
+        },
+        {
+          ...games.HELLO_NEIGHBOUR,
+          rating: '???',
+        },
+        {
+          ...games.STANLEY_PARABLE,
+          rating: '???',
+        },
+        {
+          ...games.TO_THE_MOON,
+          rating: '???',
+        },
+        {
+          ...games.THE_DARK_PICTURES,
+          rating: '???',
+        },
+        {
+          ...games.AI_DUNGEON,
+          rating: '???',
+        },
+        {
+          ...games.EVERLASTING_SUMMER,
+          rating: '???',
+        },
+        {
+          ...games.LOVE_MONEY_ROCKNROLL,
           rating: '???',
         },
       ],
@@ -936,6 +1577,92 @@ My name is, chka-chka, эээ... Nyase.
           rating: '40 уровень',
         },
       ],
+      imagesUrl: [
+        'https://sun9-55.userapi.com/impg/zx4Caz4sYFtcomHlUQm7IWBCtVSUmTFf9Y8GPA/euyc6FX9rhc.jpg?size=736x962&quality=96&sign=dc7713cd7695022b3e699b0553f77b91&type=album',
+      ],
+    },
+    {
+      name: 'オレチカ チャン',
+      vkId: 805069363,
+      text: `Здравствуйте :D.
+•Меня зовут Оля, можно называть меня Оля, Олечка, Оленька, хоть клички или как там давать, но не Ольга (неприятно.. Такое чувство будто-то обращаются к женщине) .
+•обо мне : я родилась и живу в России в Тюменской области (мск+2).Мне ПОЧТИ 13 лет (день рождения - 09.19) . Мой рост составляет 1.51 и поэтому обычно люди которые меня окружают в реальности называют карликом.. Но я даже можно сказать не против.Я перехожу в 7 класс.Мой знак зодиака Дева как вы поняли по дню рождению.Я играю в одну онлайн игру и это Neverland. Я сначала скачала эту игру по приколу но потом меня втянуло в неё. Люблю очень животных. У меня есть кот и его зовут Борис, он серо-белой окраски, и даже немного серо-голубоватой. Ему уже 2 года. Мои любимые цвета это синий, чёрный, фиолетовый и сиреневый. Немножечко люблю рисовать,по большей части читаю манхвы и немного смотрю аниме. Люблю слушать музыку. Я слушаю разную музыку, то есть я можно сказать меломан. Люблю гулять зимой вечером , либо вообще люблю гулять под дождём. Из реальности я знакома со множеством людей но общаюсь можно сказать не с кем, тк я не умею поддерживать диалог, если только у меня с этим человеком найдутся общие вкусы. В интернете у меня есть немного друзей, но так я сильно не с кем не общаюсь, хоть и зависаю 24/7 в сети. Ну я решила исправить эту мою необщительность и я хочу стать более общительным и открытым человеком, но всё равно что-то мешает мне это Сделать. Из еды,мне нравятся пельмешки и очень люблю морские продукты.
+`,
+      colors: [colors.BLUE, colors.BLACK, colors.PURPLE],
+      age: 12,
+      alert: 'new',
+      gender: gender.FEMALE,
+      games: [
+        {
+          ...games.NEVERLAND,
+          status: gameStatus.ON_GOING,
+        },
+      ],
+      imagesUrl: [
+        'https://sun9-19.userapi.com/impg/MgoPWEhpdm7GR_cPcFcWRSoXWxA7wZbsBGiPOQ/lRxJFHt5cys.jpg?size=736x982&quality=95&sign=7f400485c14f6dcadfd5892fee79eb6d&type=album',
+      ],
+    },
+    {
+      name: '당신-것 여우',
+      vkId: 776454642,
+      text: `О себе
+Екатерина
+ДР: 14.06.2005.
+Дорамщик, к-попер, тик токер, веду ТГ каналы, шарю за корейцев и вселенную Гарри Поттера.
+Есть только лучшая подруга, не имею ни парня, ни друга, что немного радует.
+Легко ранимая , одновременно веселая, но и закрытая девочка.
+`,
+      age: 18,
+      alert: 'new',
+      gender: gender.FEMALE,
+      imagesUrl: [],
+    },
+    {
+      name: 'Ilya Wieliczko',
+      alert: 'new',
+      vkId: 712497882,
+      text: `Характер скверный. Не женат.
+
+Илья. Клички или прозвища нет. Родом from Transnistria, оно же Приднестровье, оно же ПМР. Живу в Бендерах. Рост ± 183. Работал в сфере киберразведки. Сейчас в той или иной степени до сих пор занимаюсь этим. В свободное время занимаюсь историей, психологией, собой. Люблю разную музыку, но в основном предпочтение падает на что-то тяжёлое. Своей страстью считаю оружие и сигареты. До жути люблю кошек, по возможности фотографирую каждую встречную или чьи-то домашние кисы. Нравится так же запечатлять на камеру рассветы, закаты или просто погодные состояния, небо. Из алкоголя люблю бурбон. Терпеть не могу вина и коньяки.
+`,
+      gender: gender.MALE,
+      imagesUrl: [],
+    },
+    {
+      name: 'Серёжа Воронцов',
+      alert: 'new',
+      vkId: 221702211,
+      text: `Серёжа 21 год
+Живу на данный момент в Ростове
+Учусь и работаю
+Живу один
+Предпочтения как у большинства парней в моем возрастном диапазоне,это поковыряться в машине,отдохнуть от рабочей недели
+Рост 188
+`,
+      age: 21,
+      gender: gender.MALE,
+      imagesUrl: [],
+    },
+    {
+      name: 'Алексей Васильев',
+      vkId: 7401525,
+      alert: 'new',
+      text: `Я родом из маленького города Вязьма, в Смоленской области. Три года назад переехал к девушке в Питер и завис тут насовсем, купил участок в Ленобласти, строю дом, редиску вот посадил)
+Работаю кладовщиком и водителем складской техники в онлайн магазине "ОнлайнТрейд" .
+В свободное время читаю книги, чиню автопром свой, воспитываю собаню, играю на гитаре и пишу музыку. 10 лет до Питера занимался театром.
+`,
+      gender: gender.MALE,
+      imagesUrl: [],
+    },
+    {
+      name: 'Show Men',
+      vkId: 476653623,
+      text: `Меня зовут Эльдар. Мне 20 лет. Я живу в Казахстане в городе Атырау, Я окончил 5 курс Прикладного бакалавриата Прикаспийского современного высшего колледжа. Слушаю любимую музыку и смотрю любимые фильмы и кино. А также я люблю играть в компьютерные игры.
+`,
+      colors: [colors.LIGHT_BLUE, colors.CYAN, colors.PURPLE, colors.GREEN],
+      alert: 'new',
+      age: 20,
+      gender: gender.MALE,
       imagesUrl: [
         'https://sun9-55.userapi.com/impg/zx4Caz4sYFtcomHlUQm7IWBCtVSUmTFf9Y8GPA/euyc6FX9rhc.jpg?size=736x962&quality=96&sign=dc7713cd7695022b3e699b0553f77b91&type=album',
       ],

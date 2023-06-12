@@ -103,6 +103,8 @@ export default function ColorsChart() {
             рассказов
           </Link>{' '}
           участников
+          <br />
+          При нажатии на кусочек с цветом внизу покажет всех его любителей
         </p>
         <div className={styles.chart}>
           <Pie data={chartData} options={options} height={400} width={400} />

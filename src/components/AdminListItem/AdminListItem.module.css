@@ -31,6 +31,7 @@
 .name {
   margin-top: auto;
   margin-bottom: auto;
+  color: var(--accent-color);
 }
 .description {
   display: block;

@@ -1,19 +1,26 @@
 {
   "files": {
-    "main.css": "/catsgreenland/static/css/main.5f1bc9ac.css",
-    "main.js": "/catsgreenland/static/js/main.0da36354.js",
+    "main.css": "/catsgreenland/static/css/main.0fa07c08.css",
+    "main.js": "/catsgreenland/static/js/main.363dbb9a.js",
+    "static/media/Type O Negative - Everything Dies.mp3": "/catsgreenland/static/media/Type O Negative - Everything Dies.9e8f078c613404262477.mp3",
     "static/media/LEN - This Silence is Mine (RUS).mp3": "/catsgreenland/static/media/LEN - This Silence is Mine (RUS).2924bddd62e627513f9c.mp3",
     "static/media/Tuomas Holopainen - A Lifetime Of Adventure (Alternative Version).mp3": "/catsgreenland/static/media/Tuomas Holopainen - A Lifetime Of Adventure (Alternative Version).687740ee6041333c5a3d.mp3",
     "static/media/Ария - Отшельник.mp3": "/catsgreenland/static/media/Ария - Отшельник.3de9b85b927f665e92ea.mp3",
     "static/media/Kubusiowy, Kuba L - For Your Eyes Only.mp3": "/catsgreenland/static/media/Kubusiowy, Kuba L - For Your Eyes Only.721382540e4ee7f66f7c.mp3",
+    "static/media/Type O Negative - I Don't Wanna Be Me.mp3": "/catsgreenland/static/media/Type O Negative - I Don't Wanna Be Me.35b3192aa3e0617cb654.mp3",
     "static/media/Alphaville - Big in Japan.mp3": "/catsgreenland/static/media/Alphaville - Big in Japan.c633acfc59e10f0d5ebb.mp3",
     "static/media/Nickelback - Photograph.mp3": "/catsgreenland/static/media/Nickelback - Photograph.ea804319eb598a66fc1c.mp3",
     "static/media/Андрей Губин - Лиза.mp3": "/catsgreenland/static/media/Андрей Губин - Лиза.d97f8729d0427cc48daa.mp3",
     "static/media/Телевизор - Звёздная.mp3": "/catsgreenland/static/media/Телевизор - Звёздная.5b27ea8fe8571acf7643.mp3",
     "static/media/Бутырка - Шарик.mp3": "/catsgreenland/static/media/Бутырка - Шарик.6538e31f1f1b2254477c.mp3",
+    "static/media/Pentakill - Deathfire Grasp.mp3": "/catsgreenland/static/media/Pentakill - Deathfire Grasp.a1910e9009dc67604557.mp3",
+    "static/media/Marilyn Manson - KILL4ME.mp3": "/catsgreenland/static/media/Marilyn Manson - KILL4ME.09121baf844d1dbd5baa.mp3",
     "static/media/Status Quo - In the Army Now 2010 (Radio Edit).mp3": "/catsgreenland/static/media/Status Quo - In the Army Now 2010 (Radio Edit).22df1e70c8902753dc83.mp3",
     "static/media/Jasper Byrne - Voyager.mp3": "/catsgreenland/static/media/Jasper Byrne - Voyager.968f35e3789c814b3a1f.mp3",
+    "static/media/Pentakill - Infinity Edge.mp3": "/catsgreenland/static/media/Pentakill - Infinity Edge.bf921bd990fc6551f42d.mp3",
     "static/media/Eyedress - Separation Anxiety.mp3": "/catsgreenland/static/media/Eyedress - Separation Anxiety.3168cd3adb8f87c23e66.mp3",
+    "static/media/Rob Zombie - Dragula.mp3": "/catsgreenland/static/media/Rob Zombie - Dragula.f6deef8ee6f813346c3c.mp3",
+    "static/media/Rob Zombie - The Scorpion Sleeps.mp3": "/catsgreenland/static/media/Rob Zombie - The Scorpion Sleeps.5e2fec8c500c7f44920e.mp3",
     "static/media/Jasper Byrne - Voyager (1).mp3": "/catsgreenland/static/media/Jasper Byrne - Voyager (1).20365f9420c61776e680.mp3",
     "static/media/System Of A Down - Chop Suey.mp3": "/catsgreenland/static/media/System Of A Down - Chop Suey.d1e9200bcda7ca85be37.mp3",
     "static/media/Subnautica - Abandon Ship.mp3": "/catsgreenland/static/media/Subnautica - Abandon Ship.fdc38a577952fd84a74c.mp3",
@@ -23,11 +30,15 @@
     "static/media/Celldweller - Switchback (Detroit 2000) (Instrumental) [Industrial Metal].mp3": "/catsgreenland/static/media/Celldweller - Switchback (Detroit 2000) (Instrumental) [Industrial Metal].33c121ce3dd84f466c11.mp3",
     "static/media/MONACA & Chihiro Onitsuka - This Silence Is Mine.mp3": "/catsgreenland/static/media/MONACA & Chihiro Onitsuka - This Silence Is Mine.0172983755edfbe12a89.mp3",
     "static/media/Sophus Alf Agerbæk-Larsen Troels Rohde Jørgensen - A Distant Terror.mp3": "/catsgreenland/static/media/Sophus Alf Agerbæk-Larsen Troels Rohde Jørgensen - A Distant Terror.af43b7b5c3647e69fbbf.mp3",
+    "static/media/HELLA HILLZ, JEEMBO, TVETH, BATO - HORROR.mp3": "/catsgreenland/static/media/HELLA HILLZ, JEEMBO, TVETH, BATO - HORROR.d74b02313c06b70109f7.mp3",
+    "static/media/Мэйби Бэйби - Shimmy Shimmy Ya.mp3": "/catsgreenland/static/media/Мэйби Бэйби - Shimmy Shimmy Ya.006937d2ccade746d29b.mp3",
     "static/media/Heronwater - Со сцены.mp3": "/catsgreenland/static/media/Heronwater - Со сцены.1281b698805b6097068e.mp3",
+    "static/media/shadowraze, jzxdx - skyline ryodan.mp3": "/catsgreenland/static/media/shadowraze, jzxdx - skyline ryodan.b485a8c649928e205033.mp3",
     "static/media/Linkin Park - Faint (EMT Remix).mp3": "/catsgreenland/static/media/Linkin Park - Faint (EMT Remix).bcc56a81e6812d9c39a1.mp3",
     "static/media/Alela Diane - Take Us Back.mp3": "/catsgreenland/static/media/Alela Diane - Take Us Back.03d59cf2ecc2f8c77812.mp3",
+    "static/media/Blend Slipknot - Blend Slipknot.mp3": "/catsgreenland/static/media/Blend Slipknot - Blend Slipknot.b379af63259b41bdc7c2.mp3",
     "static/media/bot-pfp.jpg": "/catsgreenland/static/media/bot-pfp.a282a738d9865b94ccb0.jpg",
-    "static/media/hero-background.jpg": "/catsgreenland/static/media/hero-background.dc62879ff73878e53312.jpg",
+    "static/media/hero-background.jpg": "/catsgreenland/static/media/hero-background.89dbc55fbbd519e049fb.jpg",
     "static/media/discord-pfp.jpg": "/catsgreenland/static/media/discord-pfp.396177915abeab57b0f7.jpg",
     "static/media/cat-logo.svg": "/catsgreenland/static/media/cat-logo.70baf1cee5198b1477cfcc4b19fd2b6a.svg",
     "index.html": "/catsgreenland/index.html",
@@ -39,11 +50,11 @@
     "static/media/sort-arrow-down.svg": "/catsgreenland/static/media/sort-arrow-down.69f0c6ac352a8e2b302b146f0ff72ad5.svg",
     "static/media/sort-arrow-up.svg": "/catsgreenland/static/media/sort-arrow-up.3ceb61d5e15aa23fb2f9ca566199a764.svg",
     "static/media/close-icon.svg": "/catsgreenland/static/media/close-icon.02fd53fcb59c8b132fb76e701e22fe8f.svg",
-    "main.5f1bc9ac.css.map": "/catsgreenland/static/css/main.5f1bc9ac.css.map",
-    "main.0da36354.js.map": "/catsgreenland/static/js/main.0da36354.js.map"
+    "main.0fa07c08.css.map": "/catsgreenland/static/css/main.0fa07c08.css.map",
+    "main.363dbb9a.js.map": "/catsgreenland/static/js/main.363dbb9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f1bc9ac.css",
-    "static/js/main.0da36354.js"
+    "static/css/main.0fa07c08.css",
+    "static/js/main.363dbb9a.js"
   ]
 }

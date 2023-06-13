@@ -51,3 +51,6 @@
   background-color: var(--accent-color);
   color: white;
 }
+.loadingSpinner {
+  margin-left: 5px;
+}

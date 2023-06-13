@@ -5,13 +5,11 @@
   --table-row-secondary: #c5e1a5;
 }
 .tableDescription {
-  color: black;
   text-align: center;
   font-weight: 500;
   margin-top: 0;
 }
 .disclaimer {
-  color: black;
   text-align: center;
 }
 .bioSpan {

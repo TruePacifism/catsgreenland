@@ -13,7 +13,7 @@
   height: 50px;
 }
 .section {
-  background-color: white;
+  background-color: var(--background-color);
 }
 .container {
   padding-left: 15px;
@@ -28,7 +28,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: var(--background-color);
 }
 .burgerMenu {
   position: fixed;

@@ -3,6 +3,7 @@ import { Howl } from 'howler';
 import styles from './MusicPlayer.module.css';
 import { ReactComponent as PauseIcon } from '../../images/pause-icon.svg';
 import { ReactComponent as PlayIcon } from '../../images/play-icon.svg';
+import { PulseLoader } from 'react-spinners';
 
 function MusicPlayer({ src, title }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -181,6 +182,12 @@ function MusicPlayer({ src, title }) {
                 formatDuration(sound ? sound.duration() : 0)}
             </span>
           </div>
+          <PulseLoader
+            color="green"
+            size={10}
+            loading={sound && sound.duration() === 0 && isPlaying}
+            className={styles.loadingSpinner}
+          />
         </div>
       </div>
     </div>

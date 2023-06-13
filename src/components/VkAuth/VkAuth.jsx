@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from 'redux/store';
 import placeholder from '../../images/image-placeholder.png';
 import getPfp from 'utils/getPfp';
-import checkOnGroupMember from 'utils/checkOnGroupMember';
+import getGroupMembers from 'utils/checkOnGroupMember';
 import { useNavigate } from 'react-router-dom';
 
 export default function VkAuth({ onModalOpen }) {
@@ -96,7 +96,7 @@ export default function VkAuth({ onModalOpen }) {
               options={{
                 onAuth: async user => {
                   console.log(user);
-                  const groupMembers = await checkOnGroupMember();
+                  const groupMembers = await getGroupMembers();
                   console.log(groupMembers);
                   if (groupMembers.items.includes(user.uid)) {
                     console.log('проверка пройдена');

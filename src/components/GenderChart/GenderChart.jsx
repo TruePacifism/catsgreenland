@@ -14,6 +14,7 @@ import styles from './GenderChart.module.css';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { Link } from 'react-router-dom';
+import getGroupMembers from 'utils/checkOnGroupMember';
 
 ChartJS.register(
   CategoryScale,
@@ -34,9 +35,9 @@ const options = {
 };
 
 function getGenderPercentage(bios, gender) {
-  return Math.floor(
-    (bios.filter(bio => bio.gender === gender).length / bios.length) * 100
-  );
+  return gender === 'Мужской'
+    ? Math.floor((bios[0] / (bios[0] + bios[1])) * 100)
+    : Math.floor((bios[1] / (bios[0] + bios[1])) * 100);
 }
 function getAverageAge(ages) {
   const averageAge = Math.floor(
@@ -127,6 +128,7 @@ export function GenderChart() {
   const bios = useSelector(store => store.bios);
   const [ranges, setRanges] = useState();
   const [data, setData] = useState();
+  const [genders, setGenders] = useState(null);
   useEffect(() => {
     const ageRanges = getAgeRanges(getDatasets(bios));
     setRanges(ageRanges.ranges.map(range => `${range.start} - ${range.end}`));
@@ -140,6 +142,22 @@ export function GenderChart() {
       )
     );
   }, [bios]);
+  useEffect(() => {
+    const addGenders = async () => {
+      const groupMembers = await getGroupMembers();
+      const genders = groupMembers.items
+        .map(member => (member.sex === 2 ? 'Мужской' : 'Женский'))
+        .reduce(
+          (reducer, gender) =>
+            gender === 'Мужской'
+              ? [reducer[0] + 1, reducer[1]]
+              : [reducer[0], reducer[1] + 1],
+          [0, 0]
+        );
+      setGenders(genders);
+    };
+    addGenders();
+  }, []);
 
   return (
     <Section>
@@ -180,9 +198,9 @@ export function GenderChart() {
         )}
         <b>Соотношение М/Ж в %: </b>
         <span>
-          {getGenderPercentage(bios, 'Мужской')}
+          {genders && getGenderPercentage(genders, 'Мужской')}
           %/
-          {getGenderPercentage(bios, 'Женский')}
+          {genders && getGenderPercentage(genders, 'Женский')}
           %,{' '}
         </span>
         <br />

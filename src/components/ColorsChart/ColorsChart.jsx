@@ -51,11 +51,9 @@ export default function ColorsChart() {
   const [colors, setColors] = useState();
   const [chartData, setChartData] = useState(initChartData);
   useEffect(() => {
-    if (chartData === initChartData) {
-      setTimeout(() => {
+    if (chartData === initChartData && bios[0].pfp && bios[0].pfp.startsWith('http')) {
         const colorsWithUsers = getUsersByColor(bios.filter(bio => bio.colors));
         setColors(colorsWithUsers);
-      }, 500);
       if (colors) {
         setChartData({
           labels: colors.map(color => color.name),

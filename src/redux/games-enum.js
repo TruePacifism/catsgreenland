@@ -711,6 +711,42 @@ const games = {
     title: 'The Outer Worlds',
     types: [SINGLEPLAYER],
   },
+  SALLY_FACE: {
+    title: 'Sally Face',
+    types: [SINGLEPLAYER],
+  },
+  SAKURA_SPIRITS: {
+    title: 'Sakura: Spirits',
+    types: [SINGLEPLAYER],
+  },
+  ANGELS: {
+    title: 'Angels',
+    types: [SINGLEPLAYER],
+  },
+  FANTASY: {
+    title: 'Fantasy',
+    types: [SINGLEPLAYER],
+  },
+  BEACH: {
+    title: 'Beach',
+    types: [SINGLEPLAYER],
+  },
+  SWIM_CLUB: {
+    title: 'Swim Club',
+    types: [SINGLEPLAYER],
+  },
+  WOLF_TAILS: {
+    title: 'Wolf Tails',
+    types: [SINGLEPLAYER],
+  },
+  NEKOPARA: {
+    title: 'Nekopara',
+    types: [SINGLEPLAYER],
+  },
+  BIG_DIPPER: {
+    title: 'Big Dipper',
+    types: [SINGLEPLAYER],
+  },
   PLAGUE_INC: {
     title: 'Plague Inc.',
     types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
@@ -877,6 +913,14 @@ const games = {
   },
   SPIDER_MAN_2000: {
     title: 'Spider-Man (2000)',
+    types: [SINGLEPLAYER],
+  },
+  FRAN_BOW: {
+    title: 'Fran Bow',
+    types: [SINGLEPLAYER],
+  },
+  LITTLE_MISFORTUNE: {
+    title: 'Little Misfortune',
     types: [SINGLEPLAYER],
   },
 };

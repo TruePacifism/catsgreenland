@@ -4,13 +4,15 @@ import botPfp from '../images/bot-pfp.jpg';
 import actions from './user-actions';
 import colors from './colors-enum';
 import games from './games-enum';
+import hobbies from './hobbies-enum';
 
 function importMusic() {
   const context = require.context('../music/', true, /\.mp3$/);
   const musicFiles = context.keys().reduce((files, filePath) => {
     const pathParts = filePath.split('/');
     const vkId = pathParts[1];
-    const fileName = pathParts[pathParts.length - 1];
+    const fileNameFull = pathParts[pathParts.length - 1];
+    const fileName = fileNameFull.substring(0, fileNameFull.length - 4);
     const musicFile = context(filePath);
     const fileObject = { name: fileName, path: filePath, music: musicFile };
     if (!files[vkId]) {
@@ -26,6 +28,13 @@ function importMusic() {
   return musicFiles;
 }
 
+const hobbyStatus = {
+  FORBIDDEN: 'Заброшено',
+  NOT_SERIOUS: 'Не что-то серьезное',
+  ON_GOING: 'Развивается',
+  MONEYTISED: 'Зарабатывает',
+  PROFESSIONAL: 'Профессионал',
+};
 const gameStatus = {
   COMPLETED: 'Пройдено',
   ON_GOING: 'Активно играется',
@@ -79,6 +88,24 @@ const initialState = {
 
 `,
       colors: [colors.BLUE],
+      hobbies: [
+        {
+          name: hobbies.DANCING,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.COOKING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.NATURE,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+      ],
       games: [
         {
           ...games.FOOL_ONLINE,
@@ -107,6 +134,48 @@ const initialState = {
 
 `,
       colors: [colors.PINK, colors.PURPLE],
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.PROGRAMMING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_PLAYING,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MANGA_COMICS,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.MUSIC_COMPOSITORS,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.STREAMS,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+      ],
       games: [
         {
           ...games.OSU,
@@ -427,6 +496,24 @@ const initialState = {
           status: gameStatus.RARELY,
         },
       ],
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.RUBIKS_CUBE,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+      ],
       gender: gender.MALE,
       imagesUrl: [],
     },
@@ -474,6 +561,36 @@ OST с Drakengard 3, просто потому что потому.
           ...games.MUSEDASH,
           rating: '???',
           status: gameStatus.RARELY,
+        },
+      ],
+      hobbies: [
+        {
+          name: hobbies.COOKING,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MANGA_COMICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.COLLECTIONNING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.VOCALOIDS,
+          status: hobbyStatus.ON_GOING,
         },
       ],
       age: 26,
@@ -583,6 +700,28 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.ON_GOING,
         },
       ],
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MANGA_COMICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.COLLECTIONNING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.VOCALOIDS,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       gender: gender.MALE,
       imagesUrl: [
         'https://sun9-75.userapi.com/impg/HaVKHCHjy4SiCnLO16KcRltkb9ISKdZXrhvTjA/_8stnXrG-Ek.jpg?size=1280x720&quality=96&sign=b68d9a621242e9b1569e88144c3fe156&type=album',
@@ -595,6 +734,16 @@ My name is, chka-chka, эээ... Nyase.
 
 
 `,
+      hobbies: [
+        {
+          name: hobbies.WRITING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.DRAWING,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       gender: gender.MALE,
       imagesUrl: [
         'https://sun9-19.userapi.com/impg/NruYuCq9YbTrlXpFMJes2Wf5r4U5NpU1YrdPGw/FOOXsSW7FjM.jpg?size=665x581&quality=96&sign=bb4b323f65e245197c9c131ced5ebf50&type=album',
@@ -609,6 +758,12 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       gender: gender.MALE,
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+      ],
       games: [
         {
           ...games.GENSHIN,
@@ -634,6 +789,32 @@ My name is, chka-chka, эээ... Nyase.
 `,
       age: 29,
       gender: gender.MALE,
+      hobbies: [
+        {
+          name: hobbies.SPORT,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.STREAMER,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.PROGRAMMING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.LANGUAGES,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       games: [
         {
           ...games.GUILTY_GEAR_STRIVE,
@@ -773,16 +954,13 @@ My name is, chka-chka, эээ... Nyase.
       name: 'Иван Иванов',
       vkId: 591214241,
       text: `Здравствуй.
--Меня зовут Иван(не люблю когда называют уменьшительно-ласкательными), на момент написания мне 16 лет, живу в городе Чебоксары, учусь я на мед.брата.
+-Меня зовут Иван(не люблю когда называют уменьшительно-ласкательными и когда моё имя начитают с буквы В: Ваня и т.п), на момент написания мне 16 лет, живу в городе Чебоксары, учусь я на мед.брата.
 -Из хобби у меня: видеоигры: предпочитаю выживачи и шутеры.
 Музыка: в основном электроника и OST из игр. Но так же слушаю единичные треки из других жанров.
 Аниме: смотрю всё подряд.
 Готовка и спорт. Также являюсь фанатом Madness Combat. Ещё я начал активно играть и интересоваться DnD.
 -Есть некоторые проблемы с общением в реальном мире. В плане, мне не очень уютно свободно общаться с незнакомыми людьми ( меня это бесит ) поэтому я довольно молчалив(но в интернете нет). Так же меня очень трогает когда говорят о моем лице, росте и телосложении.
 любимые цвета: черный и тёмно-красный, чуть меньше синий и зелёный.
-
-
-
 `,
       colors: [colors.RED, colors.BLACK],
       age: 16,
@@ -793,8 +971,30 @@ My name is, chka-chka, эээ... Nyase.
           rating: '???',
         },
       ],
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.COOKING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.SPORT,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [
-        'https://sun9-37.userapi.com/impg/Ieb0cpghpTDltC7JYDZM6UaIMDc7DV0RjJiIEA/HwYF6CeA5Ds.jpg?size=373x210&quality=96&sign=47a2df211adcda7192bc75f979844b0c&type=album',
+        'https://sun9-73.userapi.com/impg/K5UXS9S-lCTJS6Rbdf_5e8HfMVuU_poeAm2fIA/LwtmFjoUcMQ.jpg?size=720x720&quality=95&sign=ec5c97578bc3e64fe9235fe1da5c2784&type=album',
       ],
     },
     {
@@ -809,6 +1009,32 @@ My name is, chka-chka, эээ... Nyase.
 `,
       colors: [colors.WHITE, colors.BLUE, colors.PINK],
       gender: gender.FEMALE,
+      hobbies: [
+        {
+          name: hobbies.PROGRAMMING,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MANGA_COMICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MUSIC_WRITERS,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [
         'https://sun9-9.userapi.com/impg/Qu7KR6Jl_Zikpf9h2G1PNtgTZxxfBg2EowgrvA/v07USPk7kps.jpg?size=1428x2048&quality=96&sign=e9369e68ab46012c0033f8dc27cb81c8&type=album',
       ],
@@ -821,6 +1047,16 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.LIGHT_BLUE, colors.PURPLE],
+      hobbies: [
+        {
+          name: hobbies.NURSING,
+          status: hobbyStatus.PROFESSIONAL,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       age: 21,
       gender: gender.FEMALE,
       games: [
@@ -847,6 +1083,16 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       colors: [colors.GREEN],
+      hobbies: [
+        {
+          name: hobbies.KNITTING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.DRAWING,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+      ],
       gender: gender.FEMALE,
       imagesUrl: [
         'https://sun9-25.userapi.com/impg/kjJlfJ42YpusldV_CyznxDezoyYNp8LvIRNUgA/Z9SE6YcN1U8.jpg?size=1200x750&quality=96&sign=d8ceb0d8ce123bb84a2c8b60c8b5478a&type=album',
@@ -888,6 +1134,16 @@ My name is, chka-chka, эээ... Nyase.
 Из музыки, у меня нет таких отдельных поджанров, которые бы выделялись на фоне других.
 
 `,
+      hobbies: [
+        {
+          name: hobbies.WALKING,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       colors: [colors.PURPLE],
       age: 22,
       gender: gender.MALE,
@@ -949,6 +1205,32 @@ My name is, chka-chka, эээ... Nyase.
 
 `,
       age: 20,
+      hobbies: [
+        {
+          name: hobbies.PLANES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.PROJECTS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.POLITICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       gender: gender.MALE,
       imagesUrl: [],
     },
@@ -981,254 +1263,322 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.ALAWAR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.G_FORCE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.NEIGHBOUR_FROM_HELL,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SONIC,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.GHOSTBUSTERS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HARD_RESET,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.CRYSIS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DOOM,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.FREEDOOM,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.BORDERLANDS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MINECRAFT_STORY_MODE,
           rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.SAINTS_ROW,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.NOITA,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.CARMAGEDDON,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SOUL_KNIGHT,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.FEAR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.FAR_CRY,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.JUST_CAUSE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.POKEMONS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SLIME_RANCHER,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.EARN_TO_DIE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.TERRARIA,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.DANGANRONPA,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ACE_ATTORNEY,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.CROSSOUT,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.WORLD_OF_TANKS,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.FOREST,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SONS_OF_THE_FOREST,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.JUST_SHAPES_AND_BEATS,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.TRICKY_TOWERS,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.CASTLE_CRASHERS,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.LOBOTOMY_CORPORATION,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DATA_WING,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SEVEN_DAYS_TO_DIE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ISAAC,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.DEEP_ROCK_GALACTIC,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PORTAL,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SCRAP_MECHANIC,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.LEGO,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.BEAMNG_DRIVE,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.AS_DUSK_FALLS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.INSCRYPTION,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.TEARDOWN,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.VISCERA_CLEANUP,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.VRCHAT,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.RAYMAN,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.GENSHIN,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.AMONG_US,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.DIG_OR_DIE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.BIOSHOCK,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PILLARS_OF_ETERNITY,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.DISHONORED,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.NEXOMON,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ENTER_THE_GUNGEON,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.MONSTER_TRAIN,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.SLAY_THE_SPIRE,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.FALL_GUYS,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.DETROIT,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.FALLOUT,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.JUST_DANCE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.KERBAL_SPACE_PROGRAM,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.METRO,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.OVERCOOKED,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MUDRUNNER,
@@ -1237,14 +1587,17 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.DESPOTISM_3K,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.RAGE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.STRANDED_DEEP,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.STICK_FIGHT,
@@ -1253,6 +1606,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.SUPRALAND,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.THE_ESCAPISTS,
@@ -1265,14 +1619,17 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.PAPERS_PLEASE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HAT_IN_TIME,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MARIO_3D,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.MARIO_CART,
@@ -1281,226 +1638,380 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.WOOLLY_YOSHIS_WORLD,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SUPER_MARIO_BROS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.IT_TAKES_TWO,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.WOBBLE_DOGS,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.ASTRONEER,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SIMS,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.GTA,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.GOAT_SIMULATOR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
-          ...games.STICK_FIGHT,
+          ...games.STICK_IT_TO_THE_MAN,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.I_AM_BREAD,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.VAMPIRE_SURVIVORS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.UNDERTALE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DELTARUNE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.UNTITLED_GOOSE_GAME,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.STARDEW_VALLEY,
           rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SALLY_FACE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.OCTODAD_DADLIEST_CATCH,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ROBLOX,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.SACKBOY_A_BIG_ADVENTURE,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.SPORE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SKYRIM,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HALF_LIFE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HOUSE_FLIPPER,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.CRAFT_THE_WORLD,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.THEY_ARE_BILLIONS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DICEY_DUNGEON,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.TABS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HOTLINE_MIAMI,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.DESTROY_ALL_HUMANS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DUCKTALES,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.TONY_HAWK_PRO_SKATER,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.CONTRA,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.SUBNAUTICA,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.BROFORCE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SPIDERMAN_SHATTERED_DIMENSIONS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PLANTS_VS_ZOMBIES,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.DONT_STARVE,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.RAFT,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.STARBOUND,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.TAZ_WANTED,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.NEED_FOR_SPEED,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MAD_MAX,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.THE_OUTER_WORLDS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PLAGUE_INC,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.SNIPER_ELITE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HEAVENLY_BODIES,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PEACE_DEATH,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PONY_ISLAND,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.EDNA_AND_HARVEY,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MAFIA,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.HELLO_NEIGHBOUR,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.STANLEY_PARABLE,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.TO_THE_MOON,
           rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FRAN_BOW,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LITTLE_MISFORTUNE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.THE_DARK_PICTURES,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.AI_DUNGEON,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.EVERLASTING_SUMMER,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.LOVE_MONEY_ROCKNROLL,
           rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SAKURA_SPIRITS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ANGELS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FANTASY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BEACH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SWIM_CLUB,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WOLF_TAILS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NEKOPARA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BIG_DIPPER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TINY_BUNNY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+      ],
+      hobbies: [
+        {
+          name: hobbies.WRITING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies._3D_GRAPHICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.YOUTUBE_WATCHER,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.FURRY,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.COLLECTIONNING,
+          status: hobbyStatus.ON_GOING,
         },
       ],
       imagesUrl: [
@@ -1552,6 +2063,24 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.ON_GOING,
         },
       ],
+      hobbies: [
+        {
+          name: hobbies.COOKING,
+          status: hobbyStatus.PROFESSIONAL,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.SPORT,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.CYBER_SPORT,
+          status: hobbyStatus.FORBIDDEN,
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -1577,6 +2106,32 @@ My name is, chka-chka, эээ... Nyase.
           rating: '40 уровень',
         },
       ],
+      hobbies: [
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.FORBIDDEN,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MANGA_COMICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.FANFICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [
         'https://sun9-55.userapi.com/impg/zx4Caz4sYFtcomHlUQm7IWBCtVSUmTFf9Y8GPA/euyc6FX9rhc.jpg?size=736x962&quality=96&sign=dc7713cd7695022b3e699b0553f77b91&type=album',
       ],
@@ -1592,6 +2147,32 @@ My name is, chka-chka, эээ... Nyase.
       age: 12,
       alert: 'new',
       gender: gender.FEMALE,
+      hobbies: [
+        {
+          name: hobbies.ANIMALS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.DRAWING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MANGA_COMICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.WALKING,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+      ],
       games: [
         {
           ...games.NEVERLAND,
@@ -1615,6 +2196,16 @@ My name is, chka-chka, эээ... Nyase.
       age: 18,
       alert: 'new',
       gender: gender.FEMALE,
+      hobbies: [
+        {
+          name: hobbies.DORAMAS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.TIKTOKER,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -1626,6 +2217,24 @@ My name is, chka-chka, эээ... Nyase.
 Илья. Клички или прозвища нет. Родом from Transnistria, оно же Приднестровье, оно же ПМР. Живу в Бендерах. Рост ± 183. Работал в сфере киберразведки. Сейчас в той или иной степени до сих пор занимаюсь этим. В свободное время занимаюсь историей, психологией, собой. Люблю разную музыку, но в основном предпочтение падает на что-то тяжёлое. Своей страстью считаю оружие и сигареты. До жути люблю кошек, по возможности фотографирую каждую встречную или чьи-то домашние кисы. Нравится так же запечатлять на камеру рассветы, закаты или просто погодные состояния, небо. Из алкоголя люблю бурбон. Терпеть не могу вина и коньяки.
 `,
       gender: gender.MALE,
+      hobbies: [
+        {
+          name: hobbies.WEAPONS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.SIGARETS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.ANIMALS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.PHOTOGRAPHING,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -1641,6 +2250,12 @@ My name is, chka-chka, эээ... Nyase.
 `,
       age: 21,
       gender: gender.MALE,
+      hobbies: [
+        {
+          name: hobbies.AUTO,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -1652,6 +2267,24 @@ My name is, chka-chka, эээ... Nyase.
 В свободное время читаю книги, чиню автопром свой, воспитываю собаню, играю на гитаре и пишу музыку. 10 лет до Питера занимался театром.
 `,
       gender: gender.MALE,
+      hobbies: [
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_PLAYING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_COMPOSITORS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.THEATER,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       imagesUrl: [],
     },
     {
@@ -1662,60 +2295,39 @@ My name is, chka-chka, эээ... Nyase.
       colors: [colors.LIGHT_BLUE, colors.CYAN, colors.PURPLE, colors.GREEN],
       alert: 'new',
       age: 20,
-      gender: gender.MALE,
-      imagesUrl: [
-        'https://sun9-55.userapi.com/impg/zx4Caz4sYFtcomHlUQm7IWBCtVSUmTFf9Y8GPA/euyc6FX9rhc.jpg?size=736x962&quality=96&sign=dc7713cd7695022b3e699b0553f77b91&type=album',
+      hobbies: [
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
       ],
-    },
-    {
-      name: 'Alex Egorov',
-      vkId: 403229636,
       gender: gender.MALE,
+      imagesUrl: [],
     },
     {
-      name: 'Артём Марков',
-      vkId: 366226306,
+      name: 'Даня Рябцев',
+      vkId: 414046636,
+      text: `Что же, что то о себе ._.
+Нус, 21 годик, отучился на специалиста в области информационной безопасности «полная херь, если уж честно»
+Играю в Rust, DayZ, иногда в Valorant
+На этом наверное все :/`,
+      alert: 'new',
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
       gender: gender.MALE,
-    },
-    {
-      name: 'Ilya Wieliczko',
-      vkId: 712497882,
-      gender: gender.MALE,
-    },
-    {
-      name: 'Роман Волков',
-      vkId: 553623499,
-      gender: gender.MALE,
-    },
-    {
-      name: 'Мария Рудова',
-      vkId: 392596805,
-      gender: gender.FEMALE,
-    },
-    {
-      name: 'Мак Сим',
-      vkId: 684817694,
-      gender: gender.MALE,
-    },
-    {
-      name: 'Слава Теплых',
-      vkId: 293207518,
-      gender: gender.FEMALE,
-    },
-    {
-      name: 'Nonad Vafakka',
-      vkId: 540275321,
-      gender: gender.MALE,
-    },
-    {
-      name: 'Вероника Ясь',
-      vkId: 510479187,
-      gender: gender.FEMALE,
-    },
-    {
-      name: 'Данил Кучугуров',
-      vkId: 261882343,
-      gender: gender.MALE,
+      imagesUrl: [],
     },
   ],
   currentUser: {},
@@ -1744,6 +2356,7 @@ My name is, chka-chka, эээ... Nyase.
   ],
   bioMusic: musicFiles,
   isBurgerOpen: false,
+  isDarkTheme: false,
 };
 const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {
@@ -1764,6 +2377,12 @@ const reducer = createReducer(initialState, builder => {
             ...action.payload[idx],
           };
         }),
+      };
+    })
+    .addCase(actions.toggleTheme, state => {
+      return {
+        ...state,
+        isDarkTheme: !state.isDarkTheme,
       };
     })
     .addCase(actions.setOpenBurger, (state, action) => {

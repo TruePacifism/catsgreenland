@@ -2,14 +2,14 @@ import VK, { Auth } from 'react-vk';
 import { useDispatch } from 'react-redux';
 import { auth } from 'redux/store';
 import styles from './LoginPage.module.css';
-import checkOnGroupMember from 'utils/checkOnGroupMember';
+import getGroupMembers from 'utils/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Section>
@@ -37,12 +37,12 @@ export default function LoginPage() {
                 options={{
                   onAuth: async user => {
                     console.log(user);
-                    const groupMembers = await checkOnGroupMember();
+                    const groupMembers = await getGroupMembers();
                     console.log(groupMembers);
                     if (groupMembers.items.includes(user.uid)) {
                       console.log('проверка пройдена');
                       dispatch(auth(user));
-                      navigate('/')
+                      navigate('/');
                     }
                   },
                 }}

@@ -78,8 +78,7 @@ function GamesTable() {
   const bios = useSelector(store => store.bios);
 
   useEffect(() => {
-    if (data.length === 0) {
-      setTimeout(() => {
+    if (data.length === 0 && bios[0].pfp && bios[0].pfp.startsWith('http')) {
         const gamesWithUsers = getUsersByGame(bios.filter(bio => bio.games));
         setData(
           gamesWithUsers.map(game => ({
@@ -89,7 +88,6 @@ function GamesTable() {
             userscount: game.users.length,
           }))
         );
-      }, 500);
     }
   }, [bios, data]);
 

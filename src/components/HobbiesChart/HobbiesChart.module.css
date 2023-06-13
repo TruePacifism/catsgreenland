@@ -1,0 +1,155 @@
+.chartDescription {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0;
+}
+.disclaimer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.bioSpan {
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: underline;
+}
+.chart {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.chart span {
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media screen and (max-width: 479px) {
+  .chart {
+    width: calc(100vw - 60px);
+  }
+}
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.colorInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.colorName {
+  text-align: center;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.colorUsersList {
+}
+.colorUsersItem {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.userPfp {
+  width: 50px;
+  margin-right: 20px;
+}
+.userName {
+  font-weight: 500;
+}
+.showingGameContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+.showingGameName {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.showingGameTitle {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.colorUsersList {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+}
+.colorUsersItem {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-right: auto;
+  margin-bottom: 20px;
+  flex-direction: column;
+  text-align: left;
+}
+.userProfile::before {
+  content: '';
+  display: block;
+  background-color: var(--accent-color);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+.userPfp {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+.userName {
+  margin-right: 0.5em;
+}
+.playerRating {
+  font-weight: 500;
+  margin-left: 15px;
+}
+.onGoing,
+.notSerious,
+.moneytised,
+.professional,
+.forbidden {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* изменяем толщину на 2 пикселя */
+  margin-left: 15px;
+  font-weight: 500;
+}
+.onGoing {
+  text-decoration-color: green; /* изменяем цвет на синий */
+}
+.notSerious {
+  text-decoration-color: blue; /* изменяем цвет на синий */
+}
+.moneytised {
+  text-decoration-color: orange; /* изменяем цвет на синий */
+}
+.forbidden {
+  text-decoration-color: red; /* изменяем цвет на синий */
+}
+.professional {
+  text-decoration-color: purple; /* изменяем цвет на синий */
+}
+@media screen and (max-width: 767px) {
+  .checkboxesList {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 480px) {
+  .colorUsersItem {
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+  }
+}

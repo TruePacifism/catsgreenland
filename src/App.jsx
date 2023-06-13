@@ -14,6 +14,7 @@ import LoginPage from 'Pages/LoginPage/LoginPage';
 export const App = () => {
   const bios = useSelector(store => store.bios);
   const dispatch = useDispatch();
+  const isDarkThemed = useSelector(store => store.isDarkTheme);
   const handlers = useSwipeable({
     onSwipedLeft: eventData => {
       dispatch(actions.setOpenBurger(true));
@@ -49,7 +50,7 @@ export const App = () => {
     }
   }, [bios, dispatch]);
   return (
-    <div {...handlers}>
+    <div {...handlers} className={isDarkThemed ? 'dark--theme' : ''}>
       <Header />
       <Routes>
         <Route exact path="/" Component={MainPage} />

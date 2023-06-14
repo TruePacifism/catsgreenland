@@ -1123,75 +1123,6 @@ My name is, chka-chka, эээ... Nyase.
       imagesUrl: [],
     },
     {
-      name: 'Владислав Орлов',
-      vkId: 443945422,
-      text: `Ну что же, опишу о себе за кружечкой чая.
-Зовут меня Владислав, мне 22 года, рост 175 см, живу в городе Кемерово. Работаю, учусь заочно, в свободное время либо хожу на прогулку, либо сижу дома.
-Не особо привередлив в общении, могу поддержать в чем-то, могу просто поддержать общение, если человек на то хочет. Сам по себе, человек-настроения. Могу из-за какой-нибудь мелочи обидется и через какое-то время быть как ни в чем не бывало. Одно из моих плохих черт.
-Из увлечений: нравятся сингл-игры, в мультиплеерные играю редко, но если кто желает, могу собраться вместе. По жанрам - Экшн-РПГ (привет Обливион), шутеры старой школы (RTCW), Визуальные новеллы (правда в них я сейчас толком не играю, но читал такие произведения как: БЛ, KS, Danganronpa, Ace Attorney, Milk inside a bag of milk inside a bag of milk, Steins;Gate)
-Любимый цвет — фиолетовый, правда в детстве очень любил синий цвет. Из еды предпочитаю макаронные изделия, обожаю гречку, ненавижу перловку.
-Из напитков пью чай, по кофе фанатизма не имею, точно так же, как к энергетикам.
-Из музыки, у меня нет таких отдельных поджанров, которые бы выделялись на фоне других.
-
-`,
-      hobbies: [
-        {
-          name: hobbies.WALKING,
-          status: hobbyStatus.NOT_SERIOUS,
-        },
-        {
-          name: hobbies.GAMES,
-          status: hobbyStatus.ON_GOING,
-        },
-      ],
-      colors: [colors.PURPLE],
-      age: 22,
-      gender: gender.MALE,
-      games: [
-        {
-          ...games.OBLIVION,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RETURN_TO_CASTLE_WOLFENSTEIN,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.EVERLASTING_SUMMER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.KATAWA_SHOUJO,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DANGANRONPA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ACE_ATTORNEY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MILK_INSIDE_A_BAG,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.STEINS_GATE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-      ],
-      imagesUrl: [],
-    },
-    {
       name: 'Александр Казачинский',
       vkId: 517359736,
       text: `Всем привет, Я Александр, или Саша!
@@ -2017,22 +1948,6 @@ My name is, chka-chka, эээ... Nyase.
       imagesUrl: [
         'https://sun9-77.userapi.com/impg/-2Jzk7HxCHcDt0EKtcUzTNwvVmBn7mLJjfXVWQ/VoenTMtYPNg.jpg?size=1280x1280&quality=96&sign=9da3ec436a4d7ebd2e420c45463f947f&type=album',
       ],
-    },
-    {
-      name: 'Дана Корочинская',
-      vkId: 169249508,
-      text: `Предпочитаю чтобы меня называли Владой)
-21 год, работаю, живу жизнь, иногда радостно, иногда не очень.
-Старательно пытаюсь найти "то самое" хобби для себя, но пока безуспешно. Берусь за все - ухожу ни с чем.
-Учусь на парикмахера-стилиста сейчас.
-Люблю всякое медицинское, красивое, странное и дурацкие песенки.
-Очень люблю мемы, потому что это буквально лучшее что создало человечество.
-Шалом!
-
-`,
-      age: 21,
-      gender: gender.FEMALE,
-      imagesUrl: [],
     },
     {
       name: 'Вера Белка',

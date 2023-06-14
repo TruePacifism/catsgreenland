@@ -39,6 +39,11 @@ export default function LoginPage() {
                     console.log(user);
                     const groupMembers = await getGroupMembers();
                     console.log(groupMembers);
+                    console.log(groupMembers.items.map(user => user.id));
+                    console.log(user.uid);
+                    console.log(
+                      groupMembers.items.map(user => user.id).includes(user.uid)
+                    );
                     if (
                       groupMembers.items.map(user => user.id).includes(user.uid)
                     ) {

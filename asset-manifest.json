@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/catsgreenland/static/css/main.a585a887.css",
-    "main.js": "/catsgreenland/static/js/main.0b319b21.js",
+    "main.js": "/catsgreenland/static/js/main.6d2e84c8.js",
     "static/media/Type O Negative - Everything Dies.mp3": "/catsgreenland/static/media/Type O Negative - Everything Dies.9e8f078c613404262477.mp3",
     "static/media/LEN - This Silence is Mine (RUS).mp3": "/catsgreenland/static/media/LEN - This Silence is Mine (RUS).2924bddd62e627513f9c.mp3",
     "static/media/адидас котэ - Эллис рассказывает истории в Нуждиках [REMASTERED] (mashup).mp3": "/catsgreenland/static/media/адидас котэ - Эллис рассказывает истории в Нуждиках [REMASTERED] (mashup).a09a2b18ac8996bfc072.mp3",
@@ -43,6 +43,7 @@
     "static/media/bot-pfp.jpg": "/catsgreenland/static/media/bot-pfp.a282a738d9865b94ccb0.jpg",
     "static/media/hero-background.jpg": "/catsgreenland/static/media/hero-background.89dbc55fbbd519e049fb.jpg",
     "static/media/discord-pfp.jpg": "/catsgreenland/static/media/discord-pfp.396177915abeab57b0f7.jpg",
+    "static/media/telegram-pfp.jpg": "/catsgreenland/static/media/telegram-pfp.d0bfec6876f722380654.jpg",
     "static/media/cat-logo.svg": "/catsgreenland/static/media/cat-logo.70baf1cee5198b1477cfcc4b19fd2b6a.svg",
     "index.html": "/catsgreenland/index.html",
     "static/media/cat-alert.svg": "/catsgreenland/static/media/cat-alert.dee687bd42e0d303cf01b7982bfd1bec.svg",
@@ -54,10 +55,10 @@
     "static/media/sort-arrow-up.svg": "/catsgreenland/static/media/sort-arrow-up.3ceb61d5e15aa23fb2f9ca566199a764.svg",
     "static/media/close-icon.svg": "/catsgreenland/static/media/close-icon.02fd53fcb59c8b132fb76e701e22fe8f.svg",
     "main.a585a887.css.map": "/catsgreenland/static/css/main.a585a887.css.map",
-    "main.0b319b21.js.map": "/catsgreenland/static/js/main.0b319b21.js.map"
+    "main.6d2e84c8.js.map": "/catsgreenland/static/js/main.6d2e84c8.js.map"
   },
   "entrypoints": [
     "static/css/main.a585a887.css",
-    "static/js/main.0b319b21.js"
+    "static/js/main.6d2e84c8.js"
   ]
 }

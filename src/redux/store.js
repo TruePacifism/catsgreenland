@@ -1,6 +1,7 @@
 import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 import discordPfp from '../images/discord-pfp.jpg';
 import botPfp from '../images/bot-pfp.jpg';
+import telegramPfp from '../images/telegram-pfp.jpg';
 import actions from './user-actions';
 import colors from './colors-enum';
 import games from './games-enum';
@@ -1957,7 +1958,6 @@ My name is, chka-chka, эээ... Nyase.
 Могу рассказать свой любимый анекдот, но лучше расскажу почему я могу иногда пропадать из чата и надеюсь меня пойдут. У меня есть болезнь с головой, название которой я предпочитаю не называть. И как раз из-за неё меня может выключить из социума на дня 3-6. Всегда по разному. Буду стараться не отставать и стану вам хорошим другом :)
 
 `,
-      alert: 'new',
       age: 16,
       gender: gender.FEMALE,
       imagesUrl: [],
@@ -1968,7 +1968,6 @@ My name is, chka-chka, эээ... Nyase.
       text: `Вообщем да, доброй ночи мальчики и девочки, я Кирилл, мне 20 лет, закончил грубо говоря 2 дня назад поварской техникум, и имею 3 разряд повара)
 увлекаюсь игрой в доту, люблю смотреть баскетбольные ассоциации и в частности выходить на площадку и самому играть)
 Пробовал себя в профессиональном баскетболе и в киберспорте, ни там ни там не получилось, но и все равно, продолжаю играть)`,
-      alert: 'new',
       age: 20,
       gender: gender.MALE,
       games: [
@@ -2264,7 +2263,7 @@ My name is, chka-chka, эээ... Nyase.
     {
       name: 'Телеграм чат',
       link: 'https://t.me/+PCMV87p-lbJhYzgy',
-      image: discordPfp,
+      image: telegramPfp,
       serviceName: 'Телеграм',
       text: 'Чат для времен, когда вк нестабилен и вот-вот развалится на части',
     },

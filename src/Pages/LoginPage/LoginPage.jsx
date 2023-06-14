@@ -39,7 +39,9 @@ export default function LoginPage() {
                     console.log(user);
                     const groupMembers = await getGroupMembers();
                     console.log(groupMembers);
-                    if (groupMembers.items.includes(user.uid)) {
+                    if (
+                      groupMembers.items.map(user => user.id).includes(user.uid)
+                    ) {
                       console.log('проверка пройдена');
                       dispatch(auth(user));
                       navigate('/');

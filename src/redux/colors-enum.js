@@ -79,6 +79,14 @@ const colors = {
       b: 255,
     },
   },
+  GRAY: {
+    name: 'Серый',
+    rgb: {
+      r: 128,
+      g: 128,
+      b: 128,
+    },
+  },
 };
 
 export default colors;

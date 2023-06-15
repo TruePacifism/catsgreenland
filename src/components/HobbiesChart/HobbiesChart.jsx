@@ -10,7 +10,6 @@ import { TagCloud } from 'react-tagcloud';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function getStatusClass(status) {
-  console.log(status);
   switch (status) {
     case 'Заброшено':
       return styles.forbidden;
@@ -57,7 +56,6 @@ export default function HobbiesChart() {
   const [showingHobby, setShowingHobby] = useState();
   const [hobbies, setHobbies] = useState();
   useEffect(() => {
-    console.log(bios);
     if (!hobbies && bios[0].pfp && bios[0].pfp.startsWith('http')) {
       const hobbiesWithUsers = getUsersByHobby(bios.filter(bio => bio.hobbies));
       setHobbies(hobbiesWithUsers);

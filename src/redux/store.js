@@ -184,6 +184,31 @@ const initialState = {
           status: gameStatus.ON_GOING,
         },
         {
+          ...games.BULLETS_PER_MINUTE,
+          rating: '???',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.NOT_FOR_BROADCAST,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COUNT_LUCANOR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.JACKBOX_PARTY_PACK,
+          rating: '???',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.DIABLO,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
           ...games.ISAAC,
           rating: 'Dead God',
           status: gameStatus.ON_GOING,
@@ -1193,6 +1218,35 @@ My name is, chka-chka, эээ... Nyase.
           rating: '???',
         },
         {
+          ...games.YUPPIE_PSYCHO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.JACKBOX_PARTY_PACK,
+          rating: '???',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.DEAD_RISING,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SOUTH_PARK_STICK_OF_TRUTH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COUNT_LUCANOR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DO_NOT_FEED_THE_MONKEYS,
+          rating: '???',
+        },
+        {
           ...games.ALAWAR,
           rating: '???',
           status: gameStatus.COMPLETED,
@@ -1868,41 +1922,6 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.COMPLETED,
         },
         {
-          ...games.ANGELS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FANTASY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BEACH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SWIM_CLUB,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.WOLF_TAILS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.NEKOPARA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BIG_DIPPER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
           ...games.TINY_BUNNY,
           rating: '???',
           status: gameStatus.COMPLETED,
@@ -1973,6 +1992,541 @@ My name is, chka-chka, эээ... Nyase.
       games: [
         {
           ...games.DOTA,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.HENTAI_GAMES,
+          rating: '80 LVL',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.WITCHER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ADVENTURES_OF_HOOL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NOT_FOR_BROADCAST,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ALBION_ONLINE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.ALIEN_SWARM,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.APERTURE_DESK_JOB,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.APEX,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.ARK,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.ARMA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BATTLE_RANCH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BATTLEFIELD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BOOM_BAHH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BORDERLANDS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BRUTAL_LEGEND,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COD_MODERN_WARFARE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CITIES_SKYLINES,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COUNTER_STRIKE_ZERO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CS_1_6,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.CS_GO,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.CS_SOURCE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.DAY_OF_DEFEAT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEFY_GRAVITY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DONT_STARVE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TES_ONLINE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SKYRIM,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.EVERLASTING_SUMMER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FALSE_FRONT,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.FARTHEST_FRONTIERS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FATHERS_DAY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FOR_HONOR,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.FROSTPUNK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GARRYS_MOD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GHOST_EXILE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.HARD_TRUCK_APOCALYPSE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HOUSE_OF_CARAVAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.I_HATE_THIS_GAME,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.INSURGENCY,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.JUST_CAUSE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEFT_4_DEAD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEGO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LIFE_IS_STRANGE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MAGICKA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MARAUDER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MARBLE_DUEL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MEN_OF_WAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.METRO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MORTAL_KOMBAT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NARUTO_TO_BORUTO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NASH_RACING,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PALADINS,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PARAGON_THE_OVERPRIME,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PAYDAY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PHASMOPHOBIA,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PIXELMAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PORTAL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RAFT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RED_LAKE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THE_RED_SOLSTICE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.RISE_OF_THE_ANCIENTS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RUST,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SEPTEMBER_7TH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SHADOW_WARRIOR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CIVILIZATION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SLEDGEHAMMER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SOULWORKER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SPOOKYS_JUMP_SCARE_MANSION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STALKER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STONEHEARTH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STRANGE_NIGHT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STRONGHOLD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SUMMER_OF_58,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TERRARIA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.VISCERA_CLEANUP,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WILD_WEST_ROGUE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FORTNITE,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.UNRAILED,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SHADOW_TACTICS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ALIEN_ISOLATION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.AMNESIA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ASSASSINS_CREED,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BLAIR_WITCH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CONTROL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CYBERPUNK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DAEMON_X_MACHINA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEATH_STRANDING,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DYING_LIGHT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GODFALL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GTA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HAND_OF_FATE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HITMAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.IN_SOUND_MIND,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KEN_FOLLETS_THE_PILLARS_OF_THE_EARTH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KILLING_FLOOR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LAYERS_OF_FEAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NBA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OBDUCTION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RAGE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RELICTA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.VALORANT,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.VAMPYR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.VERDUN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WATCH_DOGS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HOGWARTS_LEGACY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ATOMIC_HEART,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COD_WARZONE_II,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MINECRAFT,
           rating: '???',
           status: gameStatus.ON_GOING,
         },
@@ -2131,22 +2685,62 @@ My name is, chka-chka, эээ... Nyase.
 Илья. Клички или прозвища нет. Родом from Transnistria, оно же Приднестровье, оно же ПМР. Живу в Бендерах. Рост ± 183. Работал в сфере киберразведки. Сейчас в той или иной степени до сих пор занимаюсь этим. В свободное время занимаюсь историей, психологией, собой. Люблю разную музыку, но в основном предпочтение падает на что-то тяжёлое. Своей страстью считаю оружие и сигареты. До жути люблю кошек, по возможности фотографирую каждую встречную или чьи-то домашние кисы. Нравится так же запечатлять на камеру рассветы, закаты или просто погодные состояния, небо. Из алкоголя люблю бурбон. Терпеть не могу вина и коньяки.
 `,
       gender: gender.MALE,
+      colors: [colors.GRAY],
       hobbies: [
         {
           name: hobbies.WEAPONS,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.SIGARETS,
+          name: hobbies.ANIME,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.ANIMALS,
+          name: hobbies.MUSIC_LISTENERS,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.PHOTOGRAPHING,
+          name: hobbies.AUTO,
           status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.HUNTING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.WEAPONS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.WEAPONS,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
+      games: [
+        {
+          ...games.COMPANY_OF_HEROES,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.LEAGUE_OF_LEGENDS,
+          rating: '',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.TERRARIA,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.WORLD_OF_TANKS,
+          rating: '',
+          status: gameStatus.ON_GOING,
         },
       ],
       imagesUrl: [],
@@ -2276,7 +2870,6 @@ const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {
   builder
     .addCase(authAction, (state, action) => {
-      localStorage.setItem('loggedUser', JSON.stringify(action.payload));
       return {
         ...state,
         currentUser: action.payload,

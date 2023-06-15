@@ -53,6 +53,13 @@ function MusicPlayer({ src, title }) {
       setIsPlaying(false);
     }
   };
+  useEffect(() => {
+    return () => {
+      if (isPlaying) {
+        sound.stop();
+      }
+    };
+  }, [sound, isPlaying]);
 
   const handleSeek = e => {
     if (sound) {

@@ -8,7 +8,6 @@ export default function Biograhpy({ bioRef, vkId }) {
     store.bios.find(bio => bio.vkId.toString() === vkId)
   );
   const music = useSelector(store => store.bioMusic[vkId]);
-  console.log(music);
   return (
     <div ref={bioRef} className={styles.container}>
       <h3 className={styles.name}>{bio.name}</h3>

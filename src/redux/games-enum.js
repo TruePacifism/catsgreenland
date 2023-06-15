@@ -719,34 +719,6 @@ const games = {
     title: 'Sakura: Spirits',
     types: [SINGLEPLAYER],
   },
-  ANGELS: {
-    title: 'Angels',
-    types: [SINGLEPLAYER],
-  },
-  FANTASY: {
-    title: 'Fantasy',
-    types: [SINGLEPLAYER],
-  },
-  BEACH: {
-    title: 'Beach',
-    types: [SINGLEPLAYER],
-  },
-  SWIM_CLUB: {
-    title: 'Swim Club',
-    types: [SINGLEPLAYER],
-  },
-  WOLF_TAILS: {
-    title: 'Wolf Tails',
-    types: [SINGLEPLAYER],
-  },
-  NEKOPARA: {
-    title: 'Nekopara',
-    types: [SINGLEPLAYER],
-  },
-  BIG_DIPPER: {
-    title: 'Big Dipper',
-    types: [SINGLEPLAYER],
-  },
   PLAGUE_INC: {
     title: 'Plague Inc.',
     types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
@@ -922,6 +894,374 @@ const games = {
   LITTLE_MISFORTUNE: {
     title: 'Little Misfortune',
     types: [SINGLEPLAYER],
+  },
+  ADVENTURES_OF_HOOL: {
+    title: 'Adventures of Hool',
+    types: [SINGLEPLAYER],
+  },
+  ALBION_ONLINE: {
+    title: 'Albion Online',
+    types: [MULTIPLAYER],
+  },
+  ALIEN_SWARM: {
+    title: 'Alien Swarm: Reactive Drop',
+    types: [SINGLEPLAYER],
+  },
+  APERTURE_DESK_JOB: {
+    title: 'Aperture Desk Job',
+    types: [SINGLEPLAYER],
+  },
+  APEX: {
+    title: 'Apex Legends',
+    types: [MULTIPLAYER],
+  },
+  ARK: {
+    title: 'ARK',
+    types: [MULTIPLAYER],
+  },
+  ARMA: {
+    title: 'Arma',
+    types: [SINGLEPLAYER],
+  },
+  BATTLE_RANCH: {
+    title: 'Battle Ranch',
+    types: [SINGLEPLAYER],
+  },
+  BATTLEFIELD: {
+    title: 'Battlefield',
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  BOOM_BAHH: {
+    title: 'Boom-bahh',
+    types: [SINGLEPLAYER],
+  },
+  BRUTAL_LEGEND: {
+    title: 'Brutal Legend',
+    types: [SINGLEPLAYER],
+  },
+  COD_MODERN_WARFARE: {
+    title: 'Call of Duty: Modern Warfare II',
+    types: [SINGLEPLAYER],
+  },
+  CITIES_SKYLINES: {
+    title: 'Cities: Skylines',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  COMMAND_AND_CONQUER: {
+    title: 'Command & Conquer',
+    types: [SINGLEPLAYER],
+  },
+  COUNTER_STRIKE_ZERO: {
+    title: 'Counter Strike: Condition Zero',
+    types: [SINGLEPLAYER],
+  },
+  CS_SOURCE: {
+    title: 'Counter Strike: Source',
+    types: [MULTIPLAYER],
+  },
+  DAY_OF_DEFEAT: {
+    title: 'Day of Defeat: Source',
+    types: [SINGLEPLAYER],
+  },
+  DEFY_GRAVITY: {
+    title: 'Defy Gravity',
+    types: [SINGLEPLAYER],
+  },
+  TES_ONLINE: {
+    title: 'The Elder Scrolls Online',
+    types: [SINGLEPLAYER],
+  },
+  FALSE_FRONT: {
+    title: 'False Front',
+    types: [MULTIPLAYER],
+  },
+  FARTHEST_FRONTIERS: {
+    title: 'Farthest Frontiers',
+    types: [SINGLEPLAYER],
+  },
+  FATHERS_DAY: {
+    title: 'Fathers Day',
+    types: [SINGLEPLAYER],
+  },
+  FOR_HONOR: {
+    title: 'For Honor',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  FROSTPUNK: {
+    title: 'Frostpunk',
+    types: [SINGLEPLAYER],
+  },
+  GARRYS_MOD: {
+    title: "Garry's Mod",
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  GHOST_EXILE: {
+    title: 'Ghost Exile',
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  HARD_TRUCK_APOCALYPSE: {
+    title: 'Hard Truck Apocalypse',
+    types: [SINGLEPLAYER],
+  },
+  HOUSE_OF_CARAVAN: {
+    title: 'House of Caravan',
+    types: [SINGLEPLAYER],
+  },
+  HUMAN_FALL_FLAT: {
+    title: 'Human: Fall Flat',
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  INSURGENCY: {
+    title: 'Insurgency',
+    types: [MULTIPLAYER],
+  },
+  LEFT_4_DEAD: {
+    title: 'Left 4 Dead',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  LIFE_IS_STRANGE: {
+    title: 'Life is Strange',
+    types: [SINGLEPLAYER],
+  },
+  MAGICKA: {
+    title: 'Magicka',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  MARAUDER: {
+    title: 'Marauder',
+    types: [SINGLEPLAYER],
+  },
+  MARBLE_DUEL: {
+    title: 'Marble Duel',
+    types: [SINGLEPLAYER],
+  },
+  MEN_OF_WAR: {
+    title: 'Men of War',
+    types: [SINGLEPLAYER],
+  },
+  NARUTO_TO_BORUTO: {
+    title: 'NARUTO TO BORUTO',
+    types: [MULTIPLAYER],
+  },
+  NASH_RACING: {
+    title: 'Nash Racing',
+    types: [SINGLEPLAYER],
+  },
+  PALADINS: {
+    title: 'Paladins',
+    types: [MULTIPLAYER],
+  },
+  PARAGON_THE_OVERPRIME: {
+    title: 'Paragon: The Overprime',
+    types: [MULTIPLAYER],
+  },
+  PAYDAY: {
+    title: 'PAYDAY',
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  PIXELMAN: {
+    title: 'PIXELMAN',
+    types: [SINGLEPLAYER],
+  },
+  RED_LAKE: {
+    title: 'Red Lake',
+    types: [SINGLEPLAYER],
+  },
+  THE_RED_SOLSTICE: {
+    title: 'The Red Solstice',
+    types: [MULTIPLAYER, COOPERATIVE],
+  },
+  RISE_OF_THE_ANCIENTS: {
+    title: 'Rise of the Ancients',
+    types: [SINGLEPLAYER],
+  },
+  SEPTEMBER_7TH: {
+    title: 'September 7th',
+    types: [SINGLEPLAYER],
+  },
+  SHADOW_WARRIOR: {
+    title: 'Shadow Warrior',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  CIVILIZATION: {
+    title: "Sid Meier's Civilization",
+    types: [SINGLEPLAYER],
+  },
+  SLEDGEHAMMER: {
+    title: 'Sledgehammer',
+    types: [SINGLEPLAYER],
+  },
+  SOULWORKER: {
+    title: 'Soulworker',
+    types: [MULTIPLAYER, COOPERATIVE],
+  },
+  SPOOKYS_JUMP_SCARE_MANSION: {
+    title: "Spooky's Jump Scare Mansion",
+    types: [SINGLEPLAYER],
+  },
+  STALKER: {
+    title: 'S.T.A.L.K.E.R.',
+    types: [SINGLEPLAYER],
+  },
+  STONEHEARTH: {
+    title: 'Stonehearth',
+    types: [SINGLEPLAYER],
+  },
+  STRANGE_NIGHT: {
+    title: 'Strange Night',
+    types: [SINGLEPLAYER],
+  },
+  STRONGHOLD: {
+    title: 'Stronghold Crusader',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  SUMMER_OF_58: {
+    title: "Summer of '58",
+    types: [SINGLEPLAYER],
+  },
+  WILD_WEST_ROGUE: {
+    title: 'Wild West Rogue',
+    types: [SINGLEPLAYER],
+  },
+  UNRAILED: {
+    title: 'Unrailed',
+    types: [COOPERATIVE],
+  },
+  SHADOW_TACTICS: {
+    title: 'Shadow Tactics',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  X_OUT_OF_X: {
+    title: '3 out of 10',
+    types: [SINGLEPLAYER],
+  },
+  GAME_OF_THRONES: {
+    title: 'A Game of Thrones',
+    types: [SINGLEPLAYER],
+  },
+  ALIEN_ISOLATION: {
+    title: 'Alien Isolation',
+    types: [SINGLEPLAYER],
+  },
+  BLAIR_WITCH: {
+    title: 'Blair Witch',
+    types: [SINGLEPLAYER],
+  },
+  CONTROL: {
+    title: 'Control',
+    types: [SINGLEPLAYER],
+  },
+  DAEMON_X_MACHINA: {
+    title: 'DAEMON X MACHINA',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  DEATH_STRANDING: {
+    title: 'Death Stranding',
+    types: [SINGLEPLAYER],
+  },
+  DYING_LIGHT: {
+    title: 'Dying Light',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  GODFALL: {
+    title: 'Godfall',
+    types: [MULTIPLAYER],
+  },
+  HAND_OF_FATE: {
+    title: 'Hand of Fate',
+    types: [SINGLEPLAYER],
+  },
+  IN_SOUND_MIND: {
+    title: 'In Sound Mind',
+    types: [SINGLEPLAYER],
+  },
+  KEN_FOLLETS_THE_PILLARS_OF_THE_EARTH: {
+    title: "Ken Follet's The Pillars of the Earth",
+    types: [SINGLEPLAYER],
+  },
+  KILLING_FLOOR: {
+    title: 'Killing Floor',
+    types: [SINGLEPLAYER],
+  },
+  LAYERS_OF_FEAR: {
+    title: 'Layers of Fear',
+    types: [SINGLEPLAYER],
+  },
+  NBA: {
+    title: 'NBA',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  OBDUCTION: {
+    title: 'Obduction',
+    types: [SINGLEPLAYER],
+  },
+  RELICTA: {
+    title: 'Relicta',
+    types: [SINGLEPLAYER],
+  },
+  THE_HUNTER_CALL_OF_THE_WILD: {
+    title: 'theHunter: Call of the Wild',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  VALORANT: {
+    title: 'VALORANT',
+    types: [MULTIPLAYER],
+  },
+  VAMPYR: {
+    title: 'Vampyr',
+    types: [SINGLEPLAYER],
+  },
+  VERDUN: {
+    title: 'Verdun',
+    types: [SINGLEPLAYER],
+  },
+  WATCH_DOGS: {
+    title: 'Watch Dogs',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  HOGWARTS_LEGACY: {
+    title: 'Hogwarts Legacy',
+    types: [SINGLEPLAYER],
+  },
+  COMPANY_OF_HEROES: {
+    title: 'Company of heroes 2',
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  LEAGUE_OF_LEGENDS: {
+    title: 'League of Legends',
+    types: [MULTIPLAYER],
+  },
+  HENTAI_GAMES: {
+    title: 'ХЕНТАЙ ИГРЫ',
+    types: [SINGLEPLAYER, MULTIPLAYER, COOPERATIVE],
+  },
+  NOT_FOR_BROADCAST: {
+    title: 'Not For Broadcast',
+    types: [SINGLEPLAYER],
+  },
+  DIABLO: {
+    title: 'Diablo',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  DEAD_RISING: {
+    title: 'Dead Rising',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  DO_NOT_FEED_THE_MONKEYS: {
+    title: 'Do Not Feed the Monkeys',
+    types: [SINGLEPLAYER],
+  },
+  SOUTH_PARK_STICK_OF_TRUTH: {
+    title: 'South Park: Stick of Truth ',
+    types: [SINGLEPLAYER],
+  },
+  COUNT_LUCANOR: {
+    title: 'Count Lucanor ',
+    types: [SINGLEPLAYER],
+  },
+  JACKBOX_PARTY_PACK: {
+    title: 'The Jackbox Party ',
+    types: [COOPERATIVE],
   },
 };
 

@@ -17,7 +17,7 @@ export default function AdminList() {
     },
     {
       vkId: 178433478,
-      description: 'Главная советчица в важных решениях',
+      description: 'Главная советчица в важных решениях, главный олд',
     },
     {
       vkId: 591214241,

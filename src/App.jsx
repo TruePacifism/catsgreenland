@@ -51,7 +51,7 @@ export const App = () => {
   }, [bios, dispatch]);
   return (
     <div {...handlers} className={isDarkThemed ? 'dark--theme' : ''}>
-      <Header />
+      {currentUser && <Header />}
       <Routes>
         <Route exact path="/" Component={MainPage} />
         <Route path="/biographys/*" Component={Biographys} />

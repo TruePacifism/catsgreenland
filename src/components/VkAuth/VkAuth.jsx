@@ -40,6 +40,7 @@ export default function VkAuth({ onModalOpen }) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  console.log(loggedUser);
 
   useEffect(() => {
     if (isModalOpen) {

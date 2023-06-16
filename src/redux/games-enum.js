@@ -921,7 +921,7 @@ const games = {
   },
   ARMA: {
     title: 'Arma',
-    types: [SINGLEPLAYER],
+    types: [SINGLEPLAYER, MULTIPLAYER],
   },
   BATTLE_RANCH: {
     title: 'Battle Ranch',
@@ -1213,7 +1213,7 @@ const games = {
   },
   VERDUN: {
     title: 'Verdun',
-    types: [SINGLEPLAYER],
+    types: [MULTIPLAYER],
   },
   WATCH_DOGS: {
     title: 'Watch Dogs',

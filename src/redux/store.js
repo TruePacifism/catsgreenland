@@ -2870,6 +2870,7 @@ const authAction = createAction('AUTH');
 const reducer = createReducer(initialState, builder => {
   builder
     .addCase(authAction, (state, action) => {
+      localStorage.setItem('loggedUser', JSON.stringify(action.payload));
       return {
         ...state,
         currentUser: action.payload,

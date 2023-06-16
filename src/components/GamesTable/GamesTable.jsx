@@ -79,15 +79,15 @@ function GamesTable() {
 
   useEffect(() => {
     if (data.length === 0 && bios[0].pfp && bios[0].pfp.startsWith('http')) {
-        const gamesWithUsers = getUsersByGame(bios.filter(bio => bio.games));
-        setData(
-          gamesWithUsers.map(game => ({
-            title: game.title,
-            users: game.users,
-            types: game.types.join(', '),
-            userscount: game.users.length,
-          }))
-        );
+      const gamesWithUsers = getUsersByGame(bios.filter(bio => bio.games));
+      setData(
+        gamesWithUsers.map(game => ({
+          title: game.title,
+          users: game.users,
+          types: game.types.join(', '),
+          userscount: game.users.length,
+        }))
+      );
     }
   }, [bios, data]);
 

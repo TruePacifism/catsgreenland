@@ -184,6 +184,11 @@ const initialState = {
           status: gameStatus.ON_GOING,
         },
         {
+          ...games.MADAGASKAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
           ...games.BULLETS_PER_MINUTE,
           rating: '???',
           status: gameStatus.RARELY,
@@ -571,22 +576,342 @@ OST с Drakengard 3, просто потому что потому.
         {
           ...games.MINECRAFT,
           rating: '???',
-          status: gameStatus.ON_GOING,
+          status: gameStatus.RARELY,
         },
         {
-          ...games.GTA,
+          ...games.MARIO_PARTY,
           rating: '???',
-          status: gameStatus.ON_GOING,
+          status: gameStatus.RARELY,
         },
         {
           ...games.DIVA,
           rating: '???',
-          status: gameStatus.ON_GOING,
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.MUSEDASH,
           rating: '???',
           status: gameStatus.RARELY,
+        },
+        {
+          ...games.DIABLO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BLACK_AND_WHITE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STALKER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEVIL_MAY_CRY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BLOODRAYNE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SHREK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MADAGASKAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ICE_AGE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GTA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STEINS_GATE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CHAOS_HEAD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SONIC,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DETROIT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ORI,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.UNDERTALE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PUPPETEER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEATH_MARK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.IWAIHIME,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KARA_NO_SHOJO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.EVERLASTING_SUMMER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KATAWA_SHOUJO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CARTAGRA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TO_THE_MOON,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DDLC,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ACE_ATTORNEY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.IB,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BEAT_BEAT_VOCALOID_PLUS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DESIRE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THE_MOMENT_OF_SILENCE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KANON,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THE_LETTER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SPLATTERHOUSE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CASTLEVANIA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DALMATIANS_102,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ABZU,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEGACY_OF_KAIN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STREETS_OF_RAGE_4,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NIER_AUTOMATA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DRAKENGARD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HADES,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HOUSE_OF_THE_DEAD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CATHERINE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PANDORAS_TOWER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RAGING_LOOP,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.YAKUZA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NIHILUMBRA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LIMBO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OLDS_MAN_JOURNEY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BERSERK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SAYA_NO_UTA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEAD_OR_ALIVE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEMON_SLAYER_KIMETSU_NO_YAIBA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BANG_DREAM,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TWO_EYES_NONOGRAM,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CONTRA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FINAL_FANTASY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HOLLOW_KNIGHT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GUITAR_HERO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SEVEN_DAYS_TO_DIE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LITTLE_MISFORTUNE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NEED_FOR_SPEED,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RESIDENT_EVIL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DANGANRONPA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FRAN_BOW,
+          rating: '???',
+          status: gameStatus.COMPLETED,
         },
       ],
       hobbies: [
@@ -1996,6 +2321,11 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.ON_GOING,
         },
         {
+          ...games.MADAGASKAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
           ...games.HENTAI_GAMES,
           rating: '80 LVL',
           status: gameStatus.ON_GOING,
@@ -2718,12 +3048,12 @@ My name is, chka-chka, эээ... Nyase.
       ],
       games: [
         {
-          ...games.COMPANY_OF_HEROES,
+          ...games.WORLD_OF_TANKS,
           rating: '',
-          status: gameStatus.RARELY,
+          status: gameStatus.ON_GOING,
         },
         {
-          ...games.LEAGUE_OF_LEGENDS,
+          ...games.SKYRIM,
           rating: '',
           status: gameStatus.ON_GOING,
         },
@@ -2738,9 +3068,134 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.RARELY,
         },
         {
-          ...games.WORLD_OF_TANKS,
+          ...games.LEAGUE_OF_LEGENDS,
           rating: '',
-          status: gameStatus.ON_GOING,
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.CS_GO,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.STARBOUND,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.DONT_STARVE,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.LEFT_4_DEAD,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.COMPANY_OF_HEROES,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.WITCHER,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OBLIVION,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CRYSIS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MAFIA,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BORDERLANDS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THE_LONG_DARK,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CIVILIZATION,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GOD_OF_WAR,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FAR_CRY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DYING_LIGHT,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STALKER,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HEARTHSTONE,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PATH_OF_EXILE,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.FACTORIO,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RISE_OF_NATIONS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MAX_PAYNE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WORLD_OF_WARCRAFT,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.SATISFACTORY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LINEAGE_II,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.AGE_OF_EMPIRES_IV,
+          rating: '',
+          status: gameStatus.COMPLETED,
         },
       ],
       imagesUrl: [],

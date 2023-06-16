@@ -1263,6 +1263,222 @@ const games = {
     title: 'The Jackbox Party ',
     types: [COOPERATIVE],
   },
+  MARIO_PARTY: {
+    title: 'Mario Party ',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  BLACK_AND_WHITE: {
+    title: 'Black & White ',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  DEVIL_MAY_CRY: {
+    title: 'Devil May Cry ',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  BLOODRAYNE: {
+    title: 'BloodRayne',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  MADAGASKAR: {
+    title: 'Madagaskar',
+    types: [SINGLEPLAYER],
+  },
+  ICE_AGE: {
+    title: 'Ледниковый период',
+    types: [SINGLEPLAYER, COOPERATIVE],
+  },
+  CHAOS_HEAD: {
+    title: 'Chaos;Head',
+    types: [SINGLEPLAYER],
+  },
+  ORI: {
+    title: 'Ori ',
+    types: [SINGLEPLAYER],
+  },
+  PUPPETEER: {
+    title: 'Puppeteer',
+    types: [SINGLEPLAYER],
+  },
+  DEATH_MARK: {
+    title: 'Death Mark',
+    types: [SINGLEPLAYER],
+  },
+  IWAIHIME: {
+    title: 'Iwaihime',
+    types: [SINGLEPLAYER],
+  },
+  KARA_NO_SHOJO: {
+    title: 'Kara no Shōjo',
+    types: [SINGLEPLAYER],
+  },
+  CARTAGRA: {
+    title: 'Cartagra',
+    types: [SINGLEPLAYER],
+  },
+  CAUCASUS: {
+    title: 'Caucasus: Nanatsuki no Nie',
+    types: [SINGLEPLAYER],
+  },
+  IB: {
+    title: 'Ib',
+    types: [SINGLEPLAYER],
+  },
+  BEAT_BEAT_VOCALOID_PLUS: {
+    title: 'Beat Beat Vocaloid Plus',
+    types: [SINGLEPLAYER],
+  },
+  DESIRE: {
+    title: 'Désiré',
+    types: [SINGLEPLAYER],
+  },
+  THE_MOMENT_OF_SILENCE: {
+    title: 'The Moment of Silence',
+    types: [SINGLEPLAYER],
+  },
+  KANON: {
+    title: 'Kanon',
+    types: [SINGLEPLAYER],
+  },
+  THE_LETTER: {
+    title: 'The Letter',
+    types: [SINGLEPLAYER],
+  },
+  SPLATTERHOUSE: {
+    title: 'Splatterhouse',
+    types: [SINGLEPLAYER],
+  },
+  CASTLEVANIA: {
+    title: 'Castlevania',
+    types: [SINGLEPLAYER],
+  },
+  DALMATIANS_102: {
+    title: '102 Dalmatians',
+    types: [SINGLEPLAYER],
+  },
+  ABZU: {
+    title: 'ABZU',
+    types: [SINGLEPLAYER],
+  },
+  LEGACY_OF_KAIN: {
+    title: 'Legacy of Kain',
+    types: [SINGLEPLAYER],
+  },
+  STREETS_OF_RAGE_4: {
+    title: 'Streets of Rage 4',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  NIER_AUTOMATA: {
+    title: 'NieR Automata',
+    types: [SINGLEPLAYER],
+  },
+  DRAKENGARD: {
+    title: 'Drakengard',
+    types: [SINGLEPLAYER],
+  },
+  HADES: {
+    title: 'Hades',
+    types: [SINGLEPLAYER],
+  },
+  HOUSE_OF_THE_DEAD: {
+    title: 'The House of the Dead',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  CATHERINE: {
+    title: 'Catherine',
+    types: [SINGLEPLAYER],
+  },
+  PANDORAS_TOWER: {
+    title: "Pandora's Tower",
+    types: [SINGLEPLAYER],
+  },
+  RAGING_LOOP: {
+    title: 'Raging Loop',
+    types: [SINGLEPLAYER],
+  },
+  YAKUZA: {
+    title: 'Yakuza',
+    types: [SINGLEPLAYER],
+  },
+  NIHILUMBRA: {
+    title: 'Nihilumbra',
+    types: [SINGLEPLAYER],
+  },
+  LIMBO: {
+    title: 'Limbo',
+    types: [SINGLEPLAYER],
+  },
+  OLDS_MAN_JOURNEY: {
+    title: "Old Man's Journey",
+    types: [SINGLEPLAYER],
+  },
+  BERSERK: {
+    title: 'Berserk',
+    types: [SINGLEPLAYER],
+  },
+  SAYA_NO_UTA: {
+    title: 'Saya no Uta',
+    types: [SINGLEPLAYER],
+  },
+  DEAD_OR_ALIVE: {
+    title: 'Dead or Alive',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  DEMON_SLAYER_KIMETSU_NO_YAIBA: {
+    title: 'Demon Slayer: Kimetsu no Yaiba',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  BANG_DREAM: {
+    title: 'BanG Dream!',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  DEAD_ISLAND: {
+    title: 'Dead Island',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  MORROWIND: {
+    title: 'The Elder Scrolls III: Morrowind',
+    types: [SINGLEPLAYER],
+  },
+  HEARTHSTONE: {
+    title: 'Hearthstone',
+    types: [MULTIPLAYER],
+  },
+  PATH_OF_EXILE: {
+    title: 'Path of Exile',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  FACTORIO: {
+    title: 'Factorio',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  RISE_OF_NATIONS: {
+    title: 'Rise of Nations',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  MAX_PAYNE: {
+    title: 'Max Payne',
+    types: [SINGLEPLAYER],
+  },
+  WORLD_OF_WARCRAFT: {
+    title: 'World of Warcraft',
+    types: [MULTIPLAYER],
+  },
+  SATISFACTORY: {
+    title: 'Satisfactory',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  LINEAGE_II: {
+    title: 'Lineage II',
+    types: [MULTIPLAYER],
+  },
+  AGE_OF_EMPIRES_IV: {
+    title: 'Age of Empires IV',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  TWO_EYES_NONOGRAM: {
+    title: 'Two Eyes Nonogram',
+    types: [SINGLEPLAYER],
+  },
 };
 
 export default games;

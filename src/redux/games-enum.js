@@ -1479,6 +1479,58 @@ const games = {
     title: 'Two Eyes Nonogram',
     types: [SINGLEPLAYER],
   },
+  TITANFALL: {
+    title: 'Titanfall',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  MADNESS_PROJECT_NEXUS: {
+    title: 'Madness Project Nexus',
+    types: [SINGLEPLAYER],
+  },
+  JOJO_EYES_OF_HEAVEN: {
+    title: "JoJo's Bizarre Adventure: Eyes of Heaven",
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  WARHAMMER: {
+    title: 'Warhammer',
+    types: [SINGLEPLAYER, MULTIPLAYER],
+  },
+  MASS_EFFECT: {
+    title: 'Mass Effect',
+    types: [SINGLEPLAYER],
+  },
+  FRIDAY_NIGHT_FUNKIN: {
+    title: 'Friday Night Funkin',
+    types: [SINGLEPLAYER],
+  },
+  INCREDIBOX: {
+    title: 'Incredibox',
+    types: [SINGLEPLAYER],
+  },
+  ESCAPE_FROM_TARKOV: {
+    title: 'Escape from Tarkov',
+    types: [MULTIPLAYER],
+  },
+  SINGULARITY: {
+    title: 'Singularity',
+    types: [SINGLEPLAYER],
+  },
+  PREY: {
+    title: 'Prey',
+    types: [SINGLEPLAYER],
+  },
+  DARKEST_DUNGEON: {
+    title: 'Darkest Dungeon',
+    types: [SINGLEPLAYER],
+  },
+  SLEEPING_DOGS: {
+    title: 'Sleeping Dogs',
+    types: [SINGLEPLAYER],
+  },
+  SOMA: {
+    title: 'SOMA',
+    types: [SINGLEPLAYER],
+  },
 };
 
 export default games;

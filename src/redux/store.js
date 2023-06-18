@@ -1321,6 +1321,101 @@ My name is, chka-chka, эээ... Nyase.
           ...games.DND,
           rating: '???',
         },
+        {
+          ...games.TITANFALL,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.FROSTPUNK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEFT_4_DEAD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MADNESS_PROJECT_NEXUS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.JOJO_EYES_OF_HEAVEN,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.WARHAMMER,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.THE_LONG_DARK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MASS_EFFECT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FRIDAY_NIGHT_FUNKIN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.INCREDIBOX,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ESCAPE_FROM_TARKOV,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.SINGULARITY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PREY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DARKEST_DUNGEON,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEEP_ROCK_GALACTIC,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ULTRAKILL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SLEEPING_DOGS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SUBNAUTICA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SOMA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
       ],
       hobbies: [
         {

@@ -80,6 +80,7 @@ function GamesTable() {
   useEffect(() => {
     if (data.length === 0 && bios[0].pfp && bios[0].pfp.startsWith('http')) {
       const gamesWithUsers = getUsersByGame(bios.filter(bio => bio.games));
+      console.log(gamesWithUsers);
       setData(
         gamesWithUsers.map(game => ({
           title: game.title,
@@ -308,6 +309,7 @@ function GamesTable() {
                   </div>
                   {user.rating &&
                     user.rating !== '' &&
+                    user.rating !== '-' &&
                     !user.rating.includes('?') && (
                       <span className={styles.playerRating}>
                         Рейтинг: {user.rating}

@@ -1541,6 +1541,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.BULLETS_PER_MINUTE,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.YUPPIE_PSYCHO,
@@ -1570,6 +1571,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.DO_NOT_FEED_THE_MONKEYS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.ALAWAR,
@@ -1894,6 +1896,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.MUDRUNNER,
           rating: '???',
+          status: gameStatus.FORBIDDEN,
         },
         {
           ...games.DESPOTISM_3K,
@@ -1913,6 +1916,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.STICK_FIGHT,
           rating: '???',
+          status: gameStatus.RARELY,
         },
         {
           ...games.SUPRALAND,
@@ -1922,10 +1926,12 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.THE_ESCAPISTS,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.THE_LONG_DARK,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.PAPERS_PLEASE,
@@ -1945,6 +1951,7 @@ My name is, chka-chka, эээ... Nyase.
         {
           ...games.MARIO_CART,
           rating: '???',
+          status: gameStatus.COMPLETED,
         },
         {
           ...games.WOOLLY_YOSHIS_WORLD,

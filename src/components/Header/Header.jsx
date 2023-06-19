@@ -9,7 +9,6 @@ import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from 'redux/user-actions';
-// import ThemeToggle from 'components/ThemeToggle/ThemeToggle';
 
 let scrollPosition = 0;
 
@@ -57,7 +56,6 @@ export default function Header() {
         {!isMobile && (
           <>
             <NavMenu closeMenu={closeBurger} />
-            {/* <ThemeToggle /> */}
             <VkAuth onModalOpen={closeBurger} />
           </>
         )}

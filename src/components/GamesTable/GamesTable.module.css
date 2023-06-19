@@ -4,6 +4,12 @@
   --table-row-primary: #dcedc8;
   --table-row-secondary: #c5e1a5;
 }
+.dark--theme {
+  --table-header: #2e7d32;
+  --table-border: #004d00;
+  --table-row-primary: #388e3c;
+  --table-row-secondary: #2e7d32;
+}
 .tableDescription {
   text-align: center;
   font-weight: 500;
@@ -21,14 +27,22 @@
   border: 2px solid var(--table-border);
   margin-right: 10px;
   width: 100%;
+  background-color: var(--background-color);
+  color: var(--main-text-color);
 }
+
 .search::placeholder {
-  color: var(--table-border);
+  color: var(--accent-color);
+}
+.search:focus {
+  border: 2px solid var(--accent-color);
 }
 .searchField {
   display: flex;
   align-items: center;
   justify-content: right;
+}
+.dark--theme .searchField {
 }
 .totalAndSearchContainer {
   display: flex;
@@ -46,7 +60,7 @@
 }
 .totalCounter {
   font-weight: 500;
-  color: var(--table-border);
+  color: var(--accent-color);
   margin-right: auto;
   margin-bottom: 10px;
 }

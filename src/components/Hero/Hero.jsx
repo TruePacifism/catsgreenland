@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import styles from './Hero.module.css';
 import ReactModal from 'react-modal';
 import Rules from 'components/Rules/Rules';
@@ -6,6 +7,7 @@ import { ReactComponent as CloseIcon } from '../../images/close-icon.svg';
 
 export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
+  const isDarkTheme = useSelector(store => store.isDarkTheme);
   const onEscEvent = useCallback(
     e => {
       if (e.code === 'Escape' && isOpen) {
@@ -45,7 +47,11 @@ export default function Hero() {
         closeTimeoutMS={250}
         appElement={document.querySelector('#root')}
         onRequestClose={closeModal}
-        className={styles.modalContent}
+        className={
+          isDarkTheme
+            ? [styles.modalContent, 'dark--theme'].join(' ')
+            : styles.modalContent
+        }
         overlayClassName={styles.modalOverlay}
         overlayElement={(props, contentElement) => (
           <div {...props}>

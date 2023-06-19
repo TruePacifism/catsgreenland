@@ -14,7 +14,7 @@
 }
 @media screen and (max-width: 480px) {
   .item {
-    width: 100%;
+    width: calc((100% - 10px * 2) / 1);
   }
 }
 @media screen and (min-width: 768px) {

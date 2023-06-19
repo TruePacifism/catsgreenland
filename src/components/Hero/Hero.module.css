@@ -86,7 +86,7 @@
   overflow: auto;
   width: calc(100% - 100px);
   height: calc(100% - 100px);
-  background-color: white;
+  background-color: var(--background-color);
   scrollbar-color: var(--accent-color);
   scrollbar-base-color: var(--accent-color);
 }

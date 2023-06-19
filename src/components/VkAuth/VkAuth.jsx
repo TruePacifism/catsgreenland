@@ -9,6 +9,7 @@ import placeholder from '../../images/image-placeholder.png';
 import getPfp from 'utils/getPfp';
 import getGroupMembers from 'utils/checkOnGroupMember';
 import { useNavigate } from 'react-router-dom';
+import ThemeToggle from 'components/ThemeToggle/ThemeToggle';
 
 export default function VkAuth({ onModalOpen }) {
   const dispatch = useDispatch();
@@ -52,7 +53,8 @@ export default function VkAuth({ onModalOpen }) {
     };
   }, [isModalOpen, onEscEvent]);
   return (
-    <>
+    <div className={styles.container}>
+      <ThemeToggle />
       <ReactModal
         isOpen={isModalOpen}
         closeTimeoutMS={250}
@@ -111,10 +113,9 @@ export default function VkAuth({ onModalOpen }) {
           </VK>
         </div>
       </ReactModal>
-
       <button className={styles.authButton} onClick={openModal}>
         <img className={styles.authPhoto} src={pfp} alt="" />
       </button>
-    </>
+    </div>
   );
 }

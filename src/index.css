@@ -1,12 +1,17 @@
 @import-normalize; /* bring in normalize.css styles */
 :root {
   --accent-color: green;
-  --main-cubic: linear;
+  --main-cubic: ease-in-out;
   --background-color: white;
+  --main-text-color: black;
+  --white-text-color: white;
+  --scrollbar-background-color: #f1f1f1;
 }
 .dark--theme {
   --background-color: black;
-  color: white;
+  --main-text-color: white;
+  --accent-color: rgb(0, 172, 0);
+  --scrollbar-background-color: black;
 }
 .link {
   text-decoration: none;
@@ -27,6 +32,9 @@
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+body .dark--theme {
+  color: var(--main-text-color);
+}
 body {
   padding-top: 80px;
   font-family: 'Open Sans', sans-serif;
@@ -44,16 +52,18 @@ progress {
 }
 ::-webkit-scrollbar {
   width: 12px;
+  background-color: var(--scrollbar-background-color);
 }
 
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background-color: var(--scrollbar-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #4caf50;
   border-radius: 6px;
-  border: 3px solid #f1f1f1;
+  border: 3px solid var(--scrollbar-background-color);
 }
 
 *,

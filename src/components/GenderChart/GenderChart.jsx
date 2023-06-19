@@ -129,6 +129,7 @@ export function GenderChart() {
   const [ranges, setRanges] = useState();
   const [data, setData] = useState();
   const [genders, setGenders] = useState(null);
+  const isDarkTheme = useSelector(store => store.isDarkTheme);
   useEffect(() => {
     const ageRanges = getAgeRanges(getDatasets(bios));
     setRanges(ageRanges.ranges.map(range => `${range.start} - ${range.end}`));
@@ -174,7 +175,13 @@ export function GenderChart() {
         </p>
 
         {data && ranges && (
-          <div className={styles.chart}>
+          <div
+            className={
+              isDarkTheme
+                ? [styles.chart, styles['dark--theme']].join(' ')
+                : styles.chart
+            }
+          >
             <Bar
               options={options}
               data={{
@@ -184,11 +191,13 @@ export function GenderChart() {
                     label: 'Мужской',
                     data: data[0],
                     backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                    color: isDarkTheme ? '#FFF' : '',
                   },
                   {
                     label: 'Женский',
                     data: data[1],
                     backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    color: isDarkTheme ? '#FFF' : '',
                   },
                 ],
               }}

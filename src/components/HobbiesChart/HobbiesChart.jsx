@@ -15,7 +15,7 @@ function getStatusClass(status) {
       return styles.forbidden;
     case 'Не что-то серьезное':
       return styles.notSerious;
-    case 'Развивается':
+    case 'Фанат':
       return styles.onGoing;
     case 'Зарабатывает':
       return styles.moneytised;
@@ -55,6 +55,7 @@ export default function HobbiesChart() {
   const bios = useSelector(store => store.bios);
   const [showingHobby, setShowingHobby] = useState();
   const [hobbies, setHobbies] = useState();
+  const isDarkTheme = useSelector(store => store.isDarkTheme);
   useEffect(() => {
     if (!hobbies && bios[0].pfp && bios[0].pfp.startsWith('http')) {
       const hobbiesWithUsers = getUsersByHobby(bios.filter(bio => bio.hobbies));
@@ -90,7 +91,10 @@ export default function HobbiesChart() {
               count: hobby.users.length,
             }))}
             className={styles.chart}
-            colorOptions={{ luminosity: 'dark', hue: 'green' }}
+            colorOptions={{
+              luminosity: isDarkTheme ? 'light' : 'dark',
+              hue: 'green',
+            }}
             onClick={tag =>
               setShowingHobby(hobbies.find(hobby => hobby.name === tag.value))
             }

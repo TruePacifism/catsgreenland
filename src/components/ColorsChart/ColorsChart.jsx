@@ -50,10 +50,15 @@ export default function ColorsChart() {
   const [showingColor, setShowingColor] = useState();
   const [colors, setColors] = useState();
   const [chartData, setChartData] = useState(initChartData);
+  const isDarkTheme = useSelector(store => store.isDarkTheme);
   useEffect(() => {
-    if (chartData === initChartData && bios[0].pfp && bios[0].pfp.startsWith('http')) {
-        const colorsWithUsers = getUsersByColor(bios.filter(bio => bio.colors));
-        setColors(colorsWithUsers);
+    if (
+      chartData === initChartData &&
+      bios[0].pfp &&
+      bios[0].pfp.startsWith('http')
+    ) {
+      const colorsWithUsers = getUsersByColor(bios.filter(bio => bio.colors));
+      setColors(colorsWithUsers);
       if (colors) {
         setChartData({
           labels: colors.map(color => color.name),
@@ -65,18 +70,27 @@ export default function ColorsChart() {
                 color =>
                   `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 0.5)`
               ),
-              borderColor: colors.map(color =>
-                color.name === 'Белый'
-                  ? `rgba(128, 128, 128, 1)`
-                  : `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 1)`
-              ),
+              borderColor: colors.map(color => {
+                switch (color.name) {
+                  case 'Белый':
+                    return !isDarkTheme
+                      ? `rgba(128, 128, 128, 1)`
+                      : `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 1)`;
+                  case 'Черный':
+                    return !isDarkTheme
+                      ? `rgba(128, 128, 128, 1)`
+                      : `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 1)`;
+                  default:
+                    return `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, 1)`;
+                }
+              }),
               borderWidth: 1,
             },
           ],
         });
       }
     }
-  }, [bios, colors, chartData]);
+  }, [bios, colors, chartData, isDarkTheme]);
   const options = {
     responsive: true,
     maintainAspectRatio: false,

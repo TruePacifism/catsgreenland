@@ -10,11 +10,21 @@ import Hobbies from 'Pages/Hobbies/Hobbies';
 import getUsers from 'utils/getUser';
 import { useSwipeable } from 'react-swipeable';
 import LoginPage from 'Pages/LoginPage/LoginPage';
+import getGroupMembers from 'utils/checkOnGroupMember';
+import { auth } from 'redux/store';
 
 export const App = () => {
   const bios = useSelector(store => store.bios);
   const dispatch = useDispatch();
   const isDarkThemed = useSelector(store => store.isDarkTheme);
+  useEffect(() => {
+    const htmlRef = document.querySelector('html');
+    if (isDarkThemed) {
+      htmlRef.classList.add('dark--theme');
+    } else {
+      htmlRef.classList.remove('dark--theme');
+    }
+  }, [isDarkThemed]);
   const handlers = useSwipeable({
     onSwipedLeft: eventData => {
       dispatch(actions.setOpenBurger(true));
@@ -28,8 +38,19 @@ export const App = () => {
   useEffect(() => {
     if (currentUser === null) {
       navigate('/login');
+      return;
     }
-  }, [currentUser, navigate]);
+    const checkUser = async () => {
+      const groupMembers = await getGroupMembers();
+      const isGroupMember = groupMembers.items
+        .map(user => user.id)
+        .includes(currentUser.uid);
+      if (Object.keys(currentUser).length !== 0 && !isGroupMember) {
+        dispatch(auth(null));
+      }
+    };
+    checkUser();
+  }, [currentUser, navigate, dispatch]);
 
   useEffect(() => {
     if (!bios[0].pfp || !bios[0].pfp.startsWith('http')) {

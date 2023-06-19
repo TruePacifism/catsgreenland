@@ -42,6 +42,7 @@ const hobbies = {
   AUTO: 'Автомобили',
   THEATER: 'Театр',
   HUNTING: 'Охота',
+  CLUBS: 'Клубы',
 };
 
 export default hobbies;

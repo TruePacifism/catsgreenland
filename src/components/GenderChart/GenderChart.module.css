@@ -2,6 +2,9 @@
   width: 100%;
   height: 100%;
 }
+.chart.dark--theme {
+  color: white;
+}
 .chartDescription {
   text-align: center;
   font-weight: 500;

@@ -8,6 +8,11 @@
   overflow: hidden;
   cursor: pointer;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .authPhoto {
   position: absolute;
   top: 0;

@@ -63,6 +63,7 @@ function GamesTable() {
   const [filter, setFilter] = useState('');
   const [sortField, setSortField] = useState('userscount');
   const [sortOrder, setSortOrder] = useState('desc');
+  const isDarkTheme = useSelector(store => store.isDarkTheme);
   const isMobile = useMediaQuery({
     maxWidth: 479,
   });
@@ -135,7 +136,12 @@ function GamesTable() {
 
   return (
     <Section>
-      <Container heading={'Игры'}>
+      <Container
+        heading={'Игры'}
+        className={
+          isDarkTheme ? [styles.table, styles['dark--theme']].join(' ') : ''
+        }
+      >
         <p className={styles.tableDescription}>
           Хотите найти тиммейтов, обсудить игру или найти что-то новое для себя?
           Смотрите и изучайте таблицу всех наших игр.

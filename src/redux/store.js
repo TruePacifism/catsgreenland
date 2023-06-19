@@ -1547,6 +1547,7 @@ My name is, chka-chka, эээ... Nyase.
     {
       name: 'Никита Гринландский',
       vkId: 644064237,
+      alert: 'edit',
       text: `Никита
 20 лет
 Социофоб и Любитель накатить
@@ -1566,7 +1567,9 @@ My name is, chka-chka, эээ... Nyase.
           status: gameStatus.ON_GOING,
         },
       ],
-      imagesUrl: [],
+      imagesUrl: [
+        'https://sun9-14.userapi.com/impg/voS2oPZ1PZlGNhNGiFFIhVfjAYYU_N53i7zQIg/MCNCweXrT_8.jpg?size=1024x1024&quality=96&sign=b547e22c38f2a7ed974b640aac3e0f19&type=album',
+      ],
     },
     {
       name: 'Александр Казачинский',
@@ -3359,6 +3362,7 @@ My name is, chka-chka, эээ... Nyase.
           status: hobbyStatus.ON_GOING,
         },
       ],
+      alert: 'new',
       age: 19,
       gender: gender.FEMALE,
       imagesUrl: [],

@@ -1531,6 +1531,10 @@ const games = {
     title: 'SOMA',
     types: [SINGLEPLAYER],
   },
+  DAYZ: {
+    title: 'DayZ',
+    types: [MULTIPLAYER],
+  },
 };
 
 export default games;

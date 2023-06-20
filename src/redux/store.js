@@ -35,6 +35,7 @@ const hobbyStatus = {
   ON_GOING: 'Фанат',
   MONEYTISED: 'Зарабатывает',
   PROFESSIONAL: 'Профессионал',
+  PLANNED: 'Есть в планах',
 };
 const gameStatus = {
   COMPLETED: 'Пройдено',
@@ -1132,6 +1133,148 @@ My name is, chka-chka, эээ... Nyase.
       ],
     },
     {
+      name: 'Иван Иванов',
+      vkId: 591214241,
+      text: `Здравствуй.
+-Меня зовут Иван(не люблю когда называют уменьшительно-ласкательными и когда моё имя начитают с буквы В: Ваня и т.п), на момент написания мне 16 лет, живу в городе Чебоксары, учусь я на мед.брата.
+-Из хобби у меня: видеоигры: предпочитаю выживачи и шутеры.
+Музыка: в основном электроника и OST из игр. Но так же слушаю единичные треки из других жанров.
+Аниме: смотрю всё подряд.
+Готовка и спорт. Также являюсь фанатом Madness Combat. Ещё я начал активно играть и интересоваться DnD.
+-Есть некоторые проблемы с общением в реальном мире. В плане, мне не очень уютно свободно общаться с незнакомыми людьми ( меня это бесит ) поэтому я довольно молчалив(но в интернете нет). Так же меня очень трогает когда говорят о моем лице, росте и телосложении.
+любимые цвета: черный и тёмно-красный, чуть меньше синий и зелёный.
+`,
+      colors: [colors.RED, colors.BLACK],
+      age: 16,
+      gender: gender.MALE,
+      games: [
+        {
+          ...games.DND,
+          rating: '???',
+        },
+        {
+          ...games.TITANFALL,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.FROSTPUNK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEFT_4_DEAD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MADNESS_PROJECT_NEXUS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.JOJO_EYES_OF_HEAVEN,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.WARHAMMER,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.THE_LONG_DARK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MASS_EFFECT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FRIDAY_NIGHT_FUNKIN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.INCREDIBOX,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ESCAPE_FROM_TARKOV,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.SINGULARITY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PREY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DARKEST_DUNGEON,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEEP_ROCK_GALACTIC,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ULTRAKILL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SLEEPING_DOGS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SUBNAUTICA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SOMA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+      ],
+      hobbies: [
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
+          name: hobbies.ANIME,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.COOKING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.SPORT,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
+      imagesUrl: [
+        'https://sun9-73.userapi.com/impg/K5UXS9S-lCTJS6Rbdf_5e8HfMVuU_poeAm2fIA/LwtmFjoUcMQ.jpg?size=720x720&quality=95&sign=ec5c97578bc3e64fe9235fe1da5c2784&type=album',
+      ],
+    },
+    {
       name: 'Марат Айнулин',
       vkId: 48806562,
       text: `Так вот, с чего бы начать. Зовут меня... ну, вы уже знаете, но в основном ко мне обращаются по нику Дост, ибо по соционике я Достоевский, да, так уж вышло. Живу я в городе Пенза. На момент написания этого рассказика мне уже целых 28 лет, а в марте стукнет целых 29, да, вот такой я дед)) Я практически самый обычный человек, но слишком активный, занимаюсь акробатикой и почти уже 10 лет волейболом (я просто обожаю этот вид спорта). Люблю посмотреть фильмы и сериалы. Ещё больше люблю поиграть в различные видеоигры (иногда даже постримить на твиче, ЭТО НЕ РЕКЛАМА, не люблю рекламу)), в основном файтинги, ритм игру Осу и StarCraft II, но и командными играми тоже не брезгую. Сейчас изучаю три языка, японский, древнегреческий (господи, какой же он сложный) и английский (на английском могу более менее сносно разговаривать, спасибо онлайн играм)) А ещё учу язык программирования Javascript. Сам по себе человек я общительный, спокойный, но могу быть и жёстким. Мой любимый цвет красный и только красный, моё любимое число 5 (не знаю почему, вот 5 и всё тут))
@@ -1302,148 +1445,47 @@ My name is, chka-chka, эээ... Nyase.
       imagesUrl: [],
     },
     {
-      name: 'Иван Иванов',
-      vkId: 591214241,
-      text: `Здравствуй.
--Меня зовут Иван(не люблю когда называют уменьшительно-ласкательными и когда моё имя начитают с буквы В: Ваня и т.п), на момент написания мне 16 лет, живу в городе Чебоксары, учусь я на мед.брата.
--Из хобби у меня: видеоигры: предпочитаю выживачи и шутеры.
-Музыка: в основном электроника и OST из игр. Но так же слушаю единичные треки из других жанров.
-Аниме: смотрю всё подряд.
-Готовка и спорт. Также являюсь фанатом Madness Combat. Ещё я начал активно играть и интересоваться DnD.
--Есть некоторые проблемы с общением в реальном мире. В плане, мне не очень уютно свободно общаться с незнакомыми людьми ( меня это бесит ) поэтому я довольно молчалив(но в интернете нет). Так же меня очень трогает когда говорят о моем лице, росте и телосложении.
-любимые цвета: черный и тёмно-красный, чуть меньше синий и зелёный.
+      name: 'Мак Сим',
+      vkId: 684817694,
+      text: `Здрасьте. Звать Максимом, можно просто Мак, возраст мой 25+, учёба в колледже и универе уже позади, активное вJOBывание впереди! В свободное время смотрю аниме, иногда сериалы, залипаю в компухтер, поигрываю в разные онлайн игры, но и сюжетные с удовольствием прохожу, солидный список тайтлов за плечами имеется. Монетки разные коллекционирую, уже целая коробочка собралась из разных стран, книги люблю почитывать, да времени на них не находится в последнее время, хочу научиться резке по дереву (КОГДА-НИБУДЬ НИКОГДА), но и на это времени нет, с 3D моделированием такая же хурма… Хоть и купил себе 3D принтер, который теперь стоит и большую часть времени просто пылится. Зато на работу время всегда есть! Люблю свою работу, жил бы на ней, ночевал бы, женился бы, если бы такая возможность имелась, раскладушку главное купить и можно вообще безвылазно в офисе торчать. Из музыки сложно сказать что нравится, в основном это рок композиции (они преобладают в плейлисте), но слушаю и то, что Яндекс подсовывает или просто где-то услышал, будь то джаз, электро, рэп, классика и т.д и т.п. Для примера и понимания прикреплю к рассказу несколько треков, которые у меня есть в ВК. В завершение хочу сказать, скорее даже подвести некий итог для себя, что время на свои увлечения всегда можно найти, главное уметь расставлять в жизни приоритеты, чему я всё ещё учусь и с чем активно борюсь. Буду надеяться, что эта борьба закончится в мою пользу. Такие дела.
 `,
-      colors: [colors.RED, colors.BLACK],
-      age: 16,
+      colors: [colors.WHITE, colors.BLUE, colors.PINK],
       gender: gender.MALE,
-      games: [
-        {
-          ...games.DND,
-          rating: '???',
-        },
-        {
-          ...games.TITANFALL,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.FROSTPUNK,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.LEFT_4_DEAD,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MADNESS_PROJECT_NEXUS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.JOJO_EYES_OF_HEAVEN,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.WARHAMMER,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.THE_LONG_DARK,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MASS_EFFECT,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FRIDAY_NIGHT_FUNKIN,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.INCREDIBOX,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ESCAPE_FROM_TARKOV,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.SINGULARITY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.PREY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DARKEST_DUNGEON,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DEEP_ROCK_GALACTIC,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ULTRAKILL,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SLEEPING_DOGS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SUBNAUTICA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SOMA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-      ],
+      alert: 'new',
       hobbies: [
-        {
-          name: hobbies.GAMES,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.MUSIC_LISTENERS,
-          status: hobbyStatus.NOT_SERIOUS,
-        },
         {
           name: hobbies.ANIME,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.COOKING,
+          name: hobbies.SERIALS,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.SPORT,
+          name: hobbies.GAMES,
           status: hobbyStatus.ON_GOING,
         },
+        {
+          name: hobbies.COLLECTIONNING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies._3D_MODELING,
+          status: hobbyStatus.PLANNED,
+        },
+        {
+          name: hobbies.WOOD_MAKING,
+          status: hobbyStatus.PLANNED,
+        },
       ],
-      imagesUrl: [
-        'https://sun9-73.userapi.com/impg/K5UXS9S-lCTJS6Rbdf_5e8HfMVuU_poeAm2fIA/LwtmFjoUcMQ.jpg?size=720x720&quality=95&sign=ec5c97578bc3e64fe9235fe1da5c2784&type=album',
-      ],
+      imagesUrl: [],
     },
     {
+      name: 'Эмилия',
       vkId: 769263531,
       text: `Привет 👋
 Я - совершеннолетний человечек, который обожает аристократию (если быть точнее, то «аристократов» и их поведение);
@@ -1485,35 +1527,7 @@ My name is, chka-chka, эээ... Nyase.
         'https://sun9-9.userapi.com/impg/Qu7KR6Jl_Zikpf9h2G1PNtgTZxxfBg2EowgrvA/v07USPk7kps.jpg?size=1428x2048&quality=96&sign=e9369e68ab46012c0033f8dc27cb81c8&type=album',
       ],
     },
-    {
-      name: 'Ксения Ленская',
-      vkId: 463284975,
-      text: `Меня зовут Ксюша, можно звать как угодно, но не Оксана и не Ксения (от последнего такое чувство, будто у меня щас будут проблемы). Мне 21 год, рост ± 170, родилась и живу в Москве, выучилась на воспитателя в дет.сад для особых детей. Волей судьбы случилось так, что я работаю почти по профессии, хотя клялась, что с меня хватит. Уже 4 месяца я работаю в сервисе 'Няня особого назначения'. Сказать что я влюблена в это дело - ничего не сказать. По интересам: раньше я была жутким книжным червем, сейчас, конечно, времени поменьше на это дело, но я все также не могу представить жизнь без книг. Ещё иногда поигрываю в Геншин. Музыка: весь рок, но чаще играет в ушах, панк/поп/хард/металл/Пауэр металл рок. Относительно недавно открыла в себе общительность, очень люблю это все, почти как второе дыхание открылось. Влюблена в природу, город и людей вокруг. Мой любимый цвет - голубой и фиолетовый! 💙💜🤓
 
-
-`,
-      colors: [colors.LIGHT_BLUE, colors.PURPLE],
-      hobbies: [
-        {
-          name: hobbies.NURSING,
-          status: hobbyStatus.PROFESSIONAL,
-        },
-        {
-          name: hobbies.LITERATURE,
-          status: hobbyStatus.ON_GOING,
-        },
-      ],
-      age: 21,
-      gender: gender.FEMALE,
-      games: [
-        {
-          ...games.GENSHIN,
-          rating: '???',
-          status: gameStatus.RARELY,
-        },
-      ],
-      imagesUrl: [],
-    },
     {
       name: 'Камилла Гринландская',
       vkId: 373718115,
@@ -1544,6 +1558,7 @@ My name is, chka-chka, эээ... Nyase.
         'https://sun9-25.userapi.com/impg/kjJlfJ42YpusldV_CyznxDezoyYNp8LvIRNUgA/Z9SE6YcN1U8.jpg?size=1200x750&quality=96&sign=d8ceb0d8ce123bb84a2c8b60c8b5478a&type=album',
       ],
     },
+
     {
       name: 'Никита Гринландский',
       vkId: 644064237,
@@ -1572,49 +1587,803 @@ My name is, chka-chka, эээ... Nyase.
       ],
     },
     {
-      name: 'Александр Казачинский',
-      vkId: 517359736,
-      text: `Всем привет, Я Александр, или Саша!
-20 лет
-Молодой управленец, начинающий организатор производства и общественно-политический деятель!
-В последнее время я начал увлекаться самолетами (даже летную школу начал активно искать)
-Также увлекаюсь проектированием, чтением, политологией, и играю в собственную версию Мафии (от классической она сильно отличается)
-В свободное время либо я что-то проектирую, смотрю фильмы и слушаю музыку
-К животным, как и к людям отношение - нормальное
+      name: 'Ilya Wieliczko',
+      vkId: 712497882,
+      text: `Характер скверный. Не женат.
 
-
+Илья. Клички или прозвища нет. Родом from Transnistria, оно же Приднестровье, оно же ПМР. Живу в Бендерах. Рост ± 183. Работал в сфере киберразведки. Сейчас в той или иной степени до сих пор занимаюсь этим. В свободное время занимаюсь историей, психологией, собой. Люблю разную музыку, но в основном предпочтение падает на что-то тяжёлое. Своей страстью считаю оружие и сигареты. До жути люблю кошек, по возможности фотографирую каждую встречную или чьи-то домашние кисы. Нравится так же запечатлять на камеру рассветы, закаты или просто погодные состояния, небо. Из алкоголя люблю бурбон. Терпеть не могу вина и коньяки.
 `,
-      age: 20,
+      gender: gender.MALE,
+      colors: [colors.GRAY],
       hobbies: [
         {
-          name: hobbies.PLANES,
+          name: hobbies.WEAPONS,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.PROJECTS,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.LITERATURE,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.POLITICS,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.MOVIES,
+          name: hobbies.ANIME,
           status: hobbyStatus.ON_GOING,
         },
         {
           name: hobbies.MUSIC_LISTENERS,
           status: hobbyStatus.ON_GOING,
         },
+        {
+          name: hobbies.AUTO,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.HUNTING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.WEAPONS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.WEAPONS,
+          status: hobbyStatus.ON_GOING,
+        },
       ],
-      gender: gender.MALE,
+      games: [
+        {
+          ...games.WORLD_OF_TANKS,
+          rating: '',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.SKYRIM,
+          rating: '',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.TERRARIA,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.LEAGUE_OF_LEGENDS,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.CS_GO,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.STARBOUND,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.DONT_STARVE,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.LEFT_4_DEAD,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.COMPANY_OF_HEROES,
+          rating: '',
+          status: gameStatus.RARELY,
+        },
+        {
+          ...games.WITCHER,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OBLIVION,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CRYSIS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MAFIA,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BORDERLANDS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THE_LONG_DARK,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CIVILIZATION,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GOD_OF_WAR,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FAR_CRY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DYING_LIGHT,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STALKER,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HEARTHSTONE,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PATH_OF_EXILE,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.FACTORIO,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RISE_OF_NATIONS,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MAX_PAYNE,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WORLD_OF_WARCRAFT,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.SATISFACTORY,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LINEAGE_II,
+          rating: '',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.AGE_OF_EMPIRES_IV,
+          rating: '',
+          status: gameStatus.COMPLETED,
+        },
+      ],
       imagesUrl: [],
     },
 
+    {
+      name: 'Ксения Ленская',
+      vkId: 463284975,
+      text: `Меня зовут Ксюша, можно звать как угодно, но не Оксана и не Ксения (от последнего такое чувство, будто у меня щас будут проблемы). Мне 21 год, рост ± 170, родилась и живу в Москве, выучилась на воспитателя в дет.сад для особых детей. Волей судьбы случилось так, что я работаю почти по профессии, хотя клялась, что с меня хватит. Уже 4 месяца я работаю в сервисе 'Няня особого назначения'. Сказать что я влюблена в это дело - ничего не сказать. По интересам: раньше я была жутким книжным червем, сейчас, конечно, времени поменьше на это дело, но я все также не могу представить жизнь без книг. Ещё иногда поигрываю в Геншин. Музыка: весь рок, но чаще играет в ушах, панк/поп/хард/металл/Пауэр металл рок. Относительно недавно открыла в себе общительность, очень люблю это все, почти как второе дыхание открылось. Влюблена в природу, город и людей вокруг. Мой любимый цвет - голубой и фиолетовый! 💙💜🤓
+
+
+`,
+      colors: [colors.LIGHT_BLUE, colors.PURPLE],
+      hobbies: [
+        {
+          name: hobbies.NURSING,
+          status: hobbyStatus.PROFESSIONAL,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
+      age: 21,
+      gender: gender.FEMALE,
+      games: [
+        {
+          ...games.GENSHIN,
+          rating: '???',
+          status: gameStatus.RARELY,
+        },
+      ],
+      imagesUrl: [],
+    },
+    {
+      name: 'Кирилл Мейбибейбиков',
+      vkId: 339098349,
+      text: `Вообщем да, доброй ночи мальчики и девочки, я Кирилл, мне 20 лет, закончил грубо говоря 2 дня назад поварской техникум, и имею 3 разряд повара)
+увлекаюсь игрой в доту, люблю смотреть баскетбольные ассоциации и в частности выходить на площадку и самому играть)
+Пробовал себя в профессиональном баскетболе и в киберспорте, ни там ни там не получилось, но и все равно, продолжаю играть)`,
+      age: 20,
+      gender: gender.MALE,
+      games: [
+        {
+          ...games.DOTA,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.MADAGASKAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HENTAI_GAMES,
+          rating: '80 LVL',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.WITCHER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ADVENTURES_OF_HOOL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NOT_FOR_BROADCAST,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ALBION_ONLINE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.ALIEN_SWARM,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.APERTURE_DESK_JOB,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.APEX,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.ARK,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.ARMA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BATTLE_RANCH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BATTLEFIELD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BOOM_BAHH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BORDERLANDS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BRUTAL_LEGEND,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COD_MODERN_WARFARE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CITIES_SKYLINES,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COUNTER_STRIKE_ZERO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CS_1_6,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.CS_GO,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.CS_SOURCE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.DAY_OF_DEFEAT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEFY_GRAVITY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DONT_STARVE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TES_ONLINE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SKYRIM,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.EVERLASTING_SUMMER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FALSE_FRONT,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.FARTHEST_FRONTIERS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FATHERS_DAY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FOR_HONOR,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.FROSTPUNK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GARRYS_MOD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GHOST_EXILE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.HARD_TRUCK_APOCALYPSE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HOUSE_OF_CARAVAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.I_HATE_THIS_GAME,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.INSURGENCY,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.JUST_CAUSE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEFT_4_DEAD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LEGO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LIFE_IS_STRANGE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MAGICKA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MARAUDER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MARBLE_DUEL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MEN_OF_WAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.METRO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MORTAL_KOMBAT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NARUTO_TO_BORUTO,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NASH_RACING,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PALADINS,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PARAGON_THE_OVERPRIME,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PAYDAY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PHASMOPHOBIA,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.PIXELMAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.PORTAL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RAFT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RED_LAKE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.THE_RED_SOLSTICE,
+          rating: '???',
+          status: gameStatus.FORBIDDEN,
+        },
+        {
+          ...games.RISE_OF_THE_ANCIENTS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RUST,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SEPTEMBER_7TH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SHADOW_WARRIOR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CIVILIZATION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SLEDGEHAMMER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SOULWORKER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SPOOKYS_JUMP_SCARE_MANSION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STALKER,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STONEHEARTH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STRANGE_NIGHT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.STRONGHOLD,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SUMMER_OF_58,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.TERRARIA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.VISCERA_CLEANUP,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WILD_WEST_ROGUE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.FORTNITE,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.UNRAILED,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.SHADOW_TACTICS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ALIEN_ISOLATION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.AMNESIA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ASSASSINS_CREED,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.BLAIR_WITCH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CONTROL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.CYBERPUNK,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DAEMON_X_MACHINA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DEATH_STRANDING,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.DYING_LIGHT,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GODFALL,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.GTA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HAND_OF_FATE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HITMAN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.IN_SOUND_MIND,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KEN_FOLLETS_THE_PILLARS_OF_THE_EARTH,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.KILLING_FLOOR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.LAYERS_OF_FEAR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.NBA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.OBDUCTION,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RAGE,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.RELICTA,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.VALORANT,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+        {
+          ...games.VAMPYR,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.VERDUN,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.WATCH_DOGS,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.HOGWARTS_LEGACY,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.ATOMIC_HEART,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.COD_WARZONE_II,
+          rating: '???',
+          status: gameStatus.COMPLETED,
+        },
+        {
+          ...games.MINECRAFT,
+          rating: '???',
+          status: gameStatus.ON_GOING,
+        },
+      ],
+      hobbies: [
+        {
+          name: hobbies.COOKING,
+          status: hobbyStatus.PROFESSIONAL,
+        },
+        {
+          name: hobbies.GAMES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.SPORT,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.CYBER_SPORT,
+          status: hobbyStatus.FORBIDDEN,
+        },
+      ],
+      imagesUrl: [],
+    },
     {
       name: 'Сергей Андреев',
       vkId: 529988459,
@@ -2400,592 +3169,73 @@ My name is, chka-chka, эээ... Nyase.
       ],
     },
     {
-      name: 'Вера Белка',
-      vkId: 559110911,
-      text: `Всем привет, с вами Верочка белочка. Это не потому что у меня белка, а потому что мама в детстве так назвала.
-Мне 16, но надеюсь я не буду слишком шестнадцатилетней для вас. Я из Москвы, но родной город Пенза . от туда кстати Егор Крид. Ну вот теперь и думайте совпадение ли что 2 легенды родились в одном городе?
-Могу рассказать свой любимый анекдот, но лучше расскажу почему я могу иногда пропадать из чата и надеюсь меня пойдут. У меня есть болезнь с головой, название которой я предпочитаю не называть. И как раз из-за неё меня может выключить из социума на дня 3-6. Всегда по разному. Буду стараться не отставать и стану вам хорошим другом :)
+      name: 'Александр Казачинский',
+      vkId: 517359736,
+      text: `Всем привет, Я Александр, или Саша!
+20 лет
+Молодой управленец, начинающий организатор производства и общественно-политический деятель!
+В последнее время я начал увлекаться самолетами (даже летную школу начал активно искать)
+Также увлекаюсь проектированием, чтением, политологией, и играю в собственную версию Мафии (от классической она сильно отличается)
+В свободное время либо я что-то проектирую, смотрю фильмы и слушаю музыку
+К животным, как и к людям отношение - нормальное
+
 
 `,
-      age: 16,
-      gender: gender.FEMALE,
+      age: 20,
+      hobbies: [
+        {
+          name: hobbies.PLANES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.PROJECTS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.POLITICS,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MOVIES,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.MUSIC_LISTENERS,
+          status: hobbyStatus.ON_GOING,
+        },
+      ],
+      gender: gender.MALE,
       imagesUrl: [],
     },
     {
-      name: 'Кирилл Мейбибейбиков',
-      vkId: 339098349,
-      text: `Вообщем да, доброй ночи мальчики и девочки, я Кирилл, мне 20 лет, закончил грубо говоря 2 дня назад поварской техникум, и имею 3 разряд повара)
-увлекаюсь игрой в доту, люблю смотреть баскетбольные ассоциации и в частности выходить на площадку и самому играть)
-Пробовал себя в профессиональном баскетболе и в киберспорте, ни там ни там не получилось, но и все равно, продолжаю играть)`,
-      age: 20,
-      gender: gender.MALE,
-      games: [
-        {
-          ...games.DOTA,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.MADAGASKAR,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.HENTAI_GAMES,
-          rating: '80 LVL',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.WITCHER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ADVENTURES_OF_HOOL,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.NOT_FOR_BROADCAST,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ALBION_ONLINE,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.ALIEN_SWARM,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.APERTURE_DESK_JOB,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.APEX,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.ARK,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.ARMA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BATTLE_RANCH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BATTLEFIELD,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BOOM_BAHH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BORDERLANDS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BRUTAL_LEGEND,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.COD_MODERN_WARFARE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CITIES_SKYLINES,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.COUNTER_STRIKE_ZERO,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CS_1_6,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.CS_GO,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.CS_SOURCE,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.DAY_OF_DEFEAT,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DEFY_GRAVITY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DONT_STARVE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.TES_ONLINE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SKYRIM,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.EVERLASTING_SUMMER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FALSE_FRONT,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.FARTHEST_FRONTIERS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FATHERS_DAY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FOR_HONOR,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.FROSTPUNK,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.GARRYS_MOD,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.GHOST_EXILE,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.HARD_TRUCK_APOCALYPSE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.HOUSE_OF_CARAVAN,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.I_HATE_THIS_GAME,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.INSURGENCY,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.JUST_CAUSE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.LEFT_4_DEAD,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.LEGO,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.LIFE_IS_STRANGE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MAGICKA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MARAUDER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MARBLE_DUEL,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MEN_OF_WAR,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.METRO,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MORTAL_KOMBAT,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.NARUTO_TO_BORUTO,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.NASH_RACING,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.PALADINS,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.PARAGON_THE_OVERPRIME,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.PAYDAY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.PHASMOPHOBIA,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.PIXELMAN,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.PORTAL,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RAFT,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RED_LAKE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.THE_RED_SOLSTICE,
-          rating: '???',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.RISE_OF_THE_ANCIENTS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RUST,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SEPTEMBER_7TH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SHADOW_WARRIOR,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CIVILIZATION,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SLEDGEHAMMER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SOULWORKER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SPOOKYS_JUMP_SCARE_MANSION,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.STALKER,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.STONEHEARTH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.STRANGE_NIGHT,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.STRONGHOLD,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SUMMER_OF_58,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.TERRARIA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.VISCERA_CLEANUP,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.WILD_WEST_ROGUE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FORTNITE,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.UNRAILED,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.SHADOW_TACTICS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ALIEN_ISOLATION,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.AMNESIA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ASSASSINS_CREED,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BLAIR_WITCH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CONTROL,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CYBERPUNK,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DAEMON_X_MACHINA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DEATH_STRANDING,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DYING_LIGHT,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.GODFALL,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.GTA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.HAND_OF_FATE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.HITMAN,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.IN_SOUND_MIND,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.KEN_FOLLETS_THE_PILLARS_OF_THE_EARTH,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.KILLING_FLOOR,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.LAYERS_OF_FEAR,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.NBA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.OBDUCTION,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RAGE,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RELICTA,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.VALORANT,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.VAMPYR,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.VERDUN,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.WATCH_DOGS,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.HOGWARTS_LEGACY,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.ATOMIC_HEART,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.COD_WARZONE_II,
-          rating: '???',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MINECRAFT,
-          rating: '???',
-          status: gameStatus.ON_GOING,
-        },
-      ],
+      name: '당신-것 여우',
+      vkId: 776454642,
+      text: `О себе
+Екатерина
+ДР: 14.06.2005.
+Дорамщик, к-попер, тик токер, веду ТГ каналы, шарю за корейцев и вселенную Гарри Поттера.
+Есть только лучшая подруга, не имею ни парня, ни друга, что немного радует.
+Легко ранимая , одновременно веселая, но и закрытая девочка.
+`,
+      age: 18,
+      gender: gender.FEMALE,
       hobbies: [
         {
-          name: hobbies.COOKING,
-          status: hobbyStatus.PROFESSIONAL,
-        },
-        {
-          name: hobbies.GAMES,
+          name: hobbies.DORAMAS,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.SPORT,
+          name: hobbies.TIKTOKER,
           status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.CYBER_SPORT,
-          status: hobbyStatus.FORBIDDEN,
         },
       ],
       imagesUrl: [],
     },
+
     {
       name: 'Katerina Sedova',
       vkId: 195043705,
@@ -3040,220 +3290,112 @@ My name is, chka-chka, эээ... Nyase.
       ],
     },
     {
-      name: '당신-것 여우',
-      vkId: 776454642,
-      text: `О себе
-Екатерина
-ДР: 14.06.2005.
-Дорамщик, к-попер, тик токер, веду ТГ каналы, шарю за корейцев и вселенную Гарри Поттера.
-Есть только лучшая подруга, не имею ни парня, ни друга, что немного радует.
-Легко ранимая , одновременно веселая, но и закрытая девочка.
-`,
-      age: 18,
-      gender: gender.FEMALE,
-      hobbies: [
-        {
-          name: hobbies.DORAMAS,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.TIKTOKER,
-          status: hobbyStatus.ON_GOING,
-        },
-      ],
-      imagesUrl: [],
-    },
-    {
-      name: 'Ilya Wieliczko',
-      vkId: 712497882,
-      text: `Характер скверный. Не женат.
+      name: 'Слава Теплых',
+      vkId: 293207518,
+      text: `Можете звать меня Слава, Славя (настоящее имя Алина). Фамилию читайте правильно, с ударением на Ы, без Ё (Теплых).
+Дата рождения: 13.03.2001 г.
+Город актуальный: Волгоград.
+Время: Московское.
+Статус: студент, не работаю
+Рост: 150 см
+Пол: ж
+Семейный статус: в отношениях
+Сексуальность: бисексуал
+ПРОФЕССИЯ И УЧЁБА:
+Ранее училась в музыкальной школе 9 лет, потому есть знания по муз.грамоте (хоть и фрагментарные), остался навык игры на инструменте (фортепиано). Недавно в квартиру купили электрофортепиано, так что снова возобновила игру на фо-но, исполняя для себя любимые простенькие произведения.
+Обучаюсь в медицинском вузе, специалитет (5.5 лет), в январе 2024 года уже выпущусь. В данный момент на 5 курсе. Учусь на клинического психолога.
+Из области психологии мне интересны и я имею знания в: патопсихологии, психиатрии, нейропсихологии, специальной психологии, психологии зависимого поведения, криминальной психологии и виктимологии, немножко детскими патологиями, в целом вникнута в психотерапию, но нет специализированных знаний в конкретной психотерапии.
+Есть опыт работы на практике с пациентами из психиатрической больницы, с дошкольниками из спец.группы, в экспертизе с подэкспертыми (пострадавшие, свидетели и обвиняемые). Этим летом (2023 г) будет практика с пожилыми в кардио, ещё с пациентами в неврологическом и хирургическом. Немного практиковалась в консультировании, шарю за психодиагностику.
+Написала так, будто резюме на работу, но ладно. Я очень люблю свою профессию (Клинический психолог), потому сфера интересов связана с моей работой очень тесно. Я будто рыбка в воде, на столько мне комфортна эта среда. Но я человек не всезнающий, так как ещё не работаю и знать всё невозможно.
+ХОББИ:
+Разного рода прикладное творчество присутствует в моей жизни с детства. Даже если я что-то пробую один раз, то знания и навык остаётся.
+Из актуального могу выделить: коллажи, на открытках в частности; фотографирование (себя и окружение, через мой микроскоп); коллекционирование винтажных вещей (мало), вещей от мастеров и деятелей искусства (мало), трупов животных (насекомых и кости), разных антистрессов, вещей с кроликами; плету браслеты кумихимо; немного рисую (гп, традишка); люблю напевать что-то, петь; играю на фо-но; пластилинография. Часто совмещаю разные техники.
+Летом хочу заняться соларографией.
+МОИ ПРИСТРАСТИЯ:
+Как я упоминала выше, я люблю кроликов, белых. У меня много вещей с ними, я прям фанатик.
+Мне нравятся милые вещи разного вида, будь то одежда или наклеечки. Также мне нравятся и мерзкие, готические изображения, атмосфера «Битлджуса» и «Ленор — маленькой мёртвой девочки».
+Я гурофил, но эстетический, а не сексуальный.
+Я люблю соединять несовместимое или противоречия, пачкать невинное, будь то ребёнок с оружием, монахиня-проститутка, кролик-каннибал или мой образ милой девочки с рюшечками и белого цвета одеждой с атрибутами, у которой под платьем чёрный страпон.
+Я люблю извращения, странности, даже в музыке, фильмах.
+Из просмотренных фильмов могу привести примеры: «Зелёный слоник», «Конструктор красного цвета», «Святая гора», «Святая кровь», «Свадебная ваза», «Homo Paradoksum I/II/III» (три части), «Фру-89. Слева направо».
+Из музыки примеры: Philip Glass - Voices for Didgeridoo and Organ - Song 3 (дуэт органа и Диджериду - инструмент аборигенов Австралии), STROM.ec - Peilikuva, Prurient - Before Rain Becomes Snow (жанр Death Industrial).
+Я не особо люблю смотреть фильмы, но если и выделять жанры, то с романтикой и комедией. А так я предпочитаю аниме.
+Ещё я люблю смотреть советские документальные фильмы в контексте медицины, в особенности мне нравится их музыка на фоне (можно у меня в видеозаписях посмотреть).
+Я люблю по музыке классику (здесь же оперы, романсы), синт/ретровейв и рок. Я фанат Igorrr.
+Книги читаю чаще именно специализированные, люблю О.Сакса, худ.книги с медицинской тематикой, патологиями. В моём сердце надолго останется паста про малышку Сьюзи. Часто читаю научные статьи.
 
-Илья. Клички или прозвища нет. Родом from Transnistria, оно же Приднестровье, оно же ПМР. Живу в Бендерах. Рост ± 183. Работал в сфере киберразведки. Сейчас в той или иной степени до сих пор занимаюсь этим. В свободное время занимаюсь историей, психологией, собой. Люблю разную музыку, но в основном предпочтение падает на что-то тяжёлое. Своей страстью считаю оружие и сигареты. До жути люблю кошек, по возможности фотографирую каждую встречную или чьи-то домашние кисы. Нравится так же запечатлять на камеру рассветы, закаты или просто погодные состояния, небо. Из алкоголя люблю бурбон. Терпеть не могу вина и коньяки.
-`,
-      gender: gender.MALE,
-      colors: [colors.GRAY],
+Очень люблю мягкие игрушки, я даже сплю с ними. Люблю дарить подарки, вообще я тот ещё зависимый человек (не буквально) на эмоции людей, в особенности на смущение и удивление (положительные).
+Люблю пить чай, предпочитаю больше зелёный.
+Любимые цвета: белый, зелёный, синий. Но при этом не отказываюсь и от других цветов.
+Любимые цветы: гортензии (синие), незабудки, дельфиниум.
+БДСМ:
+Я состою в БДСМ-сообществе, потому кратко о себе:
+- ABDL
+- Ворарефилия (охотник)
+- Хенд-фетиш
+- DDLG/MDLB
+- Свитч, Домина, Госпожа (есть раб)
+- Pegging
+- Сенсорная депривация
+- Animal Play (я Топ)
+- Tease and denial
+- Golden Shower (я Топ)
+ЗАКЛЮЧЕНИЕ:
+Я открытая на темы, не против пообщаться с вами в ЛС или помочь в чём-то, не осуждаю за вкусы (кроме незаконного) - всё только между нами.
+Ну и ниже несколько любимых трэков и моя работа в технике пластилинографии.`,
+      age: 22,
+      gender: gender.FEMALE,
+      alert: 'new',
       hobbies: [
         {
-          name: hobbies.WEAPONS,
+          name: hobbies.MUSIC_PLAYING,
+          status: hobbyStatus.PROFESSIONAL,
+        },
+        {
+          name: hobbies.PSYCHOLOGY,
+          status: hobbyStatus.PROFESSIONAL,
+        },
+        {
+          name: hobbies.PHOTOGRAPHING,
           status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.COLLECTIONNING,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
+          name: hobbies.DRAWING,
+          status: hobbyStatus.NOT_SERIOUS,
         },
         {
           name: hobbies.ANIME,
           status: hobbyStatus.ON_GOING,
         },
         {
-          name: hobbies.MUSIC_LISTENERS,
-          status: hobbyStatus.ON_GOING,
+          name: hobbies.MOVIES,
+          status: hobbyStatus.NOT_SERIOUS,
         },
         {
-          name: hobbies.AUTO,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.HUNTING,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.WEAPONS,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.WEAPONS,
-          status: hobbyStatus.ON_GOING,
+          name: hobbies.LITERATURE,
+          status: hobbyStatus.NOT_SERIOUS,
         },
       ],
-      games: [
-        {
-          ...games.WORLD_OF_TANKS,
-          rating: '',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.SKYRIM,
-          rating: '',
-          status: gameStatus.ON_GOING,
-        },
-        {
-          ...games.MINECRAFT,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.TERRARIA,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.LEAGUE_OF_LEGENDS,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.CS_GO,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.STARBOUND,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.DONT_STARVE,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.LEFT_4_DEAD,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.COMPANY_OF_HEROES,
-          rating: '',
-          status: gameStatus.RARELY,
-        },
-        {
-          ...games.WITCHER,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.OBLIVION,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CRYSIS,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MAFIA,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.BORDERLANDS,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.THE_LONG_DARK,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.CIVILIZATION,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.GOD_OF_WAR,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.FAR_CRY,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.DYING_LIGHT,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.STALKER,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.HEARTHSTONE,
-          rating: '',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.PATH_OF_EXILE,
-          rating: '',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.FACTORIO,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.RISE_OF_NATIONS,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.MAX_PAYNE,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.WORLD_OF_WARCRAFT,
-          rating: '',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.SATISFACTORY,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
-        {
-          ...games.LINEAGE_II,
-          rating: '',
-          status: gameStatus.FORBIDDEN,
-        },
-        {
-          ...games.AGE_OF_EMPIRES_IV,
-          rating: '',
-          status: gameStatus.COMPLETED,
-        },
+      colors: [colors.WHITE, colors.GREEN, colors.BLUE],
+
+      imagesUrl: [
+        'https://sun9-67.userapi.com/impg/QPa3gTUAZTd6iB4quT_h0hELDC3nvZYHicnCYA/qJlM7LfKLWM.jpg?size=864x1080&quality=96&sign=8a5d4688df93a7c5f5095ae8143dbd9b&type=album',
       ],
+    },
+    {
+      name: 'Вера Белка',
+      vkId: 559110911,
+      text: `Всем привет, с вами Верочка белочка. Это не потому что у меня белка, а потому что мама в детстве так назвала.
+Мне 16, но надеюсь я не буду слишком шестнадцатилетней для вас. Я из Москвы, но родной город Пенза . от туда кстати Егор Крид. Ну вот теперь и думайте совпадение ли что 2 легенды родились в одном городе?
+Могу рассказать свой любимый анекдот, но лучше расскажу почему я могу иногда пропадать из чата и надеюсь меня пойдут. У меня есть болезнь с головой, название которой я предпочитаю не называть. И как раз из-за неё меня может выключить из социума на дня 3-6. Всегда по разному. Буду стараться не отставать и стану вам хорошим другом :)
+
+`,
+      age: 16,
+      gender: gender.FEMALE,
       imagesUrl: [],
     },
     {
@@ -3329,22 +3471,6 @@ My name is, chka-chka, эээ... Nyase.
       imagesUrl: [],
     },
     {
-      name: 'Даня Рябцев',
-      vkId: 414046636,
-      text: `Что же, что то о себе ._.
-Нус, 21 годик, отучился на специалиста в области информационной безопасности «полная херь, если уж честно»
-Играю в Rust, DayZ, иногда в Valorant
-На этом наверное все :/`,
-      hobbies: [
-        {
-          name: hobbies.GAMES,
-          status: hobbyStatus.ON_GOING,
-        },
-      ],
-      gender: gender.MALE,
-      imagesUrl: [],
-    },
-    {
       name: 'Röosa Jänkuü',
       vkId: 335147169,
       text: `Лиза, 19 лет.
@@ -3367,6 +3493,40 @@ My name is, chka-chka, эээ... Nyase.
       gender: gender.FEMALE,
       imagesUrl: [],
     },
+    //     {
+    //       name: 'Даня Рябцев',
+    //       vkId: 414046636,
+    //       text: `Что же, что то о себе ._.
+
+    // Нус, 21 годик, отучился на специалиста в области информационной безопасности «полная херь, если уж честно»
+
+    // Играю в Rust, DayZ, иногда в Valorant
+
+    // На этом наверное все :/
+
+    // `,
+    //       games: [
+    //         {
+    //           ...games.RUST,
+    //           rating: '',
+    //           status: gameStatus.ON_GOING,
+    //         },
+    //         {
+    //           ...games.DAYZ,
+    //           rating: '',
+    //           status: gameStatus.ON_GOING,
+    //         },
+    //         {
+    //           ...games.VALORANT,
+    //           rating: '',
+    //           status: gameStatus.RARELY,
+    //         },
+    //       ],
+
+    //       age: 21,
+    //       gender: gender.MALE,
+    //       imagesUrl: [],
+    //     },
   ],
   currentUser: {},
   chats: [

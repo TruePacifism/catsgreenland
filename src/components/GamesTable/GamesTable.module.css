@@ -115,7 +115,6 @@
 .table {
   border-collapse: collapse;
   width: 100%;
-  border: 1px solid var(--table-border);
   position: relative;
 }
 .tbody {

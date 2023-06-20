@@ -43,6 +43,10 @@ const hobbies = {
   THEATER: 'Театр',
   HUNTING: 'Охота',
   CLUBS: 'Клубы',
+  SERIALS: 'Сериалы',
+  WOOD_MAKING: 'Резка по дереву',
+  _3D_MODELING: '3D моделирование',
+  PSYCHOLOGY: 'Психология',
 };
 
 export default hobbies;

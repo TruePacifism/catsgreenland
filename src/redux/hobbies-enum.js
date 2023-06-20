@@ -47,6 +47,7 @@ const hobbies = {
   WOOD_MAKING: 'Резка по дереву',
   _3D_MODELING: '3D моделирование',
   PSYCHOLOGY: 'Психология',
+  BDSM: 'БДСМ',
 };
 
 export default hobbies;

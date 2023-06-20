@@ -3364,6 +3364,10 @@ My name is, chka-chka, эээ... Nyase.
           status: hobbyStatus.ON_GOING,
         },
         {
+          name: hobbies.BDSM,
+          status: hobbyStatus.ON_GOING,
+        },
+        {
           name: hobbies.DRAWING,
           status: hobbyStatus.NOT_SERIOUS,
         },

@@ -1,3 +1,6 @@
+.section {
+  background-color: var(--hobbies-background-color);
+}
 .chartDescription {
   text-align: center;
   font-weight: 500;

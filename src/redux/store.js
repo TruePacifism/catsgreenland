@@ -142,6 +142,10 @@ const initialState = {
           status: hobbyStatus.ON_GOING,
         },
         {
+          name: hobbies.PSYCHOLOGY,
+          status: hobbyStatus.NOT_SERIOUS,
+        },
+        {
           name: hobbies.PROGRAMMING,
           status: hobbyStatus.ON_GOING,
         },
@@ -1614,14 +1618,6 @@ My name is, chka-chka, эээ... Nyase.
         },
         {
           name: hobbies.HUNTING,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.WEAPONS,
-          status: hobbyStatus.ON_GOING,
-        },
-        {
-          name: hobbies.WEAPONS,
           status: hobbyStatus.ON_GOING,
         },
       ],

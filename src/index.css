@@ -2,16 +2,18 @@
 :root {
   --accent-color: green;
   --main-cubic: ease-in-out;
-  --background-color: white;
+  --background-color: #ddffdd;
   --main-text-color: black;
   --white-text-color: white;
   --scrollbar-background-color: #f1f1f1;
+  --hobbies-background-color: rgb(182, 255, 180);
 }
 .dark--theme {
-  --background-color: black;
+  --background-color: rgb(1, 23, 0);
   --main-text-color: white;
   --accent-color: rgb(0, 172, 0);
   --scrollbar-background-color: black;
+  --hobbies-background-color: black;
 }
 .link {
   text-decoration: none;

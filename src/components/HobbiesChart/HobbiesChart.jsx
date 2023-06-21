@@ -6,6 +6,7 @@ import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { Link } from 'react-router-dom';
 import { TagCloud } from 'react-tagcloud';
+import randomColor from 'randomcolor';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -89,12 +90,15 @@ export default function HobbiesChart() {
             tags={hobbies.map(hobby => ({
               value: hobby.name,
               count: hobby.users.length,
+              color: randomColor({
+                hue: '#AAFFAA',
+                luminosity: isDarkTheme ? 'light' : 'dark',
+                alpha: 1,
+                brightness: 'min',
+                saturation: 'max',
+              }),
             }))}
             className={styles.chart}
-            colorOptions={{
-              luminosity: isDarkTheme ? 'light' : 'dark',
-              hue: 'green',
-            }}
             onClick={tag =>
               setShowingHobby(hobbies.find(hobby => hobby.name === tag.value))
             }

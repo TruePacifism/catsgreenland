@@ -9,7 +9,7 @@ export default function AdminList() {
   const [admins, setAdmins] = useState([
     {
       vkId: 373718115,
-      description: 'Создатель беседы. Всё благодаря её уссилиям',
+      description: 'Создатель беседы. Всё благодаря её усилиям',
     },
     {
       vkId: 301865955,

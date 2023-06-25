@@ -65,7 +65,7 @@ export default function HobbiesChart() {
   }, [bios, hobbies]);
   return (
     <Section>
-      <Container heading={'Наши любимые дела'}>
+      <Container heading={'Наши увлечения'}>
         <p className={styles.chartDescription}>
           А вот они - наши любимые занятия. <br />
           Здесь собраны все наши увлечения: от стандартных и повседневных, до

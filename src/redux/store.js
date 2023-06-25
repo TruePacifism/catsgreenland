@@ -3482,6 +3482,7 @@ My name is, chka-chka, эээ... Nyase.
       hobbies: [
         {
           name: hobbies.SPORT,
+          status: hobbyStatus.ON_GOING,
         },
         {
           name: hobbies.CLUBS,

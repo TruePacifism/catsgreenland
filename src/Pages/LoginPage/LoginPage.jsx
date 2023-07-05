@@ -67,7 +67,7 @@ export default function LoginPage() {
               />
             </VK>
           </div>
-          <button
+          {/* <button
             type="button"
             onClick={async () => {
               const user = {
@@ -89,7 +89,7 @@ export default function LoginPage() {
             }}
           >
             test auth
-          </button>
+          </button> */}
         </div>
       </Container>
     </Section>

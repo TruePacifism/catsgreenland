@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <div className={styles.section}>
       <div className={styles.container}>
-        <h1 className={styles.heading}>Cat's Greenland</h1>
+        <h1 className={styles.heading}>Purrfect Green Chat</h1>
         <button type="button" className={styles.button} onClick={openModal}>
           Правила
         </button>

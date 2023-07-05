@@ -49,7 +49,7 @@ export default function LoginPage() {
                     ) {
                       console.log('проверка пройдена');
                       await createUser(user.hash, user.uid);
-                      dispatch(auth(user.hash));
+                      dispatch(auth({ token: user.hash }));
                       navigate('/');
                     }
                   },

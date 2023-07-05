@@ -7,6 +7,7 @@ import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { useNavigate } from 'react-router-dom';
 import createUser from 'utils/api/auth/createUser';
+import loginUser from 'utils/api/auth/loginUser';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -47,9 +48,18 @@ export default function LoginPage() {
                     if (
                       groupMembers.items.map(user => user.id).includes(user.uid)
                     ) {
-                      console.log('проверка пройдена');
-                      const loggedUser = await createUser(user.hash, user.uid);
-                      dispatch(auth(loggedUser));
+                      const checkUser = await loginUser(user.hash);
+                      if (!checkUser) {
+                        const loggedUser = await createUser(
+                          user.hash,
+                          user.uid
+                        );
+                        console.log(loggedUser);
+                        dispatch(auth(loggedUser));
+                      } else {
+                        console.log(checkUser);
+                        dispatch(auth(checkUser));
+                      }
                       navigate('/');
                     }
                   },
@@ -57,6 +67,27 @@ export default function LoginPage() {
               />
             </VK>
           </div>
+          <button
+            type="button"
+            onClick={async () => {
+              const user = {
+                hash: 'testhash',
+                uid: 301865955,
+              };
+              const checkUser = await loginUser(user.hash);
+              if (!checkUser) {
+                const loggedUser = await createUser(user.hash, user.uid);
+                console.log(loggedUser);
+                dispatch(auth(loggedUser));
+              } else {
+                console.log(checkUser);
+                dispatch(auth(checkUser));
+              }
+              navigate('/');
+            }}
+          >
+            test auth
+          </button>
         </div>
       </Container>
     </Section>

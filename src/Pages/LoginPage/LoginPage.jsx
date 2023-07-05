@@ -71,10 +71,12 @@ export default function LoginPage() {
             type="button"
             onClick={async () => {
               const user = {
-                hash: 'testhash',
+                hash: `testhash`,
                 uid: 301865955,
               };
-              const checkUser = await loginUser(user.hash);
+              const checkUser = await loginUser(
+                user.hash.includes('/') ? 'error' : user.hash
+              );
               if (!checkUser) {
                 const loggedUser = await createUser(user.hash, user.uid);
                 console.log(loggedUser);

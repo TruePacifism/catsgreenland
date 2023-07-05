@@ -9,5 +9,6 @@ export default async function loginUser(token) {
   } catch (error) {
     localStorage.removeItem('loggedUser');
     console.log(error);
+    return null;
   }
 }

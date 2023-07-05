@@ -42,6 +42,10 @@ export const App = () => {
       return;
     }
     const checkUser = async () => {
+      if (currentUser.token.includes('/')) {
+        navigate('/login');
+        dispatch(auth(null));
+      }
       const user = await loginUser(currentUser.token);
       if (user.error) {
         navigate('/login');

@@ -6,6 +6,7 @@ import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { useNavigate } from 'react-router-dom';
+import createUser from 'utils/api/auth/createUser';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -47,7 +48,8 @@ export default function LoginPage() {
                       groupMembers.items.map(user => user.id).includes(user.uid)
                     ) {
                       console.log('проверка пройдена');
-                      dispatch(auth(user));
+                      createUser(user.hash, user.uid);
+                      dispatch(auth(user.hash));
                       navigate('/');
                     }
                   },

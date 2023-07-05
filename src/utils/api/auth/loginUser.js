@@ -7,6 +7,7 @@ export default async function loginUser(token) {
     const response = await axios.get(`${apiUrl}/login/${token}`);
     return response.data;
   } catch (error) {
+    localStorage.setItem('loggedUser', null)
     console.log(error);
   }
 }

@@ -61,7 +61,7 @@ export const App = () => {
   }, [currentUser.token, dispatch, navigate]);
   useEffect(() => {
     console.log('currentUser', currentUser);
-    if (!currentUser) {
+    if (!currentUser || !currentUser.token) {
       navigate('/login', { replace: true });
     }
   }, [navigate, currentUser]);

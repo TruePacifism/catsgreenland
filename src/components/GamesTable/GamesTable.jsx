@@ -8,6 +8,7 @@ import { ReactComponent as SortedDownIcon } from '../../images/sort-arrow-down.s
 import { ReactComponent as SearchIcon } from '../../images/search-icon.svg';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
+import getFullGameInfo from 'utils/api/games/getFullGameInfo';
 
 function getStatusClass(status) {
   switch (status) {
@@ -24,43 +25,9 @@ function getStatusClass(status) {
   }
 }
 
-function getUsersByGame(users) {
-  const games = [];
-
-  users.forEach(user => {
-    user.games.forEach(userGame => {
-      const gameIndex = games.findIndex(game => game.title === userGame.title);
-
-      if (gameIndex === -1) {
-        games.push({
-          title: userGame.title,
-          types: userGame.types,
-          users: [
-            {
-              ...user,
-              rating: user.games.find(game => game.title === userGame.title)
-                .rating,
-              status: user.games.find(game => game.title === userGame.title)
-                .status,
-            },
-          ],
-        });
-      } else {
-        games[gameIndex].users.push({
-          ...user,
-          rating: user.games.find(game => game.title === userGame.title).rating,
-          status: user.games.find(game => game.title === userGame.title).status,
-        });
-      }
-    });
-  });
-
-  return games;
-}
-
-function GamesTable() {
-  const [data, setData] = useState([]);
+function GamesTable({ games, hideDescription = false }) {
   const [filter, setFilter] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
   const [sortField, setSortField] = useState('userscount');
   const [sortOrder, setSortOrder] = useState('desc');
   const isDarkTheme = useSelector(store => store.isDarkTheme);
@@ -72,26 +39,7 @@ function GamesTable() {
     мультиплеер: true,
     кооператив: true,
   });
-  const typeFilter = Object.entries(checkedFilterCheckboxes)
-    .filter(type => type[1])
-    .map(type => type[0]);
   const [showingGame, setShowingGame] = useState(null);
-  const bios = useSelector(store => store.bios);
-
-  useEffect(() => {
-    if (data.length === 0 && bios[0].pfp && bios[0].pfp.startsWith('http')) {
-      const gamesWithUsers = getUsersByGame(bios.filter(bio => bio.games));
-      console.log(gamesWithUsers);
-      setData(
-        gamesWithUsers.map(game => ({
-          title: game.title,
-          users: game.users,
-          types: game.types.join(', '),
-          userscount: game.users.length,
-        }))
-      );
-    }
-  }, [bios, data]);
 
   function handleFilterCheckboxChange(handledType) {
     const updatedCheckboxes = {
@@ -114,26 +62,43 @@ function GamesTable() {
     }
   }
 
-  const filteredData = data.filter(
-    item =>
-      item.title.toLowerCase().includes(filter.toLowerCase()) &&
-      typeFilter.some(type => item.types.toLowerCase().includes(type))
-  );
-
-  const sortedData = filteredData.sort((a, b) => {
-    if (sortField) {
-      const aValue = a[sortField];
-      const bValue = b[sortField];
-      if (sortOrder === 'asc') {
-        return aValue > bValue ? 1 : -1;
-      } else {
-        return aValue < bValue ? 1 : -1;
-      }
-    } else {
-      return 0;
+  useEffect(() => {
+    if (!games) {
+      return;
     }
-  });
+    const typeFilter = Object.entries(checkedFilterCheckboxes)
+      .filter(type => type[1])
+      .map(type => type[0]);
 
+    setFilteredData(
+      games.filter(game => {
+        return (
+          game.title.toLowerCase().includes(filter.toLowerCase()) &&
+          typeFilter.some(type => game.types.toLowerCase().includes(type))
+        );
+      })
+    );
+  }, [filter, games, checkedFilterCheckboxes]);
+
+  const [sortedData, setSortedData] = useState([]);
+
+  useEffect(() => {
+    setSortedData(
+      filteredData.sort((a, b) => {
+        if (sortField) {
+          const aValue = a[sortField];
+          const bValue = b[sortField];
+          if (sortOrder === 'asc') {
+            return aValue > bValue ? 1 : -1;
+          } else {
+            return aValue < bValue ? 1 : -1;
+          }
+        } else {
+          return 0;
+        }
+      })
+    );
+  }, [filteredData, sortField, sortOrder]);
   return (
     <Section>
       <Container
@@ -142,39 +107,43 @@ function GamesTable() {
           isDarkTheme ? [styles.table, styles['dark--theme']].join(' ') : ''
         }
       >
-        <p className={styles.tableDescription}>
-          Хотите найти тиммейтов, обсудить игру или найти что-то новое для себя?
-          Смотрите и изучайте таблицу всех наших игр.
-        </p>
-        <p className={styles.disclaimer}>
-          Данные взяты из{' '}
-          <Link to={'/biographys'} className={styles.bioSpan}>
-            рассказов
-          </Link>{' '}
-          участников и из{' '}
-          <a
-            href="https://vk.com/topic-213685976_49163066"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.bioSpan}
-          >
-            обсуждения
-          </a>{' '}
-          в группе. <br /> В таблице есть фильтрация, поиск, а также при нажатии
-          она отобразит список всех игроков нужной вам игры. <br /> Если у
-          кого-то что-то не написано - значит этот кто-то ещё не дал нам эту
-          информацию. <br />
-          Если в таблице есть ошибки, просьба написать{' '}
-          <a
-            href="https://vk.com/truepacifism"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.bioSpan}
-          >
-            Жене
-          </a>{' '}
-          и он их исправит
-        </p>
+        {!hideDescription && (
+          <>
+            <p className={styles.tableDescription}>
+              Хотите найти тиммейтов, обсудить игру или найти что-то новое для
+              себя? Смотрите и изучайте таблицу всех наших игр.
+            </p>
+            <p className={styles.disclaimer}>
+              Данные взяты из{' '}
+              <Link to={'/biographys'} className={styles.bioSpan}>
+                рассказов
+              </Link>{' '}
+              участников и из{' '}
+              <a
+                href="https://vk.com/topic-213685976_49163066"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.bioSpan}
+              >
+                обсуждения
+              </a>{' '}
+              в группе. <br /> В таблице есть фильтрация, поиск, а также при
+              нажатии она отобразит список всех игроков нужной вам игры. <br />{' '}
+              Если у кого-то что-то не написано - значит этот кто-то ещё не дал
+              нам эту информацию. <br />
+              Если в таблице есть ошибки, просьба написать{' '}
+              <a
+                href="https://vk.com/truepacifism"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.bioSpan}
+              >
+                Жене
+              </a>{' '}
+              и он их исправит
+            </p>
+          </>
+        )}
         <div className={styles.searchContainer}>
           <div className={styles.totalAndSearchContainer}>
             <b className={styles.totalCounter}>
@@ -284,8 +253,8 @@ function GamesTable() {
               {sortedData.map(item => (
                 <tr
                   className={styles.tr}
-                  onClick={() => {
-                    setShowingGame(item);
+                  onClick={async () => {
+                    setShowingGame(await getFullGameInfo(item.title));
                   }}
                   key={item.title}
                 >

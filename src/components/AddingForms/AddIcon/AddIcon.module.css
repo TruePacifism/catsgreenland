@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: var(--accent-color);
+  display: inline-block;
+}
+.text {
+  color: var(--accent-color);
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}

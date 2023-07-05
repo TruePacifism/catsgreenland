@@ -2,9 +2,11 @@ import Biograhpy from 'components/Biography/Biography';
 import BiograhpyList from 'components/BiographyList/BiographyList';
 import Container from 'components/Container/Container';
 import Section from 'components/Section/Section';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './Biographys.module.css';
 import { useSearchParams } from 'react-router-dom';
+import getAllBios from 'utils/api/bios/getAllBios';
+import getFullBio from 'utils/api/bios/getFullBio';
 
 export default function Biographys() {
   const [searchParams] = useSearchParams();
@@ -13,16 +15,6 @@ export default function Biographys() {
   useEffect(() => {
     setTimeout(() => {
       if (bioRef.current) {
-        const headerOffset = 80;
-        const elementPosition = bioRef.current.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-
         // bioRef.current.scrollIntoView({
         //   behavior: 'smooth',
         //   block: 'start',
@@ -32,6 +24,40 @@ export default function Biographys() {
       }
     }, 100);
   }, [searchParams]);
+  const [bios, setBios] = useState();
+  useEffect(() => {
+    const fetchBios = async () => {
+      const allBios = await getAllBios();
+      setBios(allBios);
+    };
+    fetchBios();
+  }, []);
+  const [showingBio, setShowingBio] = useState();
+  useEffect(() => {
+    async function fetchShowingBio() {
+      if (!searchParams.get('id')) {
+        return;
+      }
+      try {
+        const vkId = searchParams.get('id');
+        const bio = await getFullBio(vkId);
+        setShowingBio(bio);
+        const headerOffset = 80;
+        const elementPosition = bioRef.current.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchShowingBio();
+  }, [searchParams]);
+
   return (
     <>
       <Section>
@@ -67,10 +93,8 @@ export default function Biographys() {
               и вы хотели бы подправить — дайте знать.
             </p>
           </div>
-          <BiograhpyList />
-          {searchParams.get('id') && (
-            <Biograhpy bioRef={bioRef} vkId={searchParams.get('id')} />
-          )}
+          {bios && <BiograhpyList bios={bios} />}
+          {showingBio && <Biograhpy bioRef={bioRef} bio={showingBio} />}
           <h2 className={styles.PSHeading}>P.S.</h2>
           <p ref={PSRef} className={styles.PS}>
             • Рассказ о себе - штука необязательная. Но если вы все же хотите,

@@ -3,11 +3,9 @@ import styles from './Biography.module.css';
 import BiographyText from 'components/BiographyText/BiographyText';
 import MusicPlayer from 'components/MusicPlayer/MusicPlayer';
 
-export default function Biograhpy({ bioRef, vkId }) {
-  const bio = useSelector(store =>
-    store.bios.find(bio => bio.vkId.toString() === vkId)
-  );
-  const music = useSelector(store => store.bioMusic[vkId]);
+export default function Biograhpy({ bioRef, bio }) {
+  const music = useSelector(store => store.bioMusic[bio.vkId]);
+
   return (
     <div ref={bioRef} className={styles.container}>
       <h3 className={styles.name}>{bio.name}</h3>

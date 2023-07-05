@@ -2,7 +2,7 @@ import VK, { Auth } from 'react-vk';
 import { useDispatch } from 'react-redux';
 import { auth } from 'redux/store';
 import styles from './LoginPage.module.css';
-import getGroupMembers from 'utils/checkOnGroupMember';
+import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { useNavigate } from 'react-router-dom';
@@ -36,7 +36,6 @@ export default function LoginPage() {
               <Auth
                 options={{
                   onAuth: async user => {
-                    console.log(user);
                     const groupMembers = await getGroupMembers();
                     console.log(groupMembers);
                     console.log(groupMembers.items.map(user => user.id));

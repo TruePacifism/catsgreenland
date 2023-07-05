@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './AdminList.module.css';
 import AdminListItem from 'components/AdminListItem/AdminListItem';
-import getUsers from 'utils/getUser';
+import getUsers from 'utils/api/user/getUser';
 import Container from 'components/Container/Container';
 import Section from 'components/Section/Section';
 
@@ -18,6 +18,10 @@ export default function AdminList() {
     {
       vkId: 178433478,
       description: 'Главная советчица в важных решениях, главный олд',
+    },
+    {
+      vkId: 48806562,
+      description: 'Важный советчик в главных решениях',
     },
     {
       vkId: 591214241,

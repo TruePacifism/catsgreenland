@@ -1,6 +1,6 @@
 import jsonpAdapter from 'axios-jsonp';
 import axios from 'axios';
-import placeholder from '../images/image-placeholder.png';
+import placeholder from '../../../images/image-placeholder.png';
 
 const vkToken =
   'vk1.a.KApbhgVtf9XmrO1auTa2gwdCXkaQX6tELizt4wm2Gxh6prqcqaNUnP-nHxQcerPiulaFi8bnveAesTBl7I9_5L6nrhWYQUjl06AWWGxvJx6mjAZFKrAyHAaR10eWMHJkl8PRY2ZDgEGJPOOF8cdElvI4ykxgo8MpSHQsMaOdYySkD_GPJbueK6HKf95-hMY7USTdYLdZqfo32jF7K8MrBg';

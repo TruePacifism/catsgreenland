@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useSelector } from 'react-redux';
 import styles from './HobbiesChart.module.css';
@@ -7,6 +7,7 @@ import Container from 'components/Container/Container';
 import { Link } from 'react-router-dom';
 import { TagCloud } from 'react-tagcloud';
 import randomColor from 'randomcolor';
+import getFullHobbyInfo from 'utils/api/hobbies/getFullHobbyInfo';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -27,60 +28,31 @@ function getStatusClass(status) {
   }
 }
 
-function getUsersByHobby(users) {
-  const hobbies = [];
-
-  users.forEach(user => {
-    user.hobbies.forEach(userHobby => {
-      const hobbyIndex = hobbies.findIndex(
-        hobby => hobby.name === userHobby.name
-      );
-
-      if (hobbyIndex === -1) {
-        hobbies.push({
-          name: userHobby.name,
-          users: [{ ...user, hobbyStatus: userHobby.status }],
-        });
-      } else {
-        hobbies[hobbyIndex].users.push({
-          ...user,
-          hobbyStatus: userHobby.status,
-        });
-      }
-    });
-  });
-
-  return hobbies;
-}
-export default function HobbiesChart() {
-  const bios = useSelector(store => store.bios);
+export default function HobbiesChart({ hobbies, hideDescription = false }) {
   const [showingHobby, setShowingHobby] = useState();
-  const [hobbies, setHobbies] = useState();
   const isDarkTheme = useSelector(store => store.isDarkTheme);
-  useEffect(() => {
-    if (!hobbies && bios[0].pfp && bios[0].pfp.startsWith('http')) {
-      const hobbiesWithUsers = getUsersByHobby(bios.filter(bio => bio.hobbies));
-      setHobbies(hobbiesWithUsers);
-    }
-  }, [bios, hobbies]);
   return (
     <Section>
-      <Container heading={'Наши увлечения'}>
-        <p className={styles.chartDescription}>
-          А вот они - наши любимые занятия. <br />
-          Здесь собраны все наши увлечения: от стандартных и повседневных, до
-          самых непопулярных и интересных. <br />
-          Чем больше название - тем популярнее это занятие у нас
-        </p>
-        <p className={styles.disclaimer}>
-          Данные взяты из{' '}
-          <Link to={'/biographys'} className={styles.bioSpan}>
-            рассказов
-          </Link>{' '}
-          участников
-          <br />
-          При нажатии на название увлечения внизу покажет всех его любителей
-        </p>
+      <Container heading={'Увлечения'}>
+        {!hideDescription && (
+          <>
+            <p className={styles.chartDescription}>
+              А вот они - наши любимые занятия. <br />
+              Здесь собраны все наши увлечения: от стандартных и повседневных,
+              до самых непопулярных и интересных. <br />
+              Чем больше название - тем популярнее это занятие у нас
+            </p>
+            <p className={styles.disclaimer}>
+              Данные взяты из{' '}
+              <Link to={'/biographys'} className={styles.bioSpan}>
+                рассказов
+              </Link>{' '}
+              участников
+              <br />
+              При нажатии на название увлечения внизу покажет всех его любителей
+            </p>
+          </>
+        )}
         {hobbies && (
           <TagCloud
             minSize={15}
@@ -99,9 +71,9 @@ export default function HobbiesChart() {
               }),
             }))}
             className={styles.chart}
-            onClick={tag =>
-              setShowingHobby(hobbies.find(hobby => hobby.name === tag.value))
-            }
+            onClick={async tag => {
+              setShowingHobby(await getFullHobbyInfo(tag.value));
+            }}
             props={{ className: styles.chartItem }}
           />
         )}
@@ -109,9 +81,9 @@ export default function HobbiesChart() {
           <div className={styles.infoContainer}>
             <div className={styles.colorInfoContainer}>
               <h3 className={styles.colorName}>{showingHobby.name}:</h3>
-              <span className={styles.percentage}>
+              {/* <span className={styles.percentage}>
                 {Math.floor((showingHobby.users.length / bios.length) * 100)}%
-              </span>
+              </span> */}
             </div>
             <ul className={styles.colorUsersList}>
               {showingHobby.users.map((user, idx) => (
@@ -120,8 +92,8 @@ export default function HobbiesChart() {
                     <img className={styles.userPfp} src={user.pfp} alt="" />
                     <span className={styles.userName}>{user.name}</span>
                   </div>{' '}
-                  <span className={getStatusClass(user.hobbyStatus)}>
-                    Статус: {user.hobbyStatus}
+                  <span className={getStatusClass(user.status)}>
+                    Статус: {user.status}
                   </span>
                 </li>
               ))}

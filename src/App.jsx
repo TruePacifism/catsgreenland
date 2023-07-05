@@ -7,14 +7,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import actions from 'redux/user-actions';
 import Hobbies from 'Pages/Hobbies/Hobbies';
-import getUsers from 'utils/getUser';
 import { useSwipeable } from 'react-swipeable';
 import LoginPage from 'Pages/LoginPage/LoginPage';
-import getGroupMembers from 'utils/checkOnGroupMember';
 import { auth } from 'redux/store';
+import Cabinet from 'Pages/Cabinet/Cabinet';
+import loginUser from 'utils/api/auth/loginUser';
+import getUserInfo from 'utils/api/user/getUserInfo';
 
 export const App = () => {
-  const bios = useSelector(store => store.bios);
   const dispatch = useDispatch();
   const isDarkThemed = useSelector(store => store.isDarkTheme);
   useEffect(() => {
@@ -36,48 +36,44 @@ export const App = () => {
   const currentUser = useSelector(store => store.currentUser);
   const navigate = useNavigate();
   useEffect(() => {
-    if (currentUser === null) {
+    if (localStorage.getItem('loggedUser') === 'undefined') {
+      localStorage.removeItem('loggedUser');
       navigate('/login');
       return;
     }
     const checkUser = async () => {
-      const groupMembers = await getGroupMembers();
-      const isGroupMember = groupMembers.items
-        .map(user => user.id)
-        .includes(currentUser.uid);
-      if (Object.keys(currentUser).length !== 0 && !isGroupMember) {
+      const user = await loginUser(currentUser.token);
+      if (user.error) {
+        navigate('/login');
         dispatch(auth(null));
+      }
+      if (user.vkId) {
+        const fullUser = await getUserInfo(user.vkId);
+        dispatch(
+          auth({
+            token: currentUser.token,
+            ...fullUser,
+          })
+        );
       }
     };
     checkUser();
-  }, [currentUser, navigate, dispatch]);
-
+  }, [currentUser.token, dispatch, navigate]);
   useEffect(() => {
-    if (!bios[0].pfp || !bios[0].pfp.startsWith('http')) {
-      const updateUsers = async () => {
-        const users = await getUsers(bios.map(bios => bios.vkId));
-        dispatch(
-          actions.updateUsers(
-            users.map(user => {
-              return {
-                name: user.first_name + ' ' + user.last_name,
-                pfp: user.photo_max,
-              };
-            })
-          )
-        );
-      };
-      updateUsers();
+    console.log('currentUser', currentUser);
+    if (!currentUser) {
+      navigate('/login', { replace: true });
     }
-  }, [bios, dispatch]);
+  }, [useNavigate, currentUser]);
   return (
     <div {...handlers} className={isDarkThemed ? 'dark--theme' : ''}>
-      {currentUser && <Header />}
+      {localStorage.getItem('loggedUser') && <Header />}
       <Routes>
         <Route exact path="/" Component={MainPage} />
         <Route path="/biographys/*" Component={Biographys} />
         <Route path="/hobbies" Component={Hobbies} />
         <Route path="/login" Component={LoginPage} />
+        <Route path="/cabinet" Component={Cabinet} />
       </Routes>
       <Footer />
     </div>

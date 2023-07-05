@@ -14,7 +14,6 @@ import styles from './GenderChart.module.css';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { Link } from 'react-router-dom';
-import getGroupMembers from 'utils/checkOnGroupMember';
 
 ChartJS.register(
   CategoryScale,
@@ -34,14 +33,20 @@ const options = {
   },
 };
 
-function getGenderPercentage(bios, gender) {
-  return gender === 'Мужской'
-    ? Math.floor((bios[0] / (bios[0] + bios[1])) * 100)
-    : Math.floor((bios[1] / (bios[0] + bios[1])) * 100);
+function getGenderPercentage(gendersCount) {
+  return `${Math.floor(
+    (gendersCount.male / (gendersCount.male + gendersCount.female)) * 100
+  )}%/${Math.floor(
+    (gendersCount.female / (gendersCount.male + gendersCount.female)) * 100
+  )}% `;
+  // return gender === 'Мужской'
+  //   ? Math.floor((bios[0] / (bios[0] + bios[1])) * 100)
+  //   : Math.floor((bios[1] / (bios[0] + bios[1])) * 100);
 }
 function getAverageAge(ages) {
   const averageAge = Math.floor(
-    ages.reduce((sum, age) => sum + age, 0) / ages.length
+    [...ages.male, ...ages.female].reduce((sum, age) => sum + age, 0) /
+      [...ages.male, ...ages.female].length
   );
   let suffix = '';
   switch (averageAge % 10) {
@@ -60,7 +65,8 @@ function getAverageAge(ages) {
   }
   return `${averageAge} ${suffix}`;
 }
-function getAgeRanges(data) {
+function getAgeRanges(ages) {
+  const data = [ages.male, ages.female];
   // получаем минимальный и максимальный возраст среди всех
   const minAge = Math.min(...data.flat());
   const maxAge = Math.max(...data.flat());
@@ -117,48 +123,30 @@ function getAgeRanges(data) {
   // возвращаем объект с массивом возрастов и массивом промежутков
   return { ageRanges, ranges };
 }
-function getDatasets(bios) {
-  const agesByGender = [
-    bios.filter(bio => bio.gender === 'Мужской' && bio.age).map(bio => bio.age),
-    bios.filter(bio => bio.gender === 'Женский' && bio.age).map(bio => bio.age),
-  ];
-  return agesByGender;
-}
-export function GenderChart() {
-  const bios = useSelector(store => store.bios);
+export function GenderChart({ stats }) {
   const [ranges, setRanges] = useState();
   const [data, setData] = useState();
+  const [averageAge, setAverageAge] = useState();
   const [genders, setGenders] = useState(null);
   const isDarkTheme = useSelector(store => store.isDarkTheme);
   useEffect(() => {
-    const ageRanges = getAgeRanges(getDatasets(bios));
-    setRanges(ageRanges.ranges.map(range => `${range.start} - ${range.end}`));
-    setData(
-      ageRanges.ageRanges.reduce(
-        (result, range) => [
-          [...result[0], range.male],
-          [...result[1], range.female],
-        ],
-        [[], []]
-      )
-    );
-  }, [bios]);
-  useEffect(() => {
-    const addGenders = async () => {
-      const groupMembers = await getGroupMembers();
-      const genders = groupMembers.items
-        .map(member => (member.sex === 2 ? 'Мужской' : 'Женский'))
-        .reduce(
-          (reducer, gender) =>
-            gender === 'Мужской'
-              ? [reducer[0] + 1, reducer[1]]
-              : [reducer[0], reducer[1] + 1],
-          [0, 0]
-        );
-      setGenders(genders);
+    const fetchData = async () => {
+      const ageRanges = getAgeRanges(stats.ages);
+      setRanges(ageRanges.ranges.map(range => `${range.start} - ${range.end}`));
+      setData(
+        ageRanges.ageRanges.reduce(
+          (result, range) => [
+            [...result[0], range.male],
+            [...result[1], range.female],
+          ],
+          [[], []]
+        )
+      );
+      setGenders(stats.gendersCount);
+      setAverageAge(getAverageAge(stats.ages));
     };
-    addGenders();
-  }, []);
+    fetchData();
+  }, [stats]);
 
   return (
     <Section>
@@ -206,17 +194,10 @@ export function GenderChart() {
           </div>
         )}
         <b>Соотношение М/Ж в %: </b>
-        <span>
-          {genders && getGenderPercentage(genders, 'Мужской')}
-          %/
-          {genders && getGenderPercentage(genders, 'Женский')}
-          %,{' '}
-        </span>
+        <span>{genders && getGenderPercentage(genders)}</span>
         <br />
         <b>Средний возраст: </b>
-        <span>
-          {getAverageAge(bios.filter(bio => bio.age).map(bio => bio.age))}
-        </span>
+        <span>{averageAge}</span>
       </Container>
     </Section>
   );

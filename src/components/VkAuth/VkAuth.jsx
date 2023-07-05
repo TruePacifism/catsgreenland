@@ -1,9 +1,7 @@
 import styles from './VkAuth.module.css';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from 'redux/store';
-import placeholder from '../../images/image-placeholder.png';
-import getPfp from 'utils/api/user/getPfp';
 import { Link } from 'react-router-dom';
 import ThemeToggle from 'components/ThemeToggle/ThemeToggle';
 import loginUser from 'utils/api/auth/loginUser';

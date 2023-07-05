@@ -48,8 +48,8 @@ export default function LoginPage() {
                       groupMembers.items.map(user => user.id).includes(user.uid)
                     ) {
                       console.log('проверка пройдена');
-                      await createUser(user.hash, user.uid);
-                      dispatch(auth({ token: user.hash }));
+                      const loggedUser = await createUser(user.hash, user.uid);
+                      dispatch(auth(loggedUser));
                       navigate('/');
                     }
                   },

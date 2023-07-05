@@ -1,6 +1,6 @@
 const vars = {
   accentColor: 'green',
-  apiUrl: 'https://nodejs-production-0f0d.up.railway.app/api',
+  apiUrl: 'https://bot-gorov2323.b4a.run/api',
   // apiUrl: 'http://localhost:3000/api',
 };
 

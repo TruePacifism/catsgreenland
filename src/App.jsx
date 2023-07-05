@@ -64,7 +64,7 @@ export const App = () => {
     if (!currentUser) {
       navigate('/login', { replace: true });
     }
-  }, [useNavigate, currentUser]);
+  }, [navigate, currentUser]);
   return (
     <div {...handlers} className={isDarkThemed ? 'dark--theme' : ''}>
       {localStorage.getItem('loggedUser') && <Header />}

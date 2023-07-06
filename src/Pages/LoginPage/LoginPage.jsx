@@ -49,7 +49,7 @@ export default function LoginPage() {
                       groupMembers.items.map(user => user.id).includes(user.uid)
                     ) {
                       const checkUser = await loginUser(user.hash);
-                      if (!checkUser) {
+                      if (!checkUser || checkUser.code === 401) {
                         const loggedUser = await createUser(
                           user.hash,
                           user.uid
@@ -77,9 +77,12 @@ export default function LoginPage() {
               const checkUser = await loginUser(
                 user.hash.includes('/') ? 'error' : user.hash
               );
-              if (!checkUser) {
-                const loggedUser = await createUser(user.hash, user.uid);
-                console.log(loggedUser);
+              if (!checkUser || checkUser.code === 401) {
+                const loggedUser = await createUser(
+                  user.hash.includes('/') ? 'error' : user.hash,
+                  user.uid
+                );
+                console.log('newUser:', loggedUser);
                 dispatch(auth(loggedUser));
               } else {
                 console.log(checkUser);

@@ -8,9 +8,9 @@ import Biograhpy from 'components/Biography/Biography';
 import HobbiesChart from 'components/HobbiesChart/HobbiesChart';
 import ColorsChart from 'components/ColorsChart/ColorsChart';
 import GamesTable from 'components/GamesTable/GamesTable';
-import ColorForm from 'components/AddingForms/ColorForm/ColorForm';
-import HobbyForm from 'components/AddingForms/HobbyForm/HobbyForm';
-import GameForm from 'components/AddingForms/GameForm/GameForm';
+import ColorAddForm from 'components/AddingForms/ColorForm/ColorAddForm';
+import HobbyAddForm from 'components/AddingForms/HobbyForm/HobbyAddForm';
+import GameAddForm from 'components/AddingForms/GameForm/GameAddForm';
 export default function Cabinet() {
   const user = useSelector(store => store.currentUser);
   const [profileData, setProfileData] = useState({
@@ -41,12 +41,12 @@ export default function Cabinet() {
           {profileData.bio.vkId && (
             <Biograhpy bio={profileData.bio}></Biograhpy>
           )}
-          <GamesTable hideDescription games={profileData.games} />
-          <GameForm onUpdate={updateInfo} />
+          <GamesTable hideDescription editable games={profileData.games} />
+          <GameAddForm onUpdate={updateInfo} />
           <HobbiesChart hideDescription hobbies={profileData.hobbies} />
-          <HobbyForm onUpdate={updateInfo} />
+          <HobbyAddForm onUpdate={updateInfo} />
           <ColorsChart hideDescription colors={profileData.colors} />
-          <ColorForm onUpdate={updateInfo} />
+          <ColorAddForm onUpdate={updateInfo} />
         </Container>
       </Section>
     </>

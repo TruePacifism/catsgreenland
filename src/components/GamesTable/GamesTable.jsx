@@ -25,7 +25,7 @@ function getStatusClass(status) {
   }
 }
 
-function GamesTable({ games, hideDescription = false }) {
+function GamesTable({ games, hideDescription = false, editable = false }) {
   const [filter, setFilter] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [sortField, setSortField] = useState('userscount');
@@ -258,7 +258,10 @@ function GamesTable({ games, hideDescription = false }) {
                   }}
                   key={item.title}
                 >
-                  <td className={styles.td}>{item.title}</td>
+                  <td className={styles.td}>
+                    {item.title}
+                    {/* {editable && <EditIcon className={styles.editIcon} />} */}
+                  </td>
                   <td className={styles.td}>{item.userscount}</td>
                   {!isMobile && <td className={styles.td}>{item.types}</td>}
                 </tr>

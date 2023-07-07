@@ -22,3 +22,40 @@
   width: 100%;
   margin-bottom: 10px;
 }
+.playlistContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 10px;
+}
+.playlistItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: rgba(0, 255, 0, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 5px;
+}
+.playlistItemContainer:not(:last-child) {
+  margin-bottom: 10px;
+}
+.playAllIcon,
+.addMusicIcon {
+  width: 25px;
+  height: 25px;
+  fill: var(--accent-color);
+  margin-left: 10px;
+  cursor: pointer;
+}
+.playAllTitle,
+.title {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+.playAllContainer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  cursor: pointer;
+}

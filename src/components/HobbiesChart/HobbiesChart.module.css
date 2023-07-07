@@ -123,26 +123,30 @@
 .notSerious,
 .moneytised,
 .professional,
-.forbidden {
+.forbidden,
+.planned {
   text-decoration: underline;
   text-decoration-thickness: 2px; /* изменяем толщину на 2 пикселя */
   margin-left: 15px;
   font-weight: 500;
 }
 .onGoing {
-  text-decoration-color: green; /* изменяем цвет на синий */
+  text-decoration-color: green;
 }
 .notSerious {
-  text-decoration-color: blue; /* изменяем цвет на синий */
+  text-decoration-color: blue;
 }
 .moneytised {
-  text-decoration-color: orange; /* изменяем цвет на синий */
+  text-decoration-color: orange;
 }
 .forbidden {
-  text-decoration-color: red; /* изменяем цвет на синий */
+  text-decoration-color: red;
 }
 .professional {
-  text-decoration-color: purple; /* изменяем цвет на синий */
+  text-decoration-color: purple;
+}
+.planned {
+  text-decoration-color: pink;
 }
 @media screen and (max-width: 767px) {
   .checkboxesList {

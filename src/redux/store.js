@@ -12,7 +12,12 @@ function importMusic() {
     const fileNameFull = pathParts[pathParts.length - 1];
     const fileName = fileNameFull.substring(0, fileNameFull.length - 4);
     const musicFile = context(filePath);
-    const fileObject = { name: fileName, path: filePath, music: musicFile };
+    const fileObject = {
+      title: fileName.split(' - ')[1],
+      artist: fileName.split(' - ')[0],
+      path: filePath,
+      music: musicFile,
+    };
     if (!files[vkId]) {
       files[vkId] = [fileObject];
     } else {

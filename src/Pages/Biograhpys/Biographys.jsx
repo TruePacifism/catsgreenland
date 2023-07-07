@@ -42,6 +42,9 @@ export default function Biographys() {
         const vkId = searchParams.get('id');
         const bio = await getFullBio(vkId);
         setShowingBio(bio);
+        if (!bioRef || !bioRef.current) {
+          return;
+        }
         const headerOffset = 80;
         const elementPosition = bioRef.current.getBoundingClientRect().top;
         const offsetPosition =

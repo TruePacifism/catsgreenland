@@ -1,6 +1,5 @@
 import Biographys from 'Pages/Biograhpys/Biographys';
 import MainPage from 'Pages/MainPage/MainPage';
-import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,6 +12,65 @@ import { auth } from 'redux/store';
 import Cabinet from 'Pages/Cabinet/Cabinet';
 import loginUser from 'utils/api/auth/loginUser';
 import getUserInfo from 'utils/api/user/getUserInfo';
+import Player, { PlayerInterface, Track } from 'react-material-music-player';
+import musicPlaceholder from './images/music-placeholder.jpg';
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { green } from '@mui/material/colors';
+
+const darkTheme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+    secondary: {
+      main: green[500],
+    },
+    background: {
+      paper: '#0A1929',
+    },
+    action: {
+      active: green[500],
+      hover: 'rgba(255, 255, 255, 0.08)',
+      hoverOpacity: 0.08,
+      selected: 'rgba(255, 255, 255, 0.16)',
+      selectedOpacity: 0.16,
+    },
+    text: {
+      disabled: 'rgba(255, 255, 255, 0.5)',
+      icon: 'rgba(255, 255, 255, 0.5)',
+      primary: '#fff',
+      secondary: '#AAB4BE',
+    },
+  },
+});
+
+const lightTheme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+    secondary: {
+      main: green[500],
+    },
+    background: {
+      paper: '#eeffee',
+    },
+    action: {
+      active: green[500],
+      hover: 'rgba(0, 0, 0, 0.04)',
+      hoverOpacity: 0.04,
+      selected: 'rgba(0, 0, 0, 0.08)',
+      selectedOpacity: 0.08,
+    },
+    text: {
+      disabled: 'rgba(0, 0, 0, 0.38)',
+      icon: 'rgba(0, 0, 0, 0.54)',
+      primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: 'rgba(0, 0, 0, 0.54)',
+    },
+  },
+});
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -69,6 +127,9 @@ export const App = () => {
       navigate('/login', { replace: true });
     }
   }, [navigate, currentUser]);
+  useEffect(() => {
+    PlayerInterface.play([new Track('', musicPlaceholder, '', '', '')]);
+  }, []);
   return (
     <div {...handlers} className={isDarkThemed ? 'dark--theme' : ''}>
       {localStorage.getItem('loggedUser') && <Header />}
@@ -79,7 +140,9 @@ export const App = () => {
         <Route path="/login" Component={LoginPage} />
         <Route path="/cabinet" Component={Cabinet} />
       </Routes>
-      <Footer />
+      <ThemeProvider theme={isDarkThemed ? darkTheme : lightTheme}>
+        <Player />
+      </ThemeProvider>
     </div>
   );
 };

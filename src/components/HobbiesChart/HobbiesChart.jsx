@@ -23,6 +23,8 @@ function getStatusClass(status) {
       return styles.moneytised;
     case 'Профессионал':
       return styles.professional;
+    case 'Есть в планах':
+      return styles.planned;
     default:
       return '';
   }

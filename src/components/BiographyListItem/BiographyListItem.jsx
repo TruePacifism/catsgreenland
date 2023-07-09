@@ -23,7 +23,7 @@ export default function BiograhpyListItem({ bio }) {
   }, [bio, user]);
 
   const likeHandler = async () => {
-    await toggleLike(user.token, Number(searchParams.get('id')));
+    await toggleLike(user.token, bio.vkId);
     setIsLiked(prevIsLiked => !prevIsLiked);
     setLikesCounter(prevCounter =>
       isLiked ? prevCounter - 1 : prevCounter + 1

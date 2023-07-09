@@ -99,6 +99,21 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
       })
     );
   }, [filteredData, sortField, sortOrder]);
+  useEffect(() => {
+    const refreshShowingGame = async () => {
+      const refreshedShowingGame = async prevShowingGame => {
+        console.log('prevShowingGame', prevShowingGame);
+        if (prevShowingGame) {
+          const fullGameInfo = await getFullGameInfo(prevShowingGame.title);
+          return fullGameInfo;
+        } else {
+          return null;
+        }
+      };
+      setShowingGame(await refreshedShowingGame());
+    };
+    refreshShowingGame();
+  }, [games]);
   return (
     <Section>
       <Container
@@ -285,6 +300,11 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
                     <img className={styles.playerPfp} src={user.pfp} alt="" />
                     <span className={styles.playerName}>{user.name} </span>
                   </div>
+                  {user.status && (
+                    <span className={getStatusClass(user.status)}>
+                      Статус: {user.status}
+                    </span>
+                  )}
                   {user.rating &&
                     user.rating !== '' &&
                     user.rating !== '-' &&
@@ -293,11 +313,6 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
                         Рейтинг: {user.rating}
                       </span>
                     )}
-                  {user.status && (
-                    <span className={getStatusClass(user.status)}>
-                      Статус: {user.status}
-                    </span>
-                  )}
                 </li>
               ))}
             </ul>

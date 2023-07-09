@@ -1,5 +1,5 @@
-import styles from './AddIcon.module.css';
-import { ReactComponent as Icon } from '../../../images/edit-icon.svg';
+import styles from './EditIcon.module.css';
+import { ReactComponent as Icon } from '../../../../images/edit-icon.svg';
 
 export default function EditIcon({ action }) {
   return (

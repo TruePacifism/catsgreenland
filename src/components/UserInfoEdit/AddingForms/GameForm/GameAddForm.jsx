@@ -4,6 +4,8 @@ import styles from './GameAddForm.module.css';
 import AddIcon from '../AddIcon/AddIcon';
 import addGame from 'utils/api/games/addGame';
 import getAllGames from 'utils/api/games/getAllGames';
+import editGame from 'utils/api/games/editGame';
+import deleteGame from 'utils/api/games/deleteGame';
 
 const statuses = [
   'Пройдено',
@@ -16,18 +18,38 @@ const typesList = ['Синглплеер', 'Мультиплеер', 'Коопе
 export default function GameAddForm({ onUpdate = () => {} }) {
   const user = useSelector(store => store.currentUser);
 
-  const onSubmit = async ({ game, status, rating }) => {
+  const AddGame = async ({ game, status, rating }) => {
     const { title, types } = game;
     if (!title || !status || !types) {
       return;
     }
-    addGame(user.token, game, status, rating);
-    onUpdate();
-    setTitle('');
-    setTypes('');
-    setStatus('');
-    setRating('');
-    setShowForm(false);
+    const newGameResponse = await addGame(user.token, game, status, rating);
+    const newGame = typeof newGameResponse === Array ? newGameResponse[0] : newGameResponse;
+    setGames(
+      games.map(game => game.title).includes(newGame.title)
+        ? games.map(game => (game.title === newGame.title ? newGame : game))
+        : [...games, newGame]
+    );
+  };
+  const EditGame = async ({ game, status, rating }) => {
+    console.log(game, status, rating);
+    const { title, types } = game;
+    if (!title || !status || !types) {
+      return;
+    }
+    const updatedGame = await editGame(user.token, game, status, rating);
+    setGames(
+      games.map(game => (game.title === updatedGame.title ? updatedGame : game))
+    );
+  };
+  const DeleteGame = async ({ title }) => {
+    if (!title) {
+      return;
+    }
+    const updatedGame = await deleteGame(user.token, title);
+    setGames(
+      games.map(game => (game.title === updatedGame.title ? updatedGame : game))
+    );
   };
 
   const [games, setGames] = useState([]);
@@ -39,6 +61,15 @@ export default function GameAddForm({ onUpdate = () => {} }) {
     fetchGames();
   }, []);
 
+  const [userGames, setUserGames] = useState([]);
+  useEffect(() => {
+    setUserGames(
+      games.filter(game =>
+        game.users.find(gameUser => user.vkId === gameUser.vkId)
+      )
+    );
+  }, [games, user]);
+
   const [title, setTitle] = useState('');
   const [types, setTypes] = useState('');
   const [status, setStatus] = useState('');
@@ -47,17 +78,51 @@ export default function GameAddForm({ onUpdate = () => {} }) {
   const [suggestions, setSuggestions] = useState([]);
   const [showForm, setShowForm] = useState(false);
 
+  const [isUserPlaying, setIsUserPlaying] = useState(false);
+  useEffect(() => {
+    setIsUserPlaying(userGames.find(userGame => userGame.title === title));
+  }, [title, userGames]);
+
   // Функция, которая вызывается при отправке формы
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    onSubmit({
-      game: {
-        title,
-        types: types.join(', '),
-      },
-      status,
-      rating,
-    });
+    const actionName = e.nativeEvent.submitter.outerText;
+    switch (actionName) {
+      case 'Добавить':
+        await AddGame({
+          game: {
+            title,
+            types: types.join(', '),
+          },
+          status,
+          rating,
+        });
+        break;
+      case 'Изменить':
+        await EditGame({
+          game: {
+            title,
+            types: types.join(', '),
+          },
+          status,
+          rating,
+        });
+        break;
+      case 'Удалить':
+        await DeleteGame({
+          title,
+        });
+        break;
+
+      default:
+        break;
+    }
+    onUpdate();
+    setTitle('');
+    setTypes('');
+    setStatus('');
+    setRating('');
+    setShowForm(false);
   };
 
   // Функция, которая вызывается при изменении поля ввода для названия цвета
@@ -73,7 +138,13 @@ export default function GameAddForm({ onUpdate = () => {} }) {
         setIsDisabled(true);
         setTitle(exactSuggestion.title);
         setTypes(exactSuggestion.types.split(', '));
-
+        const userInGame = exactSuggestion.users.find(
+          gameUser => gameUser.vkId === user.vkId
+        );
+        if (userInGame) {
+          setStatus(userInGame.status);
+          setRating(userInGame.rating ? userInGame.rating : '');
+        }
         setSuggestions([]);
         return;
       }
@@ -188,9 +259,25 @@ export default function GameAddForm({ onUpdate = () => {} }) {
             />
           </div>
 
-          <button className={styles.button} type="submit">
-            Добавить игру
-          </button>
+          <div className={styles.buttonsList}>
+            {isUserPlaying ? (
+              <>
+                <button className={styles.button} type="submit">
+                  Изменить
+                </button>
+                <button
+                  className={styles.button + ' ' + styles.dangerButton}
+                  type="submit"
+                >
+                  Удалить
+                </button>
+              </>
+            ) : (
+              <button className={styles.button} type="submit">
+                Добавить
+              </button>
+            )}
+          </div>
         </form>
       ) : (
         <AddIcon action={() => setShowForm(true)} />

@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .label {
   color: var(--accent-color);
@@ -8,6 +9,9 @@
 }
 .label:not(:last-child) {
   margin-bottom: 10px;
+}
+.radioLabel {
+  width: fit-content;
 }
 .radioLabel:not(:last-child) {
   margin-right: 10px;
@@ -25,9 +29,25 @@
 .input:focus {
   border: 2px solid var(--accent-color);
 }
+.radioContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-bottom: 15px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
 .radio {
   margin-right: 5px;
 }
+.buttonsList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button {
   background-color: green;
   color: white;
@@ -35,8 +55,11 @@
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
   padding: 10px;
+  display: block;
 }
-
+.button:not(:last-child) {
+  margin-right: 15px;
+}
 .button:hover {
   background-color: #338736;
   border-color: #338736;
@@ -45,4 +68,15 @@
 
 .button:active {
   background-color: green;
+}
+.dangerButton {
+  background-color: red;
+  border: 2px solid #874033; /* зеленый оттенок из палитры Material Design */
+}
+.dangerButton:hover {
+  background-color: #874033;
+  border-color: #874033;
+}
+.dangerButton:active {
+  background-color: red;
 }

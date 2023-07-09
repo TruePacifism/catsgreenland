@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useSelector } from 'react-redux';
 import styles from './HobbiesChart.module.css';
@@ -32,6 +32,20 @@ function getStatusClass(status) {
 
 export default function HobbiesChart({ hobbies, hideDescription = false }) {
   const [showingHobby, setShowingHobby] = useState();
+  useEffect(() => {
+    const refreshShowingHobby = async () => {
+      const refreshedShowingHobby = async prevShowingHobby => {
+        if (prevShowingHobby) {
+          const fullHobbyInfo = await getFullHobbyInfo(prevShowingHobby.name);
+          return fullHobbyInfo;
+        } else {
+          return null;
+        }
+      };
+      setShowingHobby(await refreshedShowingHobby());
+    };
+    refreshShowingHobby();
+  }, [hobbies]);
   const isDarkTheme = useSelector(store => store.isDarkTheme);
   return (
     <Section>

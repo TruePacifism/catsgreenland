@@ -8,9 +8,10 @@ import Biograhpy from 'components/Biography/Biography';
 import HobbiesChart from 'components/HobbiesChart/HobbiesChart';
 import ColorsChart from 'components/ColorsChart/ColorsChart';
 import GamesTable from 'components/GamesTable/GamesTable';
-import ColorAddForm from 'components/AddingForms/ColorForm/ColorAddForm';
-import HobbyAddForm from 'components/AddingForms/HobbyForm/HobbyAddForm';
-import GameAddForm from 'components/AddingForms/GameForm/GameAddForm';
+import ColorAddForm from 'components/UserInfoEdit/AddingForms/ColorForm/ColorAddForm';
+import HobbyAddForm from 'components/UserInfoEdit/AddingForms/HobbyForm/HobbyAddForm';
+import GameAddForm from 'components/UserInfoEdit/AddingForms/GameForm/GameAddForm';
+
 export default function Cabinet() {
   const user = useSelector(store => store.currentUser);
   const [profileData, setProfileData] = useState({
@@ -21,23 +22,29 @@ export default function Cabinet() {
     colors: [],
     bio: {},
   });
-  const [updateMarker, setUpdateMarker] = useState(true);
   const updateInfo = async () => {
-    setUpdateMarker(!updateMarker);
+    const data = await getCabinetData(user.vkId);
+    setProfileData(data);
   };
   useEffect(() => {
     if (user.vkId) {
-      const fetchData = async () => {
+      const fetchInfo = async () => {
         const data = await getCabinetData(user.vkId);
         setProfileData(data);
       };
-      fetchData();
+      fetchInfo();
     }
-  }, [user, updateMarker]);
+  }, [user]);
   return (
     <>
       <Section>
         <Container heading={'Личный кабинет'}>
+          {/* <iframe
+            src="//konstruktortestov.ru/test-42680?i=frame"
+            frameborder="0"
+            width={'100%'}
+            height={'fit-content'}
+          ></iframe> */}
           {profileData.bio.vkId && (
             <Biograhpy bio={profileData.bio}></Biograhpy>
           )}

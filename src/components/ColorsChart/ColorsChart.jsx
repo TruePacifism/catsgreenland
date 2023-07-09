@@ -17,6 +17,20 @@ export default function ColorsChart({ colors, hideDescription = false }) {
     labels: [],
     datasets: [],
   });
+  useEffect(() => {
+    const refreshShowingColor = async () => {
+      const refreshedShowingColor = async prevShowingColor => {
+        if (prevShowingColor) {
+          const fullColorInfo = await getFullColorInfo(prevShowingColor.name);
+          return fullColorInfo;
+        } else {
+          return null;
+        }
+      };
+      setShowingColor(await refreshedShowingColor());
+    };
+    refreshShowingColor();
+  }, [colors]);
   const isDarkTheme = useSelector(store => store.isDarkTheme);
   useEffect(() => {
     if (colors) {

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import addColor from 'utils/api/colors/addColor';
 import getAllColors from 'utils/api/colors/getAllColors';
 import { useSelector } from 'react-redux';
-import styles from './ColorAddForm.module.css';
-import AddIcon from '../AddIcon/AddIcon';
+import styles from './ColorEditForm.module.css';
+import EditIcon from '../EditIcon/EditIcon';
 
 function rgbToHex(r, g, b) {
   const hexR = r.toString(16).padStart(2, '0');
@@ -20,7 +20,7 @@ function hexToRgb(hex) {
   return { r, g, b };
 }
 
-export default function ColorAddForm({ onUpdate = () => {} }) {
+export default function ColorEditForm({ onUpdate = () => {}, isShowing }) {
   const user = useSelector(store => store.currentUser);
 
   const onSubmit = async color => {
@@ -154,7 +154,7 @@ export default function ColorAddForm({ onUpdate = () => {} }) {
           </button>
         </form>
       ) : (
-        <AddIcon action={() => setShowForm(true)} />
+        <EditIcon action={() => setShowForm(true)} />
       )}
     </div>
   );

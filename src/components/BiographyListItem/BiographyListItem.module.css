@@ -64,3 +64,35 @@
   font-family: 'Slackside One', cursive;
   font-size: 24px;
 }
+.likeContainer {
+  position: absolute;
+  left: 5px;
+  bottom: -5px;
+  transform: translateY(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.likedIcon,
+.notLikedIcon {
+  width: 25px;
+  height: 25px;
+  stroke: var(--accent-color);
+  cursor: pointer;
+
+  transition: transform linear 250ms;
+}
+.likedIcon {
+  fill: var(--accent-color);
+}
+.notLikedIcon {
+  fill: var(--background-color);
+}
+.likedIcon:hover,
+.notLikedIcon:hover {
+  transform: scale(1.3);
+}
+.likeCounter {
+  color: var(--accent-color);
+  font-weight: 500;
+}

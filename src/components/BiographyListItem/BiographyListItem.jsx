@@ -36,22 +36,48 @@ export default function BiograhpyListItem({ bio }) {
           ? styles.item + ' ' + styles.selected
           : styles.item
       }
-      onClick={e => {
-        if (e.target === e.currentTarget) {
+    >
+      <span
+        onClick={e => {
           setSearchParams(prevParams => {
             return {
               ...prevParams,
               id: bio.vkId,
             };
           });
-        }
-      }}
-    >
-      <span className={styles.name}>{bio.name ? bio.name : 'Загрузка...'}</span>
+        }}
+        className={styles.name}
+      >
+        {bio.name ? bio.name : 'Загрузка...'}
+      </span>
       {bio.pfp ? (
-        <img src={bio.pfp} alt={bio.name} className={styles.image} />
+        <img
+          onClick={e => {
+            setSearchParams(prevParams => {
+              return {
+                ...prevParams,
+                id: bio.vkId,
+              };
+            });
+          }}
+          src={bio.pfp}
+          alt={bio.name}
+          className={styles.image}
+        />
       ) : (
-        <img src={placeholder} alt="Загрузка..." className={styles.image} />
+        <img
+          onClick={e => {
+            setSearchParams(prevParams => {
+              return {
+                ...prevParams,
+                id: bio.vkId,
+              };
+            });
+          }}
+          src={placeholder}
+          alt="Загрузка..."
+          className={styles.image}
+        />
       )}
       {bio.alert && (
         <div className={styles.alert}>

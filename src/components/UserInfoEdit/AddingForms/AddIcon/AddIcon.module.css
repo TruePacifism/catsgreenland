@@ -8,7 +8,7 @@
 .icon {
   width: 30px;
   height: 30px;
-  fill: var(--accent-color);
+  stroke: var(--accent-color);
   display: inline-block;
 }
 .text {

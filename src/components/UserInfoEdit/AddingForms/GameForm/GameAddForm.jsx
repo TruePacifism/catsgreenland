@@ -24,7 +24,8 @@ export default function GameAddForm({ onUpdate = () => {} }) {
       return;
     }
     const newGameResponse = await addGame(user.token, game, status, rating);
-    const newGame = typeof newGameResponse === Array ? newGameResponse[0] : newGameResponse;
+    const newGame =
+      typeof newGameResponse === Array ? newGameResponse[0] : newGameResponse;
     setGames(
       games.map(game => game.title).includes(newGame.title)
         ? games.map(game => (game.title === newGame.title ? newGame : game))
@@ -63,9 +64,12 @@ export default function GameAddForm({ onUpdate = () => {} }) {
 
   const [userGames, setUserGames] = useState([]);
   useEffect(() => {
+    console.log('updatedGames:', games);
     setUserGames(
       games.filter(game =>
-        game.users.find(gameUser => user.vkId === gameUser.vkId)
+        game.users
+          ? game.users.find(gameUser => user.vkId === gameUser.vkId)
+          : false
       )
     );
   }, [games, user]);

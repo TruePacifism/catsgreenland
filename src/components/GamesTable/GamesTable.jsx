@@ -72,7 +72,7 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
 
     setFilteredData(
       games.filter(game => {
-        return (
+        return ( game.users.length > 0 &&
           game.title.toLowerCase().includes(filter.toLowerCase()) &&
           typeFilter.some(type => game.types.toLowerCase().includes(type))
         );

@@ -33,6 +33,27 @@ function importMusic() {
 
 const musicFiles = importMusic();
 
+let scrollPosition = 0;
+
+const disableScroll = () => {
+  // Сохраняем текущую позицию прокрутки
+  scrollPosition = window.pageYOffset;
+
+  // Добавляем стили для блокировки прокрутки
+  document.body.style.overflow = 'hidden';
+  // document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+};
+
+const enableScroll = () => {
+  // Удаляем стили для блокировки прокрутки
+  document.body.style.overflow = '';
+  // document.body.style.position = '';
+  document.body.style.top = '';
+  // Возвращаем страницу на сохраненную позицию прокрутки
+  window.scrollTo(0, scrollPosition);
+};
+
 const initialState = {
   currentUser: {
     token: localStorage.getItem('loggedUser'),
@@ -93,6 +114,11 @@ const reducer = createReducer(initialState, builder => {
       };
     })
     .addCase(actions.setOpenBurger, (state, action) => {
+      if (action.payload === true) {
+        disableScroll();
+      } else {
+        enableScroll();
+      }
       return {
         ...state,
         isBurgerOpen: action.payload,

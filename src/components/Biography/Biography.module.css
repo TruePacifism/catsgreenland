@@ -13,6 +13,11 @@
 .name {
   color: var(--accent-color);
   composes: link from '../../index.css';
+  text-decoration: underline solid var(--accent-color);
+}
+.name:visited {
+  color: var(--accent-color);
+  text-decoration: underline solid var(--accent-color);
 }
 .text {
   color: var(--accent-color);

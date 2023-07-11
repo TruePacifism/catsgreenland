@@ -11,7 +11,9 @@ export default function Biograhpy({ bioRef, bio }) {
   const music = useSelector(store => store.bioMusic[bio.vkId]);
   return (
     <div ref={bioRef} className={styles.container}>
-      <h3 className={styles.name}>{bio.name}</h3>
+      <a target="_blank" rel="noreferrer" href={`https://vk.com/id${bio.vkId}`}>
+        <h3 className={styles.name}>{bio.name}</h3>
+      </a>
       <BiographyText className={styles.text} text={bio.text} />
       {bio.imagesUrl.map((image, idx) => (
         <img key={idx} src={image} alt="" className={styles.image} />

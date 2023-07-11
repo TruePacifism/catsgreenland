@@ -15,6 +15,7 @@
 .rulesList {
   box-sizing: border-box; /* учитывать границы и отступы элемента */
   padding-left: 1em;
+  margin-bottom: 0;
 }
 .rulesListItem {
   list-style-type: decimal;
@@ -39,4 +40,21 @@
 }
 .disclaimer {
   margin-left: 10px;
+}
+.PSBlock {
+  position: relative;
+  margin-top: 15px;
+}
+.PSBlock::before {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 80%;
+  left: 10%;
+  background-color: var(--accent-color);
+  content: '';
+}
+.PS {
+  text-align: center;
+  padding-top: 15px;
 }

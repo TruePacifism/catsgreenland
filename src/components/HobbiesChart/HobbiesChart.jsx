@@ -32,7 +32,12 @@ function getStatusClass(status) {
 
 export default function HobbiesChart({ hobbies, hideDescription = false }) {
   const [showingHobby, setShowingHobby] = useState();
+  const [filteredHobbies, setFilteredHobbies] = useState();
   useEffect(() => {
+    if (!hobbies) {
+      return;
+    }
+    setFilteredHobbies(hobbies.filter(hobby => hobby.users.length > 0));
     const refreshShowingHobby = async () => {
       const refreshedShowingHobby = async prevShowingHobby => {
         if (prevShowingHobby) {
@@ -69,13 +74,13 @@ export default function HobbiesChart({ hobbies, hideDescription = false }) {
             </p>
           </>
         )}
-        {hobbies && (
+        {filteredHobbies && (
           <TagCloud
             minSize={15}
             maxSize={35}
             randomSeed={3213}
             style={{ textAlign: 'center' }}
-            tags={hobbies.map(hobby => ({
+            tags={filteredHobbies.map(hobby => ({
               value: hobby.name,
               count: hobby.users.length,
               color: randomColor({

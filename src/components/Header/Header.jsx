@@ -36,6 +36,11 @@ export default function Header() {
   const dispatch = useDispatch();
   const setIsBurgerOpen = isOpen => {
     dispatch(actions.setOpenBurger(isOpen));
+    if (isOpen) {
+      disableScroll();
+    } else {
+      enableScroll();
+    }
   };
   const isBurgerOpen = useSelector(store => store.isBurgerOpen);
 

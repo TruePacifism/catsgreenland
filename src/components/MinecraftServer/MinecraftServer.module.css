@@ -1,0 +1,49 @@
+.description {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.IP {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 15px;
+}
+.playersList {
+}
+.playersListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+.playersListItem:not(:last-child) {
+  margin-bottom: 15px;
+}
+.playerPfp {
+  width: 50px;
+  height: 50px;
+}
+.playerName {
+  color: var(--main-text-color);
+}
+
+.playerNickname {
+  color: var(--main-text-color);
+  font-weight: 500;
+}
+.vipIcon,
+.notVipIcon {
+  width: 40px;
+  height: 40px;
+}
+.vipIcon {
+  stroke: var(--accent-color);
+}
+@media screen and (max-width: 479px) {
+  .IP {
+    font-size: 16px;
+  }
+}

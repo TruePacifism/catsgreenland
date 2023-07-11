@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catsgreenland/static/css/main.1ba8c7ca.css",
-    "main.js": "/catsgreenland/static/js/main.9d661e56.js",
+    "main.css": "/catsgreenland/static/css/main.3d02caeb.css",
+    "main.js": "/catsgreenland/static/js/main.279c1dc2.js",
     "static/media/Type O Negative - Everything Dies.mp3": "/catsgreenland/static/media/Type O Negative - Everything Dies.9e8f078c613404262477.mp3",
     "static/media/LEN - This Silence is Mine (RUS).mp3": "/catsgreenland/static/media/LEN - This Silence is Mine (RUS).2924bddd62e627513f9c.mp3",
     "static/media/адидас котэ - Эллис рассказывает истории в Нуждиках [REMASTERED] (mashup).mp3": "/catsgreenland/static/media/адидас котэ - Эллис рассказывает истории в Нуждиках [REMASTERED] (mashup).a09a2b18ac8996bfc072.mp3",
@@ -91,6 +91,7 @@
     "static/media/cat-logo.svg": "/catsgreenland/static/media/cat-logo.70baf1cee5198b1477cfcc4b19fd2b6a.svg",
     "static/media/sun-icon.svg": "/catsgreenland/static/media/sun-icon.06267223436fc086ffe9904b578c9892.svg",
     "index.html": "/catsgreenland/index.html",
+    "static/media/star-icon.svg": "/catsgreenland/static/media/star-icon.f6cca62da501774a4abb933c6591b707.svg",
     "static/media/cat-alert.svg": "/catsgreenland/static/media/cat-alert.dee687bd42e0d303cf01b7982bfd1bec.svg",
     "static/media/edit-icon.svg": "/catsgreenland/static/media/edit-icon.582f1dba47e21e76f7ab3b4c8424779b.svg",
     "static/media/add-music-icon.svg": "/catsgreenland/static/media/add-music-icon.462ca0e73d91cfb757fe381866a5a177.svg",
@@ -102,11 +103,11 @@
     "static/media/sort-arrow-down.svg": "/catsgreenland/static/media/sort-arrow-down.69f0c6ac352a8e2b302b146f0ff72ad5.svg",
     "static/media/sort-arrow-up.svg": "/catsgreenland/static/media/sort-arrow-up.3ceb61d5e15aa23fb2f9ca566199a764.svg",
     "static/media/close-icon.svg": "/catsgreenland/static/media/close-icon.02fd53fcb59c8b132fb76e701e22fe8f.svg",
-    "main.1ba8c7ca.css.map": "/catsgreenland/static/css/main.1ba8c7ca.css.map",
-    "main.9d661e56.js.map": "/catsgreenland/static/js/main.9d661e56.js.map"
+    "main.3d02caeb.css.map": "/catsgreenland/static/css/main.3d02caeb.css.map",
+    "main.279c1dc2.js.map": "/catsgreenland/static/js/main.279c1dc2.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ba8c7ca.css",
-    "static/js/main.9d661e56.js"
+    "static/css/main.3d02caeb.css",
+    "static/js/main.279c1dc2.js"
   ]
 }

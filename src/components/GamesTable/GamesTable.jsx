@@ -63,16 +63,18 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
   }
 
   useEffect(() => {
-    if (!games) {
+    if (!games || !checkedFilterCheckboxes) {
       return;
     }
     const typeFilter = Object.entries(checkedFilterCheckboxes)
       .filter(type => type[1])
       .map(type => type[0]);
+    console.log('unfiltered games', games);
 
     setFilteredData(
       games.filter(game => {
-        return ( game.users.length > 0 &&
+        return (
+          game.userscount > 0 &&
           game.title.toLowerCase().includes(filter.toLowerCase()) &&
           typeFilter.some(type => game.types.toLowerCase().includes(type))
         );

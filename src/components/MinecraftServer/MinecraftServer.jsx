@@ -24,14 +24,29 @@ const playersBasicInfo = [
     nickname: 'Rossbone',
   },
   {
+    vkId: 403229636,
+    isVip: true,
+    nickname: 'DeHunX',
+  },
+  {
     vkId: 731437792,
-    isVip: false,
+    isVip: true,
     nickname: 'pgtdrs',
+  },
+  {
+    vkId: 649859412,
+    isVip: false,
+    nickname: 'Remeyker_',
+  },
+  {
+    vkId: 644064237,
+    isVip: false,
+    nickname: 'sateer69russ',
   },
 ];
 
 export default function MinecraftServer() {
-  const isMobile = useMediaQuery({maxWidth: 479});
+  const isMobile = useMediaQuery({ maxWidth: 479 });
   const [playersList, setPlayersList] = useState();
   useEffect(() => {
     const fetchPlayersList = async () => {

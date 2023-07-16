@@ -2,8 +2,7 @@ import jsonpAdapter from 'axios-jsonp';
 import axios from 'axios';
 
 const vkToken =
-  'vk1.a.KApbhgVtf9XmrO1auTa2gwdCXkaQX6tELizt4wm2Gxh6prqcqaNUnP-nHxQcerPiulaFi8bnveAesTBl7I9_5L6nrhWYQUjl06AWWGxvJx6mjAZFKrAyHAaR10eWMHJkl8PRY2ZDgEGJPOOF8cdElvI4ykxgo8MpSHQsMaOdYySkD_GPJbueK6HKf95-hMY7USTdYLdZqfo32jF7K8MrBg';
-
+  'vk1.a.uFf9O-72X1q1UftVKqiN1RXiWkRyk7grt8p8E55pBz5IhsuUE13lVDB8x7kTQnU9ZWwmP9oWXXhAeXeADGGiZCZgJl6JRW_iFp7xjuhuZzYXwDayu3n1X_bqrf-8v5iXtygP72XrkG8u4lCsefiIV8FEez9iDfVrrZ0LqckohrQ7JnbE8vJJT8DYz-z3n5QL42wRLgoVbvmmtt6Eer_mnQ';
 export default async function getUsers(ids) {
   if (!ids) {
     return;

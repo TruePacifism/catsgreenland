@@ -14,6 +14,8 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "@vkontakte/superappkit": "^1.60.2",
+    "@vkontakte/vk-connect": "^1.9.1",
     "audio-loader": "^1.0.3",
     "axios": "^1.4.0",
     "axios-jsonp": "^1.0.4",

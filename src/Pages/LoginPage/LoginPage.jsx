@@ -1,4 +1,4 @@
-import VK, { Auth } from 'react-vk';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { auth } from 'redux/store';
 import styles from './LoginPage.module.css';
@@ -8,17 +8,81 @@ import Container from 'components/Container/Container';
 import { useNavigate } from 'react-router-dom';
 import createUser from 'utils/api/auth/createUser';
 import loginUser from 'utils/api/auth/loginUser';
+import { Connect } from '@vkontakte/superappkit';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // eslint-disable-next-line
+  const [authButton, setAuthButton] = useState(
+    Connect.buttonOneTapAuth({
+      callback: async e => {
+        const user = e.payload.uuid;
+        console.log(e.payload);
+        const groupMembers = await getGroupMembers();
+        console.log(groupMembers);
+        console.log(groupMembers.items.map(user => user.id));
+        console.log(user.id);
+        console.log(groupMembers.items.map(user => user.id).includes(user.id));
+        if (groupMembers.items.map(user => user.id).includes(user.id)) {
+          const checkUser = await loginUser(user.id);
+          if (!checkUser || checkUser.code === 401) {
+            const loggedUser = await createUser(user.id, user.id);
+            console.log(loggedUser);
+            dispatch(auth(loggedUser));
+          } else {
+            console.log(checkUser);
+            dispatch(auth(checkUser));
+          }
+          navigate('/');
+        }
+      },
+    })
+  );
+  useEffect(() => {
+    const fetchButton = async () => {
+      console.log('authButton:', authButton);
+      console.dir(authButton.getFrame());
+    };
+    fetchButton();
+  }, [authButton]);
+
+  // useEffect(() => {
+  //   const init = async () => {
+  //     try {
+  //       await Connect.init({
+  //         apiVersion: '5.131',
+  //         appId: 51666098,
+  //       });
+  //       const user = await VKConnect.sendPromise('VKWebAppGetUserInfo');
+  //       const groupMembers = await getGroupMembers();
+  //       console.log(groupMembers);
+  //       console.log(groupMembers.items.map(user => user.id));
+  //       console.log(user.id);
+  //       console.log(groupMembers.items.map(user => user.id).includes(user.id));
+  //       if (groupMembers.items.map(user => user.id).includes(user.id)) {
+  //         const checkUser = await loginUser(user.id);
+  //         if (!checkUser || checkUser.code === 401) {
+  //           const loggedUser = await createUser(user.id, user.id);
+  //           console.log(loggedUser);
+  //           dispatch(auth(loggedUser));
+  //         } else {
+  //           console.log(checkUser);
+  //           dispatch(auth(checkUser));
+  //         }
+  //         navigate('/');
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   init();
+  // }, [dispatch, navigate]);
 
   return (
     <Section>
       <Container
-        heading={
-          'Для доступа к сайту нужно авторизироваться через Вконтакте по виджету ниже'
-        }
+        heading={'Для доступа к сайту нужно авторизироваться через Вконтакте'}
       >
         <div>
           <p className={styles.notice}>
@@ -33,67 +97,10 @@ export default function LoginPage() {
               мне
             </a>
           </p>
-          <div className={styles.widgetContainer}>
-            <VK apiId={51666098}>
-              <Auth
-                options={{
-                  onAuth: async user => {
-                    const groupMembers = await getGroupMembers();
-                    console.log(groupMembers);
-                    console.log(groupMembers.items.map(user => user.id));
-                    console.log(user.uid);
-                    console.log(
-                      groupMembers.items.map(user => user.id).includes(user.uid)
-                    );
-                    if (
-                      groupMembers.items.map(user => user.id).includes(user.uid)
-                    ) {
-                      const checkUser = await loginUser(user.hash);
-                      if (!checkUser || checkUser.code === 401) {
-                        const loggedUser = await createUser(
-                          user.hash,
-                          user.uid
-                        );
-                        console.log(loggedUser);
-                        dispatch(auth(loggedUser));
-                      } else {
-                        console.log(checkUser);
-                        dispatch(auth(checkUser));
-                      }
-                      navigate('/');
-                    }
-                  },
-                }}
-              />
-            </VK>
-          </div>
-          {/* <button
-            type="button"
-            onClick={async () => {
-              const user = {
-                hash: `testhash`,
-                uid: 301865955,
-              };
-              const checkUser = await loginUser(
-                user.hash.includes('/') ? 'error' : user.hash
-              );
-              if (!checkUser || checkUser.code === 401) {
-                const loggedUser = await createUser(
-                  user.hash.includes('/') ? 'error' : user.hash,
-                  user.uid
-                );
-                console.log('newUser:', loggedUser);
-                dispatch(auth(loggedUser));
-              } else {
-                console.log(checkUser);
-                dispatch(auth(checkUser));
-              }
-              navigate('/');
-            }}
-          >
-            test auth
-          </button> */}
         </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: authButton.getFrame().outerHTML }}
+        ></div>
       </Container>
     </Section>
   );

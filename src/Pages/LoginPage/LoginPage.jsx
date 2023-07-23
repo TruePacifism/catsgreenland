@@ -70,7 +70,7 @@ export default function LoginPage() {
     //   console.dir(authButton.getFrame());
     // };
     // fetchButton();
-  }, [params]);
+  }, [params, searchParams]);
 
   // useEffect(() => {
   //   const init = async () => {

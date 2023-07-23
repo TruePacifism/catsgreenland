@@ -17,7 +17,7 @@ export default function LoginPage() {
   const loggedUser = localStorage.getItem('loggedUser');
 
   const logButtonHandler = async () => {
-    if (loggedUser && loggedUser !== 'undefined') {
+    if (!loggedUser || loggedUser === 'undefined') {
       Config.init({
         appId: 51666098,
       });

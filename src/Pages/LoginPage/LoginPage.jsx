@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { auth } from 'redux/store';
+// import { auth } from 'redux/store';
 import styles from './LoginPage.module.css';
-import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
+// import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { useNavigate, useParams } from 'react-router-dom';
-import createUser from 'utils/api/auth/createUser';
-import loginUser from 'utils/api/auth/loginUser';
+// import createUser from 'utils/api/auth/createUser';
+// import loginUser from 'utils/api/auth/loginUser';
 import { Config, Connect } from '@vkontakte/superappkit';
 
 export default function LoginPage() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
   const params = useParams();
   const loggedUser = localStorage.getItem('loggedUser');
 
@@ -29,7 +29,7 @@ export default function LoginPage() {
   };
 
   // eslint-disable-next-line
-  const [authButton, setAuthButton] = useState();
+  // const [authButton, setAuthButton] = useState();
   useEffect(() => {
     if (params) {
       console.log(params);

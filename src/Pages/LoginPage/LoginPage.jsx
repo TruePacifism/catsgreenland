@@ -1,19 +1,18 @@
 import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { auth } from 'redux/store';
+import { useDispatch } from 'react-redux';
+import { auth } from 'redux/store';
 import styles from './LoginPage.module.css';
-// import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
-import { useParams, useSearchParams } from 'react-router-dom';
-// import createUser from 'utils/api/auth/createUser';
-// import loginUser from 'utils/api/auth/loginUser';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Config, Connect } from '@vkontakte/superappkit';
+import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
+import createUser from 'utils/api/auth/createUser';
+import loginUser from 'utils/api/auth/loginUser';
 
 export default function LoginPage() {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  const params = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const searchParams = useSearchParams();
   const loggedUser = localStorage.getItem('loggedUser');
 
@@ -29,81 +28,36 @@ export default function LoginPage() {
     }
   };
 
-  // eslint-disable-next-line
-  // const [authButton, setAuthButton] = useState();
   useEffect(() => {
-    if (params) {
-      console.log(params);
-      console.log(searchParams);
-      return;
-    }
-    // const fetchButton = async () => {
-    //   const button = Connect.buttonOneTapAuth({
-    //     callback: async e => {
-    //       const user = e.payload.uuid;
+    const fetchUser = async () => {
+      if (searchParams[0].payload) {
+        const payload = JSON.parse(searchParams[0].get('payload'));
+        const userId = payload.user.id;
+        const hash = payload.hash;
 
-    //       console.log(e.payload);
-    //       const groupMembers = await getGroupMembers();
-    //       console.log(groupMembers);
-    //       console.log(groupMembers.items.map(user => user.id));
-    //       console.log(user.id);
-    //       console.log(
-    //         groupMembers.items.map(user => user.id).includes(user.id)
-    //       );
-    //       if (groupMembers.items.map(user => user.id).includes(user.id)) {
-    //         const checkUser = await loginUser(user.id);
-    //         if (!checkUser || checkUser.code === 401) {
-    //           const loggedUser = await createUser(user.id, user.id);
-    //           console.log(loggedUser);
-    //           dispatch(auth(loggedUser));
-    //         } else {
-    //           console.log(checkUser);
-    //           dispatch(auth(checkUser));
-    //         }
-    //         navigate('/');
-    //       }
-    //     },
-    //     options: {},
-    //   });
-    //   setAuthButton(button);
-    //   console.log('authButton:', authButton);
-    //   console.dir(authButton.getFrame());
-    // };
-    // fetchButton();
-  }, [params, searchParams]);
+        const groupMembers = await getGroupMembers();
+        console.log(groupMembers);
+        console.log(groupMembers.items.map(user => user.id));
+        console.log(userId);
+        console.log(groupMembers.items.map(user => user.id).includes(userId));
+        if (groupMembers.items.map(user => user.id).includes(userId)) {
+          const checkUser = await loginUser(userId);
+          if (!checkUser || checkUser.code === 401) {
+            const loggedUser = await createUser(hash, userId);
+            console.log(loggedUser);
+            dispatch(auth(loggedUser));
+          } else {
+            console.log(checkUser);
+            dispatch(auth(checkUser));
+          }
+          navigate('/');
+        }
 
-  // useEffect(() => {
-  //   const init = async () => {
-  //     try {
-  //       await Connect.init({
-  //         apiVersion: '5.131',
-  //         appId: 51666098,
-  //       });
-  //       const user = await VKConnect.sendPromise('VKWebAppGetUserInfo');
-  //       const groupMembers = await getGroupMembers();
-  //       console.log(groupMembers);
-  //       console.log(groupMembers.items.map(user => user.id));
-  //       console.log(user.id);
-  //       console.log(groupMembers.items.map(user => user.id).includes(user.id));
-  //       if (groupMembers.items.map(user => user.id).includes(user.id)) {
-  //         const checkUser = await loginUser(user.id);
-  //         if (!checkUser || checkUser.code === 401) {
-  //           const loggedUser = await createUser(user.id, user.id);
-  //           console.log(loggedUser);
-  //           dispatch(auth(loggedUser));
-  //         } else {
-  //           console.log(checkUser);
-  //           dispatch(auth(checkUser));
-  //         }
-  //         navigate('/');
-  //       }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   init();
-  // }, [dispatch, navigate]);
-
+        return;
+      }
+    };
+    fetchUser();
+  }, [searchParams, dispatch, navigate]);
   return (
     <Section>
       <Container

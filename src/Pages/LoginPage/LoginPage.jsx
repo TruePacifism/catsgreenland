@@ -5,7 +5,7 @@ import styles from './LoginPage.module.css';
 // import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 // import createUser from 'utils/api/auth/createUser';
 // import loginUser from 'utils/api/auth/loginUser';
 import { Config, Connect } from '@vkontakte/superappkit';
@@ -14,6 +14,7 @@ export default function LoginPage() {
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
   const params = useParams();
+  const searchParams = useSearchParams();
   const loggedUser = localStorage.getItem('loggedUser');
 
   const logButtonHandler = async () => {
@@ -33,6 +34,7 @@ export default function LoginPage() {
   useEffect(() => {
     if (params) {
       console.log(params);
+      console.log(searchParams);
       return;
     }
     // const fetchButton = async () => {

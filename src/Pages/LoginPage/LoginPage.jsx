@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import { auth } from 'redux/store';
 import styles from './LoginPage.module.css';
 // import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // import createUser from 'utils/api/auth/createUser';
 // import loginUser from 'utils/api/auth/loginUser';
 import { Config, Connect } from '@vkontakte/superappkit';

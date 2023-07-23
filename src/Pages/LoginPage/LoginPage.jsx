@@ -16,7 +16,7 @@ export default function LoginPage() {
   const searchParams = useSearchParams();
   const loggedUser = localStorage.getItem('loggedUser');
 
-  const logButtonHandler = async () => {
+  const logButtonHandler = () => {
     if (!loggedUser || loggedUser === 'undefined') {
       Config.init({
         appId: 51666098,
@@ -30,8 +30,9 @@ export default function LoginPage() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      if (searchParams[0].payload) {
-        const payload = JSON.parse(searchParams[0].get('payload'));
+      console.log(searchParams[0].get('payload'));
+      const payload = JSON.parse(searchParams[0].get('payload'));
+      if (payload) {
         const userId = payload.user.id;
         const hash = payload.hash;
 

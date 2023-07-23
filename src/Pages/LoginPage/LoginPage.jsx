@@ -42,7 +42,7 @@ export default function LoginPage() {
         console.log(userId);
         console.log(groupMembers.items.map(user => user.id).includes(userId));
         if (groupMembers.items.map(user => user.id).includes(userId)) {
-          const checkUser = await loginUser(userId);
+          const checkUser = await loginUser(hash);
           if (!checkUser || checkUser.code === 401) {
             const loggedUser = await createUser(hash, userId);
             console.log(loggedUser);

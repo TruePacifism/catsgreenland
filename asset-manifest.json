@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catsgreenland/static/css/main.9d6ffb09.css",
-    "main.js": "/catsgreenland/static/js/main.5a32cc21.js",
+    "main.css": "/catsgreenland/static/css/main.3bbb17cd.css",
+    "main.js": "/catsgreenland/static/js/main.b096c137.js",
     "static/media/Type O Negative - Everything Dies.mp3": "/catsgreenland/static/media/Type O Negative - Everything Dies.9e8f078c613404262477.mp3",
     "static/media/LEN - This Silence is Mine (RUS).mp3": "/catsgreenland/static/media/LEN - This Silence is Mine (RUS).2924bddd62e627513f9c.mp3",
     "static/media/адидас котэ - Эллис рассказывает истории в Нуждиках [REMASTERED] (mashup).mp3": "/catsgreenland/static/media/адидас котэ - Эллис рассказывает истории в Нуждиках [REMASTERED] (mashup).a09a2b18ac8996bfc072.mp3",
@@ -103,11 +103,11 @@
     "static/media/sort-arrow-down.svg": "/catsgreenland/static/media/sort-arrow-down.69f0c6ac352a8e2b302b146f0ff72ad5.svg",
     "static/media/sort-arrow-up.svg": "/catsgreenland/static/media/sort-arrow-up.3ceb61d5e15aa23fb2f9ca566199a764.svg",
     "static/media/close-icon.svg": "/catsgreenland/static/media/close-icon.02fd53fcb59c8b132fb76e701e22fe8f.svg",
-    "main.9d6ffb09.css.map": "/catsgreenland/static/css/main.9d6ffb09.css.map",
-    "main.5a32cc21.js.map": "/catsgreenland/static/js/main.5a32cc21.js.map"
+    "main.3bbb17cd.css.map": "/catsgreenland/static/css/main.3bbb17cd.css.map",
+    "main.b096c137.js.map": "/catsgreenland/static/js/main.b096c137.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d6ffb09.css",
-    "static/js/main.5a32cc21.js"
+    "static/css/main.3bbb17cd.css",
+    "static/js/main.b096c137.js"
   ]
 }

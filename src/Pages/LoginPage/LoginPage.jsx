@@ -5,47 +5,70 @@ import styles from './LoginPage.module.css';
 import getGroupMembers from 'utils/api/auth/checkOnGroupMember';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useResolvedPath } from 'react-router-dom';
 import createUser from 'utils/api/auth/createUser';
 import loginUser from 'utils/api/auth/loginUser';
-import { Connect } from '@vkontakte/superappkit';
+import { Config, Connect } from '@vkontakte/superappkit';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const params = useParams();
+  const loggedUser = localStorage.getItem('loggedUser');
+
+  const logButtonHandler = async () => {
+    if (loggedUser && loggedUser !== 'undefined') {
+      Config.init({
+        appId: 51666098,
+      });
+      Connect.redirectAuth({
+        url: 'https://truepacifism.github.io/catsgreenland/login',
+      });
+      return;
+    }
+  };
+
   // eslint-disable-next-line
-  const [authButton, setAuthButton] = useState(
-    Connect.buttonOneTapAuth({
-      callback: async e => {
-        const user = e.payload.uuid;
-        console.log(e.payload);
-        const groupMembers = await getGroupMembers();
-        console.log(groupMembers);
-        console.log(groupMembers.items.map(user => user.id));
-        console.log(user.id);
-        console.log(groupMembers.items.map(user => user.id).includes(user.id));
-        if (groupMembers.items.map(user => user.id).includes(user.id)) {
-          const checkUser = await loginUser(user.id);
-          if (!checkUser || checkUser.code === 401) {
-            const loggedUser = await createUser(user.id, user.id);
-            console.log(loggedUser);
-            dispatch(auth(loggedUser));
-          } else {
-            console.log(checkUser);
-            dispatch(auth(checkUser));
-          }
-          navigate('/');
-        }
-      },
-    })
-  );
+  const [authButton, setAuthButton] = useState();
   useEffect(() => {
+    if (params) {
+      console.log(params);
+      return;
+    }
     const fetchButton = async () => {
+      const button = Connect.buttonOneTapAuth({
+        callback: async e => {
+          const user = e.payload.uuid;
+
+          console.log(e.payload);
+          const groupMembers = await getGroupMembers();
+          console.log(groupMembers);
+          console.log(groupMembers.items.map(user => user.id));
+          console.log(user.id);
+          console.log(
+            groupMembers.items.map(user => user.id).includes(user.id)
+          );
+          if (groupMembers.items.map(user => user.id).includes(user.id)) {
+            const checkUser = await loginUser(user.id);
+            if (!checkUser || checkUser.code === 401) {
+              const loggedUser = await createUser(user.id, user.id);
+              console.log(loggedUser);
+              dispatch(auth(loggedUser));
+            } else {
+              console.log(checkUser);
+              dispatch(auth(checkUser));
+            }
+            navigate('/');
+          }
+        },
+        options: {},
+      });
+      setAuthButton(button);
       console.log('authButton:', authButton);
       console.dir(authButton.getFrame());
     };
     fetchButton();
-  }, [authButton]);
+  }, []);
 
   // useEffect(() => {
   //   const init = async () => {
@@ -98,9 +121,13 @@ export default function LoginPage() {
             </a>
           </p>
         </div>
-        <div
-          dangerouslySetInnerHTML={{ __html: authButton.getFrame().outerHTML }}
-        ></div>
+        <button
+          className={styles.button}
+          onClick={logButtonHandler}
+          type="button"
+        >
+          Войти через VK ID
+        </button>
       </Container>
     </Section>
   );

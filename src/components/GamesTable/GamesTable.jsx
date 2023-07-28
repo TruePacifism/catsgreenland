@@ -69,7 +69,6 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
     const typeFilter = Object.entries(checkedFilterCheckboxes)
       .filter(type => type[1])
       .map(type => type[0]);
-    console.log('unfiltered games', games);
 
     setFilteredData(
       games.filter(game => {
@@ -104,7 +103,6 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
   useEffect(() => {
     const refreshShowingGame = async () => {
       const refreshedShowingGame = async prevShowingGame => {
-        console.log('prevShowingGame', prevShowingGame);
         if (prevShowingGame) {
           const fullGameInfo = await getFullGameInfo(prevShowingGame.title);
           return fullGameInfo;

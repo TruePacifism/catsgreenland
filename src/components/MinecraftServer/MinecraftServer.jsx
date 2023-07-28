@@ -13,11 +13,11 @@ const playersBasicInfo = [
     isVip: true,
     nickname: 'TruePacifism',
   },
-  {
-    vkId: 529988459,
-    isVip: true,
-    nickname: 'Andreew_Sergei',
-  },
+  // {
+  //   vkId: 529988459,
+  //   isVip: true,
+  //   nickname: 'Andreew_Sergei',
+  // },
   {
     vkId: 712497882,
     isVip: true,
@@ -38,11 +38,11 @@ const playersBasicInfo = [
     isVip: false,
     nickname: 'Remeyker_',
   },
-  {
-    vkId: 644064237,
-    isVip: false,
-    nickname: 'sateer69russ',
-  },
+  // {
+  //   vkId: 644064237,
+  //   isVip: false,
+  //   nickname: 'sateer69russ',
+  // },
 ];
 
 export default function MinecraftServer() {
@@ -52,13 +52,6 @@ export default function MinecraftServer() {
     const fetchPlayersList = async () => {
       const response = await Promise.all(
         playersBasicInfo.map(player => getUserInfo(player.vkId))
-      );
-      console.log(response);
-      console.log(
-        response.map((player, idx) => ({
-          ...player,
-          ...playersBasicInfo[idx],
-        }))
       );
       setPlayersList(
         response.map((player, idx) => ({

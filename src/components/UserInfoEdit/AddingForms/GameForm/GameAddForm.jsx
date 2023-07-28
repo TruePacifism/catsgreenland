@@ -33,7 +33,6 @@ export default function GameAddForm({ onUpdate = () => {} }) {
     );
   };
   const EditGame = async ({ game, status, rating }) => {
-    console.log(game, status, rating);
     const { title, types } = game;
     if (!title || !status || !types) {
       return;
@@ -64,7 +63,6 @@ export default function GameAddForm({ onUpdate = () => {} }) {
 
   const [userGames, setUserGames] = useState([]);
   useEffect(() => {
-    console.log('updatedGames:', games);
     setUserGames(
       games.filter(game =>
         game.users

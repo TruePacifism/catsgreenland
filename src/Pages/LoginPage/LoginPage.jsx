@@ -19,7 +19,7 @@ export default function LoginPage() {
   const logButtonHandler = () => {
     if (!loggedUser || loggedUser === 'undefined') {
       Config.init({
-        appId: 51666098,
+        appId: 51717131,
       });
       Connect.redirectAuth({
         url: 'https://truepacifism.github.io/catsgreenland/login',
@@ -30,25 +30,24 @@ export default function LoginPage() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      console.log(searchParams[0].get('payload'));
       const payload = JSON.parse(searchParams[0].get('payload'));
       if (payload) {
         const userId = payload.user.id;
         const hash = payload.hash;
 
         const groupMembers = await getGroupMembers();
-        console.log(groupMembers);
-        console.log(groupMembers.items.map(user => user.id));
-        console.log(userId);
-        console.log(groupMembers.items.map(user => user.id).includes(userId));
+        // console.log(groupMembers);
+        // console.log(groupMembers.items.map(user => user.id));
+        // console.log(userId);
+        // console.log(groupMembers.items.map(user => user.id).includes(userId));
         if (groupMembers.items.map(user => user.id).includes(userId)) {
           const checkUser = await loginUser(hash);
           if (!checkUser || checkUser.code === 401) {
             const loggedUser = await createUser(hash, userId);
-            console.log(loggedUser);
+            // console.log(loggedUser);
             dispatch(auth(loggedUser));
           } else {
-            console.log(checkUser);
+            // console.log(checkUser);
             dispatch(auth(checkUser));
           }
           navigate('/');

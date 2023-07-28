@@ -10,47 +10,19 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from 'redux/user-actions';
 
-let scrollPosition = 0;
-
-const disableScroll = () => {
-  // Сохраняем текущую позицию прокрутки
-  scrollPosition = window.pageYOffset;
-
-  // Добавляем стили для блокировки прокрутки
-  document.body.style.overflow = 'hidden';
-  // document.body.style.position = 'fixed';
-  document.body.style.top = `-${scrollPosition}px`;
-};
-
-const enableScroll = () => {
-  // Удаляем стили для блокировки прокрутки
-  document.body.style.overflow = '';
-  // document.body.style.position = '';
-  document.body.style.top = '';
-  // Возвращаем страницу на сохраненную позицию прокрутки
-  window.scrollTo(0, scrollPosition);
-};
-
 export default function Header() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const dispatch = useDispatch();
   const setIsBurgerOpen = isOpen => {
     dispatch(actions.setOpenBurger(isOpen));
-    if (isOpen) {
-      disableScroll();
-    } else {
-      enableScroll();
-    }
   };
   const isBurgerOpen = useSelector(store => store.isBurgerOpen);
 
   const openBurger = () => {
     setIsBurgerOpen(true);
-    disableScroll();
   };
   const closeBurger = () => {
     setIsBurgerOpen(false);
-    enableScroll();
   };
   return (
     <div className={styles.section}>

@@ -44,7 +44,6 @@ export default function ColorAddForm({ onUpdate = () => {} }) {
     if (!name) {
       return;
     }
-    console.log(user, name);
     const editedColor = await deleteColor(user.token, name);
     setColors(
       colors.map(color =>
@@ -69,7 +68,6 @@ export default function ColorAddForm({ onUpdate = () => {} }) {
 
   const [userColors, setUserColors] = useState([]);
   useEffect(() => {
-    console.log('colors', colors);
     setUserColors(
       colors.filter(color =>
         color.users.find(colorUser => user.vkId === colorUser.vkId)
@@ -93,7 +91,6 @@ export default function ColorAddForm({ onUpdate = () => {} }) {
   const handleSubmit = async e => {
     e.preventDefault();
     const actionName = e.nativeEvent.submitter.outerText;
-    console.log('color', color);
     switch (actionName) {
       case 'Добавить':
         await AddColor({
@@ -127,7 +124,6 @@ export default function ColorAddForm({ onUpdate = () => {} }) {
         color => color.name.toLowerCase() === value.toLowerCase()
       );
       if (exactSuggestion) {
-        console.log('exactSuggestion', exactSuggestion);
         setIsDisabled(true);
         setName(exactSuggestion.name);
         setColor(rgbToHex(exactSuggestion.rgb));

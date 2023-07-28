@@ -110,7 +110,7 @@ export const App = () => {
         dispatch(auth(null));
       }
       if (user.vkId) {
-        const fullUser = await getUserInfo(user.vkId);
+        const [fullUser] = await getUserInfo(user.vkId);
         dispatch(
           auth({
             token: currentUser.token,
@@ -122,7 +122,6 @@ export const App = () => {
     checkUser();
   }, [currentUser.token, dispatch, navigate]);
   useEffect(() => {
-    console.log('currentUser', currentUser);
     if (!currentUser || !currentUser.token) {
       navigate('/login', { replace: true });
     }

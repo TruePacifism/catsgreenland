@@ -50,8 +50,8 @@ export default function MinecraftServer() {
   const [playersList, setPlayersList] = useState();
   useEffect(() => {
     const fetchPlayersList = async () => {
-      const response = await Promise.all(
-        playersBasicInfo.map(player => getUserInfo(player.vkId))
+      const response = await getUserInfo(
+        playersBasicInfo.map(player => player.vkId)
       );
       setPlayersList(
         response.map((player, idx) => ({

@@ -114,6 +114,9 @@ const reducer = createReducer(initialState, builder => {
       };
     })
     .addCase(actions.setOpenBurger, (state, action) => {
+      if (state.isBurgerOpen === action.payload) {
+        return { ...state };
+      }
       if (action.payload === true) {
         disableScroll();
       } else {

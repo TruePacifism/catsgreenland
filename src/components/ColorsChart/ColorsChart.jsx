@@ -8,6 +8,7 @@ import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { Link } from 'react-router-dom';
 import getFullColorInfo from 'utils/api/colors/getFullColorInfo';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -98,9 +99,20 @@ export default function ColorsChart({ colors, hideDescription = false }) {
             </p>
           </>
         )}
-        <div className={styles.chart}>
-          <Pie data={chartData} options={options} height={400} width={400} />
-        </div>
+        {colors ? (
+          <>
+            <div className={styles.chart}>
+              <Pie
+                data={chartData}
+                options={options}
+                height={400}
+                width={400}
+              />
+            </div>
+          </>
+        ) : (
+          <LoadingSpinner />
+        )}
         {showingColor && (
           <div className={styles.infoContainer}>
             <div className={styles.colorInfoContainer}>

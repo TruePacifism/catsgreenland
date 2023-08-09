@@ -7,6 +7,7 @@ import styles from './Biographys.module.css';
 import { useSearchParams } from 'react-router-dom';
 import getAllBios from 'utils/api/bios/getAllBios';
 import getFullBio from 'utils/api/bios/getFullBio';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 export default function Biographys() {
   const [searchParams] = useSearchParams();
@@ -42,9 +43,10 @@ export default function Biographys() {
         const vkId = searchParams.get('id');
         const bio = await getFullBio(vkId);
         setShowingBio(bio);
-        if (!bioRef || !bioRef.current) {
-          return;
-        }
+        console.log(bioRef);
+        // if (!bioRef || !bioRef.current) {
+        //   return;
+        // }
         const headerOffset = 80;
         const elementPosition = bioRef.current.getBoundingClientRect().top;
         const offsetPosition =
@@ -59,7 +61,7 @@ export default function Biographys() {
       }
     }
     fetchShowingBio();
-  }, [searchParams]);
+  }, [searchParams, bioRef]);
 
   return (
     <>
@@ -75,9 +77,10 @@ export default function Biographys() {
           <div className={styles.introducingBlock}>
             <p className={styles.introducing}>
               Каждый рассказ написан от лица того, о ком речь. В каждом из них
-              можно перейти на профиль автора, нажав на его имя, а так же поставить лайк. Порядок
-              рассказов определяется количеством сообщений в топе за всё время,
-              кроме тех, кто выбрал себе место. ДОЛИСТАЙТЕ СТРАНИЦУ ДО{' '}
+              можно перейти на профиль автора, нажав на его имя, а так же
+              поставить лайк. Порядок рассказов определяется количеством
+              сообщений в топе за всё время, кроме тех, кто выбрал себе место.
+              ДОЛИСТАЙТЕ СТРАНИЦУ ДО{' '}
               <span
                 onClick={() => {
                   PSRef.current.scrollIntoView({
@@ -101,8 +104,15 @@ export default function Biographys() {
               .
             </p>
           </div>
-          {bios && <BiograhpyList bios={bios} />}
-          {showingBio && <Biograhpy bioRef={bioRef} bio={showingBio} />}
+          {bios ? <BiograhpyList bios={bios} /> : <LoadingSpinner />}
+          <div ref={bioRef}>
+            {showingBio &&
+              (showingBio.pfp ? (
+                <Biograhpy bioRef={bioRef} bio={showingBio} />
+              ) : (
+                <LoadingSpinner />
+              ))}
+          </div>
           <h2 className={styles.PSHeading}>P.S.</h2>
           <p ref={PSRef} className={styles.PS}>
             • Рассказ о себе - штука необязательная и писать вы его можете так,

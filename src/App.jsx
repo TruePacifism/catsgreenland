@@ -1,7 +1,7 @@
 import Biographys from 'Pages/Biograhpys/Biographys';
 import MainPage from 'Pages/MainPage/MainPage';
 import Header from 'components/Header/Header';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import actions from 'redux/user-actions';
@@ -17,6 +17,7 @@ import musicPlaceholder from './images/music-placeholder.jpg';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
+import DevAccess from 'Pages/DevAccess/DevAccess';
 
 const darkTheme = createTheme({
   palette: {
@@ -126,6 +127,13 @@ export const App = () => {
       navigate('/login', { replace: true });
     }
   }, [navigate, currentUser]);
+  const { pathname } = useLocation();
+
+  // Automatically scrolls to top whenever pathname changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useEffect(() => {
     PlayerInterface.play([new Track('', musicPlaceholder, '', '', '')]);
   }, []);
@@ -138,6 +146,7 @@ export const App = () => {
         <Route path="/hobbies" Component={Hobbies} />
         <Route path="/login" Component={LoginPage} />
         <Route path="/cabinet" Component={Cabinet} />
+        <Route path="/dev" Component={DevAccess} />
       </Routes>
       <ThemeProvider theme={isDarkThemed ? darkTheme : lightTheme}>
         <Player />

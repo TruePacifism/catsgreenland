@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { ReactComponent as AlertIcon } from '../../images/cat-alert.svg';
 import { ReactComponent as LikeIcon } from '../../images/like-icon.svg';
 import toggleLike from 'utils/api/bios/toggleLike';
+import Image from 'components/Image/Image';
 
 export default function BiograhpyListItem({ bio }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,35 +51,20 @@ export default function BiograhpyListItem({ bio }) {
       >
         {bio.name ? bio.name : 'Загрузка...'}
       </span>
-      {bio.pfp ? (
-        <img
-          onClick={e => {
-            setSearchParams(prevParams => {
-              return {
-                ...prevParams,
-                id: bio.vkId,
-              };
-            });
-          }}
-          src={bio.pfp}
-          alt={bio.name}
-          className={styles.image}
-        />
-      ) : (
-        <img
-          onClick={e => {
-            setSearchParams(prevParams => {
-              return {
-                ...prevParams,
-                id: bio.vkId,
-              };
-            });
-          }}
-          src={placeholder}
-          alt="Загрузка..."
-          className={styles.image}
-        />
-      )}
+      <Image
+        onClick={e => {
+          setSearchParams(prevParams => {
+            return {
+              ...prevParams,
+              id: bio.vkId,
+            };
+          });
+        }}
+        src={bio.pfp}
+        alt={bio.name}
+        className={styles.image}
+        placeholder={placeholder}
+      />
       {bio.alert && (
         <div className={styles.alert}>
           <span className={styles.alertText}>{bio.alert}</span>

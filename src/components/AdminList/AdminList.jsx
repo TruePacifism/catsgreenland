@@ -4,6 +4,7 @@ import AdminListItem from 'components/AdminListItem/AdminListItem';
 import Container from 'components/Container/Container';
 import Section from 'components/Section/Section';
 import getUserInfo from 'utils/api/user/getUserInfo';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 export default function AdminList() {
   const [admins, setAdmins] = useState([
@@ -46,10 +47,13 @@ export default function AdminList() {
     <Section>
       <Container heading={'Значимые люди'}>
         <ul className={styles.list}>
-          {admins &&
+          {admins[0].pfp ? (
             admins.map((admin, idx) => (
               <AdminListItem key={idx} admin={admin} />
-            ))}
+            ))
+          ) : (
+            <LoadingSpinner />
+          )}
         </ul>
       </Container>
     </Section>

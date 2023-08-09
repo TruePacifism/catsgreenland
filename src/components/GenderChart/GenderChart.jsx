@@ -14,6 +14,7 @@ import styles from './GenderChart.module.css';
 import Section from 'components/Section/Section';
 import Container from 'components/Container/Container';
 import { Link } from 'react-router-dom';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 ChartJS.register(
   CategoryScale,
@@ -131,6 +132,9 @@ export function GenderChart({ stats }) {
   const isDarkTheme = useSelector(store => store.isDarkTheme);
   useEffect(() => {
     const fetchData = async () => {
+      if (!stats) {
+        return;
+      }
       const ageRanges = getAgeRanges(stats.ages);
       setRanges(ageRanges.ranges.map(range => `${range.start} - ${range.end}`));
       setData(
@@ -162,42 +166,46 @@ export function GenderChart({ stats }) {
           участников. <br /> Пол взят со страницы вк
         </p>
 
-        {data && ranges && (
-          <div
-            className={
-              isDarkTheme
-                ? [styles.chart, styles['dark--theme']].join(' ')
-                : styles.chart
-            }
-          >
-            <Bar
-              options={options}
-              data={{
-                labels: ranges,
-                datasets: [
-                  {
-                    label: 'Мужской',
-                    data: data[0],
-                    backgroundColor: 'rgba(53, 162, 235, 0.5)',
-                    color: isDarkTheme ? '#FFF' : '',
-                  },
-                  {
-                    label: 'Женский',
-                    data: data[1],
-                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                    color: isDarkTheme ? '#FFF' : '',
-                  },
-                ],
-              }}
-              width={400}
-            />
-          </div>
+        {data && ranges ? (
+          <>
+            <div
+              className={
+                isDarkTheme
+                  ? [styles.chart, styles['dark--theme']].join(' ')
+                  : styles.chart
+              }
+            >
+              <Bar
+                options={options}
+                data={{
+                  labels: ranges,
+                  datasets: [
+                    {
+                      label: 'Мужской',
+                      data: data[0],
+                      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                      color: isDarkTheme ? '#FFF' : '',
+                    },
+                    {
+                      label: 'Женский',
+                      data: data[1],
+                      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                      color: isDarkTheme ? '#FFF' : '',
+                    },
+                  ],
+                }}
+                width={400}
+              />
+            </div>{' '}
+            <b>Соотношение М/Ж в %: </b>
+            <span>{genders && getGenderPercentage(genders)}</span>
+            <br />
+            <b>Средний возраст: </b>
+            <span>{averageAge}</span>
+          </>
+        ) : (
+          <LoadingSpinner />
         )}
-        <b>Соотношение М/Ж в %: </b>
-        <span>{genders && getGenderPercentage(genders)}</span>
-        <br />
-        <b>Средний возраст: </b>
-        <span>{averageAge}</span>
       </Container>
     </Section>
   );

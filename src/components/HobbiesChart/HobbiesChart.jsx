@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { TagCloud } from 'react-tagcloud';
 import randomColor from 'randomcolor';
 import getFullHobbyInfo from 'utils/api/hobbies/getFullHobbyInfo';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -74,7 +75,7 @@ export default function HobbiesChart({ hobbies, hideDescription = false }) {
             </p>
           </>
         )}
-        {filteredHobbies && (
+        {filteredHobbies ? (
           <TagCloud
             minSize={15}
             maxSize={35}
@@ -97,6 +98,8 @@ export default function HobbiesChart({ hobbies, hideDescription = false }) {
             }}
             props={{ className: styles.chartItem }}
           />
+        ) : (
+          <LoadingSpinner />
         )}
         {showingHobby && (
           <div className={styles.infoContainer}>

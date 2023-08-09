@@ -9,6 +9,7 @@ import { ReactComponent as SearchIcon } from '../../images/search-icon.svg';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 import getFullGameInfo from 'utils/api/games/getFullGameInfo';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 function getStatusClass(status) {
   switch (status) {
@@ -159,131 +160,141 @@ function GamesTable({ games, hideDescription = false, editable = false }) {
             </p>
           </>
         )}
-        <div className={styles.searchContainer}>
-          <div className={styles.totalAndSearchContainer}>
-            <b className={styles.totalCounter}>
-              Всего игр: {sortedData.length}
-            </b>
-            <div className={styles.searchField}>
-              <SearchIcon className={styles.searchIcon} />
-              <input
-                className={styles.search}
-                type="text"
-                placeholder="Название игры"
-                value={filter}
-                onChange={handleFilterChange}
-              />
+
+        {games ? (
+          <>
+            <div className={styles.searchContainer}>
+              <div className={styles.totalAndSearchContainer}>
+                <b className={styles.totalCounter}>
+                  Всего игр: {sortedData.length}
+                </b>
+                <div className={styles.searchField}>
+                  <SearchIcon className={styles.searchIcon} />
+                  <input
+                    className={styles.search}
+                    type="text"
+                    placeholder="Название игры"
+                    value={filter}
+                    onChange={handleFilterChange}
+                  />
+                </div>
+              </div>
+              <div className={styles.checkboxesList}>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name="singleplayer"
+                    id="singleplayer"
+                    checked={checkedFilterCheckboxes.синглплеер}
+                    onChange={() => {
+                      handleFilterCheckboxChange('синглплеер');
+                    }}
+                  />
+                  Синглплеер
+                </label>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name="multiplayer"
+                    id="multiplayer"
+                    checked={checkedFilterCheckboxes.мультиплеер}
+                    onChange={() => {
+                      handleFilterCheckboxChange('мультиплеер');
+                    }}
+                  />
+                  Мультиплеер
+                </label>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name="cooperative"
+                    id="cooperative"
+                    checked={checkedFilterCheckboxes.кооператив}
+                    onChange={() => {
+                      handleFilterCheckboxChange('кооператив');
+                    }}
+                  />
+                  Кооператив
+                </label>
+              </div>
             </div>
-          </div>
-          <div className={styles.checkboxesList}>
-            <label className={styles.checkboxLabel}>
-              <input
-                className={styles.checkbox}
-                type="checkbox"
-                name="singleplayer"
-                id="singleplayer"
-                checked={checkedFilterCheckboxes.синглплеер}
-                onChange={() => {
-                  handleFilterCheckboxChange('синглплеер');
-                }}
-              />
-              Синглплеер
-            </label>
-            <label className={styles.checkboxLabel}>
-              <input
-                className={styles.checkbox}
-                type="checkbox"
-                name="multiplayer"
-                id="multiplayer"
-                checked={checkedFilterCheckboxes.мультиплеер}
-                onChange={() => {
-                  handleFilterCheckboxChange('мультиплеер');
-                }}
-              />
-              Мультиплеер
-            </label>
-            <label className={styles.checkboxLabel}>
-              <input
-                className={styles.checkbox}
-                type="checkbox"
-                name="cooperative"
-                id="cooperative"
-                checked={checkedFilterCheckboxes.кооператив}
-                onChange={() => {
-                  handleFilterCheckboxChange('кооператив');
-                }}
-              />
-              Кооператив
-            </label>
-          </div>
-        </div>
-        <div className={styles.tableContainer}>
-          <table className={styles.table}>
-            <thead className={styles.thead}>
-              <tr className={styles.tr}>
-                <th className={styles.th} onClick={() => handleSort('title')}>
-                  Название
-                  {sortField === 'title' ? (
-                    sortOrder === 'asc' ? (
-                      <SortedUpIcon className={styles.sortedUp} />
-                    ) : (
-                      <SortedDownIcon className={styles.sortedDown} />
-                    )
-                  ) : (
-                    <></>
-                  )}
-                </th>
-                <th
-                  className={styles.th}
-                  onClick={() => handleSort('userscount')}
-                >
-                  Кол-во игроков
-                  {sortField === 'userscount' ? (
-                    sortOrder === 'asc' ? (
-                      <SortedUpIcon className={styles.sortedUp} />
-                    ) : (
-                      <SortedDownIcon className={styles.sortedDown} />
-                    )
-                  ) : (
-                    <></>
-                  )}
-                </th>
-                {!isMobile && (
-                  <th className={styles.th} onClick={() => handleSort('types')}>
-                    Тип
-                    {sortField === 'types' ? (
-                      sortOrder === 'asc' ? (
-                        <SortedUpIcon className={styles.sortedUp} />
+            <div className={styles.tableContainer}>
+              <table className={styles.table}>
+                <thead className={styles.thead}>
+                  <tr className={styles.tr}>
+                    <th
+                      className={styles.th}
+                      onClick={() => handleSort('title')}
+                    >
+                      Название
+                      {sortField === 'title' ? (
+                        sortOrder === 'asc' ? (
+                          <SortedUpIcon className={styles.sortedUp} />
+                        ) : (
+                          <SortedDownIcon className={styles.sortedDown} />
+                        )
                       ) : (
-                        <SortedDownIcon className={styles.sortedDown} />
-                      )
-                    ) : (
-                      <></>
+                        <></>
+                      )}
+                    </th>
+                    <th
+                      className={styles.th}
+                      onClick={() => handleSort('userscount')}
+                    >
+                      Кол-во игроков
+                      {sortField === 'userscount' ? (
+                        sortOrder === 'asc' ? (
+                          <SortedUpIcon className={styles.sortedUp} />
+                        ) : (
+                          <SortedDownIcon className={styles.sortedDown} />
+                        )
+                      ) : (
+                        <></>
+                      )}
+                    </th>
+                    {!isMobile && (
+                      <th
+                        className={styles.th}
+                        onClick={() => handleSort('types')}
+                      >
+                        Тип
+                        {sortField === 'types' ? (
+                          sortOrder === 'asc' ? (
+                            <SortedUpIcon className={styles.sortedUp} />
+                          ) : (
+                            <SortedDownIcon className={styles.sortedDown} />
+                          )
+                        ) : (
+                          <></>
+                        )}
+                      </th>
                     )}
-                  </th>
-                )}
-              </tr>
-            </thead>
-            <tbody className={styles.tbody}>
-              {sortedData.map(item => (
-                <tr
-                  className={styles.tr}
-                  onClick={async () => {
-                    setShowingGame(await getFullGameInfo(item.title));
-                  }}
-                  key={item.title}
-                >
-                  <td className={styles.td}>
-                    {item.title}
-                    {/* {editable && <EditIcon className={styles.editIcon} />} */}
-                  </td>
-                  <td className={styles.td}>{item.userscount}</td>
-                  {!isMobile && <td className={styles.td}>{item.types}</td>}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                  </tr>
+                </thead>
+                <tbody className={styles.tbody}>
+                  {sortedData.map(item => (
+                    <tr
+                      className={styles.tr}
+                      onClick={async () => {
+                        setShowingGame(await getFullGameInfo(item.title));
+                      }}
+                      key={item.title}
+                    >
+                      <td className={styles.td}>{item.title}</td>
+                      <td className={styles.td}>{item.userscount}</td>
+                      {!isMobile && <td className={styles.td}>{item.types}</td>}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ) : (
+          <LoadingSpinner />
+        )}
         {showingGame && (
           <div className={styles.showingGameContainer}>
             <h3 className={styles.showingGameTitle}>

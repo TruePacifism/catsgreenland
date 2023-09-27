@@ -55,7 +55,7 @@ const lightTheme = createTheme({
       main: green[500],
     },
     background: {
-      paper: '#4c6839',
+      paper: '#ddffdd',
     },
     action: {
       active: green[500],

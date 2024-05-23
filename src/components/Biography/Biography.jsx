@@ -15,15 +15,20 @@ export default function Biograhpy({ bioRef, bio }) {
         <h3 className={styles.name}>{bio.name}</h3>
       </a>
       <BiographyText className={styles.text} text={bio.text} />
-      {bio.imagesUrl.map((image, idx) => (
-        <img key={idx} src={image} alt="" className={styles.image} />
+      {bio.imagesUrl.map(image => (
+        <img
+          key={image}
+          alt={bio.name ? bio.name : 'ноунейм'}
+          src={image}
+          className={styles.image}
+        />
       ))}
       {music && (
         <>
           <ul className={styles.playlistContainer}>
             {music.map((musicItem, idx) => (
               <li
-                key={`${bio.vkId}-${idx}`}
+                key={`${bio.vkId}-${musicItem.title}`}
                 className={styles.playlistItemContainer}
               >
                 <span className={styles.title}>

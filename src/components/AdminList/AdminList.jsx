@@ -38,7 +38,9 @@ export default function AdminList() {
     if (!admins[0].pfp) {
       const setUsersInfo = async adminsIds => {
         const users = await getUserInfo(adminsIds);
-        setAdmins(users);
+        setAdmins(oldAdmins =>
+          oldAdmins.map((oldAdmin, idx) => ({ ...oldAdmin, ...users[idx] }))
+        );
       };
       setUsersInfo(admins.map(adminInfo => adminInfo.vkId));
     }
@@ -49,7 +51,7 @@ export default function AdminList() {
         <ul className={styles.list}>
           {admins[0].pfp ? (
             admins.map((admin, idx) => (
-              <AdminListItem key={idx} admin={admin} />
+              <AdminListItem key={admin.vkId} admin={admin} />
             ))
           ) : (
             <LoadingSpinner />

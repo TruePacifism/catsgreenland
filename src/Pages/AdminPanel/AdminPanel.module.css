@@ -1,0 +1,108 @@
+.container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.selectFormControl {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+.bioSelect {
+  min-width: 200px;
+  width: fit-content;
+}
+.biosMenuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+}
+.biosMenuPfp {
+  height: 100%;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.buttonsList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.buttonsItem {
+  min-width: 20%;
+  cursor: pointer;
+  width: min-content;
+}
+.button {
+  cursor: inherit;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--accent-color);
+  padding: 10px;
+  color: white;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  background-color: var(--background-color);
+  scrollbar-color: var(--accent-color);
+  scrollbar-base-color: var(--accent-color);
+}
+.closeButton {
+  position: absolute;
+  right: calc((50px));
+  transform: translate(50%, 50%);
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: black;
+  transition: color 250ms ease-in-out;
+}
+.closeButton:hover {
+  color: var(--accent-color);
+}
+
+.closeIcon {
+  stroke: currentColor;
+  stroke-width: 1px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background-color: white;
+}
+.pictureContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}

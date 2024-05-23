@@ -62,7 +62,7 @@ export default function Hero() {
           </div>
         )}
       >
-        <Rules />
+        <Rules editable={false} />
       </ReactModal>
     </div>
   );

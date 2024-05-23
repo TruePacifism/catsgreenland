@@ -71,17 +71,19 @@ export default function BiograhpyListItem({ bio }) {
           <AlertIcon className={styles.alertIcon}>,dfsdfsd</AlertIcon>
         </div>
       )}
-      <div className={styles.likeContainer}>
-        <LikeIcon
-          className={isLiked ? styles.likedIcon : styles.notLikedIcon}
-          onClick={likeHandler}
-        />
-        {bio.likes && (
-          <span className={styles.likeCounter}>
-            {likesCounter === 0 ? '' : likesCounter}
-          </span>
-        )}
-      </div>
+      {user.vkId && (
+        <div className={styles.likeContainer}>
+          <LikeIcon
+            className={isLiked ? styles.likedIcon : styles.notLikedIcon}
+            onClick={likeHandler}
+          />
+          {bio.likes && (
+            <span className={styles.likeCounter}>
+              {likesCounter === 0 ? '' : likesCounter}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

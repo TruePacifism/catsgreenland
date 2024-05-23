@@ -63,6 +63,9 @@ export default function GameAddForm({ onUpdate = () => {} }) {
 
   const [userGames, setUserGames] = useState([]);
   useEffect(() => {
+    if (!games) {
+      return;
+    }
     setUserGames(
       games.filter(game =>
         game.users

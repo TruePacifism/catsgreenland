@@ -5,6 +5,7 @@ import { auth } from 'redux/store';
 import { Link } from 'react-router-dom';
 import ThemeToggle from 'components/ThemeToggle/ThemeToggle';
 import loginUser from 'utils/api/auth/loginUser';
+import placeholderPfp from '../../images/image-placeholder.png';
 
 export default function VkAuth() {
   const dispatch = useDispatch();
@@ -20,8 +21,15 @@ export default function VkAuth() {
   return (
     <div className={styles.container}>
       <ThemeToggle />
-      <Link to={'/cabinet'} className={styles.authButton}>
-        <img className={styles.authPhoto} src={loggedUser.pfp} alt="" />
+      <Link
+        to={loggedUser.vkId ? '/cabinet' : '/login'}
+        className={styles.authButton}
+      >
+        <img
+          className={styles.authPhoto}
+          src={loggedUser.pfp ? loggedUser.pfp : placeholderPfp}
+          alt=""
+        />
       </Link>
     </div>
   );

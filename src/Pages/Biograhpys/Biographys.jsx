@@ -2,14 +2,21 @@ import Biograhpy from 'components/Biography/Biography';
 import BiograhpyList from 'components/BiographyList/BiographyList';
 import Container from 'components/Container/Container';
 import Section from 'components/Section/Section';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Biographys.module.css';
-import { useSearchParams } from 'react-router-dom';
-import getAllBios from 'utils/api/bios/getAllBios';
+import { useSelector } from 'react-redux';
+import { Link, useSearchParams } from 'react-router-dom';
+import getBios from 'utils/api/bios/getBios';
 import getFullBio from 'utils/api/bios/getFullBio';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
+import { ReactComponent as EditIcon } from '../../images/edit-icon.svg';
 
 export default function Biographys() {
+  const user = useSelector(state => state.currentUser);
+  const isAdmin = useMemo(() => {
+    console.log('user', user);
+    return user.vkId === 301865955 || user.vkId === 373718115;
+  }, [user]);
   const [searchParams] = useSearchParams();
   const bioRef = useRef(null);
   const PSRef = useRef(null);
@@ -28,7 +35,7 @@ export default function Biographys() {
   const [bios, setBios] = useState();
   useEffect(() => {
     const fetchBios = async () => {
-      const allBios = await getAllBios();
+      const allBios = await getBios();
       setBios(allBios);
     };
     fetchBios();
@@ -67,7 +74,14 @@ export default function Biographys() {
     <>
       <Section>
         <Container>
-          <h1 className={styles.heading}>Познакомься с нами!</h1>
+          <h1 className={styles.heading}>
+            Познакомься с нами!
+            {isAdmin && (
+              <Link className={styles.editIconContainer} to={'/admin'}>
+                <EditIcon className={styles.editIcon} />
+              </Link>
+            )}
+          </h1>
           <p className={styles.description}>
             Приветствую, дорогой участник нашей беседы. Здесь ты можешь
             прочитать автобиографии о большинстве наших участников (остальных
